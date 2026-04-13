@@ -249,18 +249,18 @@ input[type=range]::-webkit-slider-thumb {
 
 
 /* PAGE EXTRAS */
-.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#1a2e1e; }
-.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#1a2e1e; }
+.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background: var(--linen); }
+.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; background: var(--linen); }
 .ph { text-align: center; margin-bottom: 4rem; }
 .ph h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
-  font-size: clamp(2.2rem,4vw,3.2rem); color: var(--white); margin-bottom: 1rem; }
-.ph h1 em { font-style: italic; color: var(--mist); }
-.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--mist);
-  max-width: 600px; margin: 0 auto; opacity: 0.85; }
-.note { font-size: 0.75rem; color: var(--sage); line-height: 1.7; font-style: italic; }
+  font-size: clamp(2.2rem,4vw,3.2rem); color: var(--forest); margin-bottom: 1rem; }
+.ph h1 em { font-style: italic; color: var(--moss); }
+.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--muted);
+  max-width: 600px; margin: 0 auto; opacity: 0.9; }
+.note { font-size: 0.75rem; color: var(--moss); line-height: 1.7; font-style: italic; }
 
 /* Card */
-.card { background: #243028; border: 1px solid rgba(107,143,99,0.15); padding: 2rem; margin-bottom: 1px; color: var(--frost); }
+.card { background: #fff; border: 1px solid rgba(107,143,99,0.15); padding: 2rem; margin-bottom: 1px; color: var(--text); }
 
 /* FAQ accordion arrow */
 .arr { transition: transform 0.3s; display: inline-block; }
