@@ -4,60 +4,60 @@
 /* Results panels */
 .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   background: transparent; margin: 2rem 0; }
-.res-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 2rem 1.5rem; text-align: center; }
+.res-cell { background: #243028; border:1px solid rgba(107,143,99,0.15); padding: 2rem 1.5rem; text-align: center; }
 .res-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: #2d6010; display: block; margin-bottom: 0.5rem; }
+  color: var(--sage); display: block; margin-bottom: 0.5rem; }
 .res-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
-  font-weight: 300; color: #1a2e1e; display: block; line-height: 1; }
-.res-unit { font-size: 0.7rem; color: rgba(107,143,99,0.6); display: block; margin-top: 0.3rem; }
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.res-unit { font-size: 0.7rem; color: rgba(168,196,160,0.5); display: block; margin-top: 0.3rem; }
 @media(max-width:700px) { .results { grid-template-columns: 1fr; } }
 
 /* Species info */
-.species-info { font-size: 0.82rem; color: #cde0c5; line-height: 1.7;
+.species-info { font-size: 0.82rem; color: var(--mist); line-height: 1.7;
   font-weight: 300; margin-top: 1rem; padding-top: 1rem;
-  border-top: 1px solid rgba(0,0,0,0.08); opacity: 0.8; }
+  border-top: 1px solid rgba(107,143,99,0.15); opacity: 0.85; }
 
 /* Comparison section */
-.comparison { background: #fff; border:1px solid rgba(0,0,0,0.08); border: 1px solid rgba(107,143,99,0.15);
+.comparison { background: #243028; border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin-top: 1px; }
 .comp-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: #2d6010; display: block; margin-bottom: 1.5rem; font-weight: 500; }
+  color: var(--sage); display: block; margin-bottom: 1.5rem; font-weight: 500; }
 .comp-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .comp-icon { width: 32px; height: 32px; flex-shrink: 0; opacity: 0.7; }
-.comp-text { font-size: 0.88rem; color: #cde0c5; font-weight: 300; line-height: 1.5; }
-.comp-text strong { color: #1a2e1e; font-weight: 400; }
+.comp-text { font-size: 0.88rem; color: var(--mist); font-weight: 300; line-height: 1.5; }
+.comp-text strong { color: var(--frost); font-weight: 400; }
 
 /* Stats row */
 .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin: 2rem 0; }
-.stat { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
-.stat-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+.stat { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
+.stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
   font-weight: 300; color: var(--white); display: block; line-height: 1; }
 .stat-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: #2d6010; display: block; margin-top: 0.3rem; }
-.stat-u { font-size: 0.75rem; color: rgba(107,143,99,0.5); }
+  color: var(--sage); display: block; margin-top: 0.3rem; }
+.stat-u { font-size: 0.75rem; color: rgba(168,196,160,0.5); }
 
 /* Metrics row */
 .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin: 2rem 0; }
-.metric, .met { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
-.metric-n, .met-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+.metric, .met { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
+.metric-n, .met-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
   font-weight: 300; color: var(--white); display: block; line-height: 1; }
 .metric-l, .met-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: #2d6010; display: block; margin-top: 0.3rem; }
-.metric-u, .met-u { font-size: 0.72rem; color: rgba(107,143,99,0.5); }
+  color: var(--sage); display: block; margin-top: 0.3rem; }
+.metric-u, .met-u { font-size: 0.72rem; color: rgba(168,196,160,0.5); }
 @media(max-width:700px) { .stats, .metrics { grid-template-columns: 1fr; } }
 
 /* Inputs section (avkastning) */
 .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
   background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
-.inp-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; }
+.inp-cell { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; }
 
 /* Chart */
-.chart-card { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+.chart-card { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin: 2rem 0; }
 .chart-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: #2d6010; display: block; margin-bottom: 1rem; font-weight: 500; }
+  color: var(--sage); display: block; margin-bottom: 1rem; font-weight: 500; }
 .chart-wrap { position: relative; height: 280px; }
 .legend { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
 .leg-item { display: flex; align-items: center; gap: 0.5rem;
@@ -65,7 +65,7 @@
 .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
 /* Timeline */
-.timeline { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+.timeline { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin: 1px 0; }
 .tl-bar-wrap { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
 .tl-bar { display: flex; align-items: center; gap: 1rem; }
@@ -75,7 +75,7 @@
 /* Bonitet */
 .main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
 @media(max-width:700px) { .main { grid-template-columns: 1fr; } }
-.result-panel { background: #f8fbf6; padding: 2rem; display: flex;
+.result-panel { background: #243028; padding: 2rem; display: flex;
   flex-direction: column; justify-content: center; }
 .si-card { text-align: center; padding: 1.5rem 0; }
 .si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;

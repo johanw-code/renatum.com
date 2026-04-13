@@ -249,18 +249,18 @@ input[type=range]::-webkit-slider-thumb {
 
 
 /* PAGE EXTRAS */
-.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#f8fbf6; }
-.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#f8fbf6; }
+.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#1a2e1e; }
+.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#1a2e1e; }
 .ph { text-align: center; margin-bottom: 4rem; }
 .ph h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
-  font-size: clamp(2.2rem,4vw,3.2rem); color: #1a2e1e; margin-bottom: 1rem; }
+  font-size: clamp(2.2rem,4vw,3.2rem); color: var(--white); margin-bottom: 1rem; }
 .ph h1 em { font-style: italic; color: var(--mist); }
-.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: #cde0c5;
+.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--mist);
   max-width: 600px; margin: 0 auto; opacity: 0.85; }
-.note { font-size: 0.75rem; color: #8fbf80; line-height: 1.7; font-style: italic; }
+.note { font-size: 0.75rem; color: var(--sage); line-height: 1.7; font-style: italic; }
 
 /* Card */
-.card { background: #fff; border: 1px solid rgba(107,143,99,0.18); padding: 2rem; margin-bottom: 1px; }
+.card { background: #243028; border: 1px solid rgba(107,143,99,0.15); padding: 2rem; margin-bottom: 1px; color: var(--frost); }
 
 /* FAQ accordion arrow */
 .arr { transition: transform 0.3s; display: inline-block; }
