@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Priser — CO₂-rådgivning och certifiering av klimatkrediter | Renatum</title>
+<meta name="keywords" content="co2 certifiering, klimatkrediter pris, koldioxidkrediter certifiering, skog certifiering, klimatkompensation pris, utsläppsrätter, gold standard certifiering">
+<meta name="description" content="Renatum erbjuder gratis CO₂-analys, certifiering med 15% provision och enterprise-avtal för företag. Inga startavgifter för analys.">
+<meta property="og:title" content="Priser — CO₂-rådgivning och certifiering av klimatkrediter | Renatum">
+<meta property="og:type" content="website">
+<meta name="author" content="Renatum AB">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0a1a0d;
+  --deep:    #111f14;
+  --forest:  #1a2e1e;
+  --bark:    #243028;
+  --moss:    #3d5c38;
+  --sage:    #6b8f63;
+  --mist:    #a8c4a0;
+  --frost:   #d4e4cf;
+  --linen:   #f2ede4;
+  --parchment: #e8e1d4;
+  --gold:    #c4a24a;
+  --gold-lt: #e8d49a;
+  --leaf:    #76B33B;
+  --leaf-lt: #93cc52;
+  --white:   #faf8f4;
+  --text:    #1a1a16;
+  --muted:   #5c5c50;
+  --subtle:  #8c8c7c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep);
+  color: var(--frost);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ───────────────────────────────────────────────────────────── */
+.serif        { font-family: 'Cormorant Garamond', serif; }
+.serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.1; }
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.display em { font-style: italic; color: var(--mist); }
+
+.heading-xl {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+}
+.heading-xl em { font-style: italic; color: var(--mist); }
+
+.heading-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.18;
+}
+.heading-lg em { font-style: italic; color: var(--sage); }
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.body-lg { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--mist); }
+.body-sm { font-size: 0.85rem; line-height: 1.75; font-weight: 300; color: var(--mist); }
+.caption  { font-size: 0.7rem;  line-height: 1.6;  font-weight: 400; color: var(--sage); letter-spacing: 0.08em; }
+
+/* ── NAVIGATION ───────────────────────────────────────────────────────────── */
+.nav { position:sticky; top:0; z-index:100; background:rgba(10,26,13,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { text-decoration:none; display:flex; align-items:center; }
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
+.nav-links a:hover { color:#76B33B; opacity:1; }
+.nav-dropdown { position:relative; }
+.nav-dropdown > a { cursor:pointer; user-select:none; }
+.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
+.nav-dropdown-menu::before { content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
+.nav-dropdown.open .nav-dropdown-menu { display:block; }
+.nav-dropdown:hover .nav-dropdown-menu { display:block; }
+.nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
+.nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
+.nav-cta { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.6rem 1.5rem; border:1px solid rgba(118,179,59,0.45); color:#a8d878; text-decoration:none; font-weight:400; transition:all 0.3s; }
+.nav-cta:hover { background:#76B33B; border-color:#76B33B; color:#fff; }
+
+/* ── LAYOUT ───────────────────────────────────────────────────────────────── */
+.container       { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
+.container-sm    { max-width: 780px;  margin: 0 auto; padding: 0 3rem; }
+.section         { padding: 7rem 3rem; }
+.section-sm      { padding: 5rem 3rem; }
+.section-dark    { background: var(--ink); }
+.section-deep    { background: var(--deep); }
+.section-forest  { background: var(--forest); }
+.section-linen   { background: var(--linen); color: var(--text); }
+.section-parch   { background: var(--parchment); color: var(--text); }
+
+/* ── DIVIDERS ─────────────────────────────────────────────────────────────── */
+.divider        { width: 40px; height: 1px; background: var(--sage); margin: 1.5rem 0; }
+.divider-gold   { width: 40px; height: 1px; background: var(--gold); margin: 1.5rem 0; }
+.divider-center { margin-left: auto; margin-right: auto; }
+
+/* ── BUTTONS ──────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 400;
+  transition: all 0.3s; cursor: pointer; border: none;
+}
+.btn-primary   { background:#76B33B;color:#fff; }
+.btn-primary:hover { background: #2d6010; }
+.btn-gold      { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-lt); }
+.btn-outline   { border: 1px solid rgba(107,143,99,0.5); color: var(--mist); background: transparent; }
+.btn-outline:hover { border-color: var(--sage); color: var(--frost); }
+.btn-outline-gold { border: 1px solid rgba(196,162,74,0.4); color: var(--gold-lt); background: transparent; }
+.btn-outline-gold:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-ghost { color: var(--mist); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid rgba(168,196,160,0.3); padding-bottom: 2px; transition: all 0.3s; }
+.btn-ghost:hover { color: var(--frost); border-color: var(--mist); }
+
+/* ── CARDS ────────────────────────────────────────────────────────────────── */
+.card-dark {
+  background: var(--forest);
+  border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem;
+}
+.card-linen {
+  background: var(--linen);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-parch {
+  background: var(--parchment);
+  border: 1px solid rgba(107,143,99,0.1);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-inset {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+}
+
+/* ── STAT BLOCKS ──────────────────────────────────────────────────────────── */
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 300; line-height: 1;
+  color: var(--white);
+}
+.stat-unit { font-size: 0.75rem; color: var(--sage); margin-left: 0.3rem; }
+.stat-label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-top: 0.3rem; display: block; }
+
+/* ── FORMS ────────────────────────────────────────────────────────────────── */
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 0.85rem 1.1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(107,143,99,0.2);
+  color: var(--frost); font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 300; outline: none;
+  transition: border-color 0.3s;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(168,196,160,0.35); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--sage); }
+.form-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.5rem; }
+.form-textarea { resize: none; height: 130px; }
+
+/* ── SLIDERS ──────────────────────────────────────────────────────────────── */
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 2px;
+  background: rgba(107,143,99,0.25); border-radius: 1px; outline: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--leaf); border: 2px solid var(--deep);
+  box-shadow: 0 0 0 1px var(--sage);
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────────── */
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.1); padding: 5rem 3rem 2.5rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); }
+.footer-col h4 { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.55rem; }
+.footer-col ul li a { font-size: 0.82rem; color: rgba(168,196,160,0.5); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 0.72rem; color: rgba(168,196,160,0.3); font-weight: 300; }
+.footer-bottom a { color: rgba(168,196,160,0.3); text-decoration: none; }
+
+/* ── UTILITIES ────────────────────────────────────────────────────────────── */
+.text-mist   { color: var(--mist); }
+.text-sage   { color: var(--sage); }
+.text-gold   { color: var(--gold-lt); }
+.text-frost  { color: var(--frost); }
+.text-linen  { color: var(--linen); }
+.text-ink    { color: var(--text); }
+.text-muted-dark { color: var(--muted); }
+.bg-dark  { background: var(--deep); }
+.bg-ink   { background: var(--ink); }
+.bg-forest { background: var(--forest); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.gold-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+/* ── SCROLL INDICATOR ─────────────────────────────────────────────────────── */
+.scroll-line { width: 1px; height: 70px; background: rgba(107,143,99,0.25); position: relative; overflow: hidden; }
+.scroll-line::after { content:''; position:absolute; top:-70px; left:0; width:1px; height:70px; background: var(--mist); animation: drop 2s 1.5s infinite; }
+@keyframes drop { from{top:-70px} to{top:70px} }
+
+/* ── COOKIE BANNER ────────────────────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--ink); border-top: 1px solid rgba(107,143,99,0.2);
+  padding: 1.2rem 3rem; display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  transform: translateY(100%); transition: transform 0.4s ease;
+}
+.cookie-banner.show { transform: translateY(0); }
+.cookie-text { font-size: 0.8rem; line-height: 1.6; font-weight: 300; color: var(--mist); flex: 1; min-width: 200px; }
+.cookie-text a { color: var(--gold-lt); }
+.cookie-actions { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.cookie-accept { background:#76B33B;color:#fff; border: none; padding: 0.55rem 1.3rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.cookie-decline { background: transparent; color: var(--subtle); border: 1px solid rgba(107,143,99,0.2); padding: 0.55rem 1.1rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav { padding: 0.9rem 1.5rem; }
+  .nav-links { display: none; }
+  .section, .section-sm { padding: 5rem 1.5rem; }
+  .container, .container-sm { padding: 0 1.5rem; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .footer { padding: 4rem 1.5rem 2rem; }
+  .cookie-banner { padding: 1rem 1.5rem; }
+}
+
+
+/* PAGE EXTRAS */
+.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#f8fbf6; }
+.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; background:#f8fbf6; }
+.ph { text-align: center; margin-bottom: 4rem; }
+.ph h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.2rem,4vw,3.2rem); color: #1a2e1e; margin-bottom: 1rem; }
+.ph h1 em { font-style: italic; color: var(--mist); }
+.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: #cde0c5;
+  max-width: 600px; margin: 0 auto; opacity: 0.85; }
+.note { font-size: 0.75rem; color: #8fbf80; line-height: 1.7; font-style: italic; }
+
+/* Card */
+.card { background: #fff; border: 1px solid rgba(107,143,99,0.18); padding: 2rem; margin-bottom: 1px; }
+
+/* FAQ accordion arrow */
+.arr { transition: transform 0.3s; display: inline-block; }
+.arr.open { transform: rotate(180deg); }
+
+/* Footer */
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.08); padding: 4rem 2rem 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1140px; margin: 0 auto 3rem; }
+.footer-brand { }
+.logo-foot { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); display: block; margin-bottom: 0.8rem; }
+.footer-col h4 { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a { font-size: 0.78rem; color: rgba(168,196,160,0.4); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; max-width: 1140px; margin: 0 auto; }
+.footer-bottom p, .footer-bottom a { font-size: 0.68rem; color: rgba(168,196,160,0.25); font-weight: 300; text-decoration: none; }
+@media(max-width:900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+@media(max-width:600px) { .footer-top { grid-template-columns: 1fr; } }
+
+</style>
+<link rel="canonical" href="https://renatum.se/priser.html">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><svg height="22" viewBox="0 0 877 177" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M659.921 152.209C639.985 152.209 639.985 134.235 639.985 134.235V68.1178C639.985 68.1178 615 68.1178 615 87.9403C615 108.011 615 139.334 615 139.334C615 139.334 615 176.111 659.921 176.111C705.252 176.111 705.252 139.334 705.252 139.334C705.252 139.334 705.252 100.688 705.252 87.9403C705.252 68.1178 680.267 68.1178 680.267 68.1178V134.235C680.267 134.235 679.857 152.209 659.921 152.209Z" fill="#a8c4a0"/><path d="M602.661 67.8931C596.48 67.8931 582.605 67.8931 582.605 67.8931C582.605 67.8931 582.605 57.9225 582.605 51.5337C582.605 31.3501 557.62 31.3501 557.62 31.3501V49.6216V67.8931C557.62 67.8931 537.564 67.8931 537.564 92.1984C544.428 92.1984 557.62 92.1984 557.62 92.1984C557.62 113.078 557.621 138.304 557.621 156.17C557.622 175.992 582.605 175.992 582.605 175.992V92.1984C582.605 92.1984 602.661 92.1984 602.661 67.8931Z" fill="#a8c4a0"/><path d="M369.187 91.9017C349.251 91.9017 349.251 109.876 349.251 109.876V175.993C349.251 175.993 324.266 175.993 324.266 156.171C324.266 136.1 324.266 104.777 324.266 104.777C324.266 104.777 324.266 68 369.187 68C414.518 68 414.518 104.777 414.518 104.777C414.518 104.777 414.518 143.423 414.518 156.171C414.518 175.993 389.533 175.993 389.533 175.993V109.876C389.533 109.876 389.123 91.9017 369.187 91.9017Z" fill="#a8c4a0"/><path d="M484.99 92.5H496C496 92.5 496 107.638 496 120.99C496 140.99 520.99 140.99 520.99 140.99V95.99V68C520.99 68 487.542 68 484.995 68C455.174 68 431 93.6794 431 123.5C431 153.321 455.174 175.99 484.995 175.99C489.479 175.99 520.99 175.99 520.99 175.99C520.99 175.99 520.99 151.5 500.99 151.5C495 151.5 484.99 151.5 484.99 151.5C484.99 151.5 456 151.5 456 123.5C456 92.5 484.99 92.5 484.99 92.5Z" fill="#a8c4a0"/><path d="M831.872 93C811.752 93 811.752 110.031 811.752 110.031V138.422C811.752 158.422 786.767 158.422 786.767 158.422V110.2C786.767 110.2 786.767 93.073 766.7 93C746.485 92.9265 746.485 110.2 746.485 110.2V175.993C746.485 175.993 721.5 175.993 721.5 156.268C721.5 140.844 721.5 120.173 721.5 105.126C721.5 83.8602 729.368 68.1921 770.95 68.0007C779.979 68.0007 786.226 67.9992 798.93 68.0007C811.598 68.0022 818.222 68.0007 826.832 68.0007C868.482 68.1897 876.34 83.8469 876.34 105.126C876.34 120.173 876.34 141.468 876.34 156.268C876.34 175.993 851.525 175.993 851.525 175.993V110.2C851.525 110.2 851.526 93 831.872 93Z" fill="#a8c4a0"/><path d="M262.921 91.9017C242.985 91.9017 242.493 91.9017 242.493 91.9017V121.523V133.171C242.493 133.171 242 151.171 262.921 151.171C275 151.171 278.36 151.171 288.252 151.171C308.252 151.171 308.252 175.993 308.252 175.993C308.252 175.993 280.623 175.993 262.92 175.993C218 175.993 218 138.993 218 138.993V68C218 68 218 68 262.921 68C308.252 68 308.252 104.777 308.252 104.777V134.171H283.267H255.27C255.27 134.171 255.27 112.171 275.267 112.171C277.172 112.171 283.267 112.171 283.267 112.171V109.876C283.267 109.876 282.857 91.9017 262.921 91.9017Z" fill="#a8c4a0"/><path d="M51.5811 9.21094H140.297C174.087 9.21094 190.071 34.7693 190.071 59.7547C190.071 75.167 183.541 90.4378 170.862 99.8772C167.101 102.677 163.177 104.704 168.559 112.116C163.272 113.894 146.756 109.354 140.211 109.354H132.834L124.349 97.9286C124.349 97.9286 113.754 86.5036 128.952 86.5036C130.795 86.5036 132.174 86.5036 133.207 86.5036C153.582 86.5036 158.822 74.1476 158.822 59.7547C158.822 45.3618 153.019 36.5805 132.864 36.5805H102.401C102.401 36.5805 84.2797 36.5805 80.2269 36.5805C51.5811 36.5805 51.5811 9.21094 51.5811 9.21094ZM157.132 96.5541L216.008 175.928H196.786C196.786 175.928 181.183 175.928 171.322 162.35C132.834 109.354 123.228 96.5541 123.228 96.5541H157.132Z" fill="#a8c4a0"/><path d="M3.60739 0C13.7393 18.8823 15.5815 20.2644 25.2529 29.0811C42.0901 44.4301 70.9082 54.267 88.8086 74.6084C106.265 94.446 109.438 113.918 106.769 136.321C104.588 154.639 129.297 175.895 129.336 175.928H105.388C105.388 175.928 107.69 169.941 102.624 162.111C99.4003 157.129 94.0686 155.533 86.9658 157.506C53.806 166.717 34.4629 157.045 22.0283 146.913C3.01277 131.419 -0.880808 111.561 0.15231 89.8057C0.838862 73.5071 4.78134 65.9022 3.14645 40.5283C1.63476 17.0672 0.383541 11.9741 3.60739 0ZM17.291 41.8369C17.291 41.8369 34.512 117.231 65.2011 135.519C69.3198 137.973 74.5673 140.474 78.7763 137.186C83.9061 133.913 84.2338 127.83 79.5224 124.531C38.569 95.8579 17.291 41.8369 17.291 41.8369Z" fill="#76B33B"/></svg></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Hem</a></li>
+    <li><a href="om-oss.html">Om oss</a></li>
+    <li><a href="case.html">Case</a></li>
+    <li><a href="priser.html">Priser</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Verktyg ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="prisvardhet.html">Prisvärdhetskalkylator</a>
+        <a href="co2.html">CO₂-kalkylator</a>
+        <a href="avkastning.html">Avkastningskalkylator</a>
+        <a href="bonitet.html">Bonitetsberäkning</a>
+        <a href="vardering.html">Fastighetsvärdering</a>
+        <a href="markagare.html">Ny markägare — guide</a>
+      </div>
+    </li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="index.html#kontakt" class="nav-cta">Kontakta oss</a>
+</nav>
+
+<div class="page">
+  <div class="ph">
+    <span class="eyebrow">Priser & tjänster</span>
+    <h1>Transparent prissättning — <em>inga dolda kostnader</em></h1>
+    <p class="sub">Vi tror på tydlighet. Här är vad våra tjänster kostar — och vad du får för pengarna.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:3rem;">
+    <div style="background:var(--white);border:1px solid rgba(74,103,65,0.1);padding:2.5rem;display:flex;flex-direction:column;">
+      <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Analys</span>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--frost);line-height:1;margin-bottom:0.3rem;">0 kr</div>
+      <div style="font-size:0.78rem;color:var(--mist);margin-bottom:1.5rem;">Kostnadsfritt, inga förpliktelser</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">CO₂-analys via vår kalkylator</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Indikativt intäktsintervall</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">30 min rådgivningssamtal</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Rekommendation om nästa steg</span></div>
+      </div>
+      <a href="co2.html" style="display:block;text-align:center;background:transparent;color:var(--sage);border:1px solid var(--moss);padding:0.85rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#2d6010';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--moss)'">Kom igång gratis</a>
+    </div>
+
+    <div style="background:var(--forest);padding:2.5rem;display:flex;flex-direction:column;position:relative;">
+      <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#2d6010;color:var(--white);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1rem;font-weight:500;">Populärast</div>
+      <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Certifiering</span>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:0.3rem;">15%</div>
+      <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;">av kreditintäkterna + fast startavgift</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Fullständig fältinventering</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Skogsbruksplan och dokumentation</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Certifieringsprocess (Gold Standard el. Plan Vivo)</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Löpande rapportering och uppföljning</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Matching med potentiella köpare</span></div>
+      </div>
+      <a href="index.html#kontakt" style="display:block;text-align:center;background:#2d6010;color:var(--white);padding:0.85rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;" onmouseover="this.style.background='#3a5332'" onmouseout="this.style.background='#4a6741'">Kontakta oss</a>
+    </div>
+
+    <div style="background:var(--white);border:1px solid rgba(74,103,65,0.1);padding:2.5rem;display:flex;flex-direction:column;">
+      <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Enterprise</span>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--frost);line-height:1;margin-bottom:0.3rem;">Offert</div>
+      <div style="font-size:0.78rem;color:var(--mist);margin-bottom:1.5rem;">Skräddarsytt för stora innehav & företag</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Allt i Certifiering</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Dedikerad rådgivare</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Juridisk rådgivning och avtalshjälp</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Kommunikationsunderlag för hållbarhetsrapport</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#2d6010;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--mist);font-weight:300;line-height:1.6;">Direkt köpare-säljare-matchning</span></div>
+      </div>
+      <a href="index.html#kontakt" style="display:block;text-align:center;background:transparent;color:var(--sage);border:1px solid var(--moss);padding:0.85rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='#2d6010';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--moss)'">Begär offert</a>
+    </div>
+  </div>
+
+  <div style="background:rgba(74,103,65,0.06);border:1px solid rgba(74,103,65,0.15);padding:2rem;text-align:center;">
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--frost);margin-bottom:0.5rem;">Osäker på vilket alternativ som passar dig?</p>
+    <p style="font-size:0.85rem;color:var(--mist);font-weight:300;margin-bottom:1.2rem;">Börja med den kostnadsfria analysen — så berättar vi vad som är rätt nästa steg för just din fastighet.</p>
+    <a href="co2.html" style="display:inline-block;background:#2d6010;color:var(--white);padding:0.85rem 2rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;" onmouseover="this.style.background='var(--forest)'" onmouseout="this.style.background='#2d6010'">Starta gratis analys</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-foot" style="display:block;margin-bottom:1rem;"><svg height="24" viewBox="0 0 877 177" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M659.921 152.209C639.985 152.209 639.985 134.235 639.985 134.235V68.1178C639.985 68.1178 615 68.1178 615 87.9403C615 108.011 615 139.334 615 139.334C615 139.334 615 176.111 659.921 176.111C705.252 176.111 705.252 139.334 705.252 139.334C705.252 139.334 705.252 100.688 705.252 87.9403C705.252 68.1178 680.267 68.1178 680.267 68.1178V134.235C680.267 134.235 679.857 152.209 659.921 152.209Z" fill="rgba(255,255,255,0.7)"/><path d="M602.661 67.8931C596.48 67.8931 582.605 67.8931 582.605 67.8931C582.605 67.8931 582.605 57.9225 582.605 51.5337C582.605 31.3501 557.62 31.3501 557.62 31.3501V49.6216V67.8931C557.62 67.8931 537.564 67.8931 537.564 92.1984C544.428 92.1984 557.62 92.1984 557.62 92.1984C557.62 113.078 557.621 138.304 557.621 156.17C557.622 175.992 582.605 175.992 582.605 175.992V92.1984C582.605 92.1984 602.661 92.1984 602.661 67.8931Z" fill="rgba(255,255,255,0.7)"/><path d="M369.187 91.9017C349.251 91.9017 349.251 109.876 349.251 109.876V175.993C349.251 175.993 324.266 175.993 324.266 156.171C324.266 136.1 324.266 104.777 324.266 104.777C324.266 104.777 324.266 68 369.187 68C414.518 68 414.518 104.777 414.518 104.777C414.518 104.777 414.518 143.423 414.518 156.171C414.518 175.993 389.533 175.993 389.533 175.993V109.876C389.533 109.876 389.123 91.9017 369.187 91.9017Z" fill="rgba(255,255,255,0.7)"/><path d="M484.99 92.5H496C496 92.5 496 107.638 496 120.99C496 140.99 520.99 140.99 520.99 140.99V95.99V68C520.99 68 487.542 68 484.995 68C455.174 68 431 93.6794 431 123.5C431 153.321 455.174 175.99 484.995 175.99C489.479 175.99 520.99 175.99 520.99 175.99C520.99 175.99 520.99 151.5 500.99 151.5C495 151.5 484.99 151.5 484.99 151.5C484.99 151.5 456 151.5 456 123.5C456 92.5 484.99 92.5 484.99 92.5Z" fill="rgba(255,255,255,0.7)"/><path d="M831.872 93C811.752 93 811.752 110.031 811.752 110.031V138.422C811.752 158.422 786.767 158.422 786.767 158.422V110.2C786.767 110.2 786.767 93.073 766.7 93C746.485 92.9265 746.485 110.2 746.485 110.2V175.993C746.485 175.993 721.5 175.993 721.5 156.268C721.5 140.844 721.5 120.173 721.5 105.126C721.5 83.8602 729.368 68.1921 770.95 68.0007C779.979 68.0007 786.226 67.9992 798.93 68.0007C811.598 68.0022 818.222 68.0007 826.832 68.0007C868.482 68.1897 876.34 83.8469 876.34 105.126C876.34 120.173 876.34 141.468 876.34 156.268C876.34 175.993 851.525 175.993 851.525 175.993V110.2C851.525 110.2 851.526 93 831.872 93Z" fill="rgba(255,255,255,0.7)"/><path d="M262.921 91.9017C242.985 91.9017 242.493 91.9017 242.493 91.9017V121.523V133.171C242.493 133.171 242 151.171 262.921 151.171C275 151.171 278.36 151.171 288.252 151.171C308.252 151.171 308.252 175.993 308.252 175.993C308.252 175.993 280.623 175.993 262.92 175.993C218 175.993 218 138.993 218 138.993V68C218 68 218 68 262.921 68C308.252 68 308.252 104.777 308.252 104.777V134.171H283.267H255.27C255.27 134.171 255.27 112.171 275.267 112.171C277.172 112.171 283.267 112.171 283.267 112.171V109.876C283.267 109.876 282.857 91.9017 262.921 91.9017Z" fill="rgba(255,255,255,0.7)"/><path d="M51.5811 9.21094H140.297C174.087 9.21094 190.071 34.7693 190.071 59.7547C190.071 75.167 183.541 90.4378 170.862 99.8772C167.101 102.677 163.177 104.704 168.559 112.116C163.272 113.894 146.756 109.354 140.211 109.354H132.834L124.349 97.9286C124.349 97.9286 113.754 86.5036 128.952 86.5036C130.795 86.5036 132.174 86.5036 133.207 86.5036C153.582 86.5036 158.822 74.1476 158.822 59.7547C158.822 45.3618 153.019 36.5805 132.864 36.5805H102.401C102.401 36.5805 84.2797 36.5805 80.2269 36.5805C51.5811 36.5805 51.5811 9.21094 51.5811 9.21094ZM157.132 96.5541L216.008 175.928H196.786C196.786 175.928 181.183 175.928 171.322 162.35C132.834 109.354 123.228 96.5541 123.228 96.5541H157.132Z" fill="rgba(255,255,255,0.7)"/><path d="M3.60739 0C13.7393 18.8823 15.5815 20.2644 25.2529 29.0811C42.0901 44.4301 70.9082 54.267 88.8086 74.6084C106.265 94.446 109.438 113.918 106.769 136.321C104.588 154.639 129.297 175.895 129.336 175.928H105.388C105.388 175.928 107.69 169.941 102.624 162.111C99.4003 157.129 94.0686 155.533 86.9658 157.506C53.806 166.717 34.4629 157.045 22.0283 146.913C3.01277 131.419 -0.880808 111.561 0.15231 89.8057C0.838862 73.5071 4.78134 65.9022 3.14645 40.5283C1.63476 17.0672 0.383541 11.9741 3.60739 0ZM17.291 41.8369C17.291 41.8369 34.512 117.231 65.2011 135.519C69.3198 137.973 74.5673 140.474 78.7763 137.186C83.9061 133.913 84.2338 127.83 79.5224 124.531C38.569 95.8579 17.291 41.8369 17.291 41.8369Z" fill="#76B33B"/></svg></span>
+      <p>Specialister på mark och naturmark i Sverige. Vi förvaltar naturens värden med kunskap, omsorg och långsiktighet.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tjänster</h4>
+      <ul>
+        <li><a href="#">Fastighetsförmedling</a></li>
+        <li><a href="#">Fastighetsvärdering</a></li>
+        <li><a href="#">Förvaltning</a></li>
+        <li><a href="#">Rådgivning</a></li>
+        <li><a href="#">Juridik &amp; avtal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Om oss</h4>
+      <ul>
+        <li><a href="om-oss.html">Vår historia</a></li>
+        <li><a href="om-oss.html">Teamet</a></li>
+        <li><a href="case.html">Case</a></li>
+        <li><a href="priser.html">Priser</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+46101234567">+46 10 123 45 67</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#50393e363f1022353e3124253d7e333f3d"><span class="__cf_email__" data-cfemail="7f161119103f0d1a111e0b0a12511c1012">[email&#160;protected]</span></a></li>
+        <li><a href="faq.html">Vanliga frågor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Renatum AB. Alla rättigheter förbehållna
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.querySelector('.nav-dropdown');
+  var trigger = dropdown && dropdown.querySelector(':scope > a');
+  if (!trigger) return;
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (dropdown && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

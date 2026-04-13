@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Analysera om en skogsfastighet är prisvärd med vår kalkylator. Bedöm 8 kriterier: inköpspris, bonitet, trädslag, transportläge, miljörisker och mer.">
+  <meta name="keywords" content="skogsfastighet värdering, pris skogsmark, pris per hektar skog, värdera skogsfastighet, skogsmark pris per hektar, bonitet skog, skogsfastigheter till salu">
+  <meta name="author" content="Renatum AB">
+  <meta property="og:title" content="Prisvärdhetskalkylator för skogsfastighet — Objektivt poängsystem | Renatum">
+  <meta property="og:description" content="Analysera om en skogsfastighet är prisvärd med vår kalkylator. Bedöm 8 kriterier: inköpspris, bonitet, trädslag, transportläge, miljörisker och mer.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Renatum">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prisvärdhetskalkylator för skogsmark — Renatum">
+  <meta name="twitter:description" content="Poängsätt en skogsfastighet på 8 kriterier och få ett objektivt prisvärdhetsindex. Gratis analysverktyg.">
+  <link rel="canonical" href="https://renatum.se/prisvardhet.html">
+<title>Prisvärdhetskalkylator för skogsfastighet — Objektivt poängsystem | Renatum</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0a1a0d;
+  --deep:    #111f14;
+  --forest:  #1a2e1e;
+  --bark:    #243028;
+  --moss:    #3d5c38;
+  --sage:    #6b8f63;
+  --mist:    #a8c4a0;
+  --frost:   #d4e4cf;
+  --linen:   #f2ede4;
+  --parchment: #e8e1d4;
+  --gold:    #c4a24a;
+  --gold-lt: #e8d49a;
+  --leaf:    #76B33B;
+  --leaf-lt: #93cc52;
+  --white:   #faf8f4;
+  --text:    #1a1a16;
+  --muted:   #5c5c50;
+  --subtle:  #8c8c7c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep);
+  color: var(--frost);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ───────────────────────────────────────────────────────────── */
+.serif        { font-family: 'Cormorant Garamond', serif; }
+.serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.1; }
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.display em { font-style: italic; color: var(--mist); }
+
+.heading-xl {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+}
+.heading-xl em { font-style: italic; color: var(--mist); }
+
+.heading-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.18;
+}
+.heading-lg em { font-style: italic; color: var(--sage); }
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.body-lg { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--mist); }
+.body-sm { font-size: 0.85rem; line-height: 1.75; font-weight: 300; color: var(--mist); }
+.caption  { font-size: 0.7rem;  line-height: 1.6;  font-weight: 400; color: var(--sage); letter-spacing: 0.08em; }
+
+/* ── NAVIGATION ───────────────────────────────────────────────────────────── */
+.nav { position:sticky; top:0; z-index:100; background:rgba(10,26,13,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { text-decoration:none; display:flex; align-items:center; }
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
+.nav-links a:hover { color:#76B33B; opacity:1; }
+.nav-dropdown { position:relative; }
+.nav-dropdown > a { cursor:pointer; user-select:none; }
+.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
+.nav-dropdown-menu::before { content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
+.nav-dropdown.open .nav-dropdown-menu { display:block; }
+.nav-dropdown:hover .nav-dropdown-menu { display:block; }
+.nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
+.nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
+.nav-cta { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.6rem 1.5rem; border:1px solid rgba(118,179,59,0.45); color:#a8d878; text-decoration:none; font-weight:400; transition:all 0.3s; }
+.nav-cta:hover { background:#76B33B; border-color:#76B33B; color:#fff; }
+
+/* ── LAYOUT ───────────────────────────────────────────────────────────────── */
+.container       { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
+.container-sm    { max-width: 780px;  margin: 0 auto; padding: 0 3rem; }
+.section         { padding: 7rem 3rem; }
+.section-sm      { padding: 5rem 3rem; }
+.section-dark    { background: var(--ink); }
+.section-deep    { background: var(--deep); }
+.section-forest  { background: var(--forest); }
+.section-linen   { background: var(--linen); color: var(--text); }
+.section-parch   { background: var(--parchment); color: var(--text); }
+
+/* ── DIVIDERS ─────────────────────────────────────────────────────────────── */
+.divider        { width: 40px; height: 1px; background: var(--sage); margin: 1.5rem 0; }
+.divider-gold   { width: 40px; height: 1px; background: var(--gold); margin: 1.5rem 0; }
+.divider-center { margin-left: auto; margin-right: auto; }
+
+/* ── BUTTONS ──────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 400;
+  transition: all 0.3s; cursor: pointer; border: none;
+}
+.btn-primary   { background:#76B33B;color:#fff; }
+.btn-primary:hover { background: #2d6010; }
+.btn-gold      { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-lt); }
+.btn-outline   { border: 1px solid rgba(107,143,99,0.5); color: var(--mist); background: transparent; }
+.btn-outline:hover { border-color: var(--sage); color: var(--frost); }
+.btn-outline-gold { border: 1px solid rgba(196,162,74,0.4); color: var(--gold-lt); background: transparent; }
+.btn-outline-gold:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-ghost { color: var(--mist); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid rgba(168,196,160,0.3); padding-bottom: 2px; transition: all 0.3s; }
+.btn-ghost:hover { color: var(--frost); border-color: var(--mist); }
+
+/* ── CARDS ────────────────────────────────────────────────────────────────── */
+.card-dark {
+  background: var(--forest);
+  border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem;
+}
+.card-linen {
+  background: var(--linen);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-parch {
+  background: var(--parchment);
+  border: 1px solid rgba(107,143,99,0.1);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-inset {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+}
+
+/* ── STAT BLOCKS ──────────────────────────────────────────────────────────── */
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 300; line-height: 1;
+  color: var(--white);
+}
+.stat-unit { font-size: 0.75rem; color: var(--sage); margin-left: 0.3rem; }
+.stat-label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-top: 0.3rem; display: block; }
+
+/* ── FORMS ────────────────────────────────────────────────────────────────── */
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 0.85rem 1.1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(107,143,99,0.2);
+  color: var(--frost); font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 300; outline: none;
+  transition: border-color 0.3s;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(168,196,160,0.35); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--sage); }
+.form-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.5rem; }
+.form-textarea { resize: none; height: 130px; }
+
+/* ── SLIDERS ──────────────────────────────────────────────────────────────── */
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 2px;
+  background: rgba(107,143,99,0.25); border-radius: 1px; outline: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--leaf); border: 2px solid var(--deep);
+  box-shadow: 0 0 0 1px var(--sage);
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────────── */
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.1); padding: 5rem 3rem 2.5rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); }
+.footer-col h4 { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.55rem; }
+.footer-col ul li a { font-size: 0.82rem; color: rgba(168,196,160,0.5); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 0.72rem; color: rgba(168,196,160,0.3); font-weight: 300; }
+.footer-bottom a { color: rgba(168,196,160,0.3); text-decoration: none; }
+
+/* ── UTILITIES ────────────────────────────────────────────────────────────── */
+.text-mist   { color: var(--mist); }
+.text-sage   { color: var(--sage); }
+.text-gold   { color: var(--gold-lt); }
+.text-frost  { color: var(--frost); }
+.text-linen  { color: var(--linen); }
+.text-ink    { color: var(--text); }
+.text-muted-dark { color: var(--muted); }
+.bg-dark  { background: var(--deep); }
+.bg-ink   { background: var(--ink); }
+.bg-forest { background: var(--forest); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.gold-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+/* ── SCROLL INDICATOR ─────────────────────────────────────────────────────── */
+.scroll-line { width: 1px; height: 70px; background: rgba(107,143,99,0.25); position: relative; overflow: hidden; }
+.scroll-line::after { content:''; position:absolute; top:-70px; left:0; width:1px; height:70px; background: var(--mist); animation: drop 2s 1.5s infinite; }
+@keyframes drop { from{top:-70px} to{top:70px} }
+
+/* ── COOKIE BANNER ────────────────────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--ink); border-top: 1px solid rgba(107,143,99,0.2);
+  padding: 1.2rem 3rem; display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  transform: translateY(100%); transition: transform 0.4s ease;
+}
+.cookie-banner.show { transform: translateY(0); }
+.cookie-text { font-size: 0.8rem; line-height: 1.6; font-weight: 300; color: var(--mist); flex: 1; min-width: 200px; }
+.cookie-text a { color: var(--gold-lt); }
+.cookie-actions { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.cookie-accept { background:#76B33B;color:#fff; border: none; padding: 0.55rem 1.3rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.cookie-decline { background: transparent; color: var(--subtle); border: 1px solid rgba(107,143,99,0.2); padding: 0.55rem 1.1rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav { padding: 0.9rem 1.5rem; }
+  .nav-links { display: none; }
+  .section, .section-sm { padding: 5rem 1.5rem; }
+  .container, .container-sm { padding: 0 1.5rem; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .footer { padding: 4rem 1.5rem 2rem; }
+  .cookie-banner { padding: 1rem 1.5rem; }
+}
+
+
+/* PAGE EXTRAS */
+
+/* ─── TOOL PAGE SPECIFIC STYLES ─────────────────────────────────── */
+
+/* Page layout */
+.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background: #f8fbf6; min-height: calc(100vh - 80px); }
+.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; }
+
+/* Page header */
+.ph { text-align: center; margin-bottom: 4rem; }
+.ph h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; color: var(--white); margin-bottom: 1rem; }
+.ph h1 em { font-style: italic; color: var(--mist); }
+.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: #cde0c5;
+  max-width: 600px; margin: 0 auto; opacity: 0.85; }
+.note { font-size: 0.75rem; color: #8fbf80; line-height: 1.7;
+  font-style: italic; margin-top: 1.5rem; }
+
+/* Cards */
+.card { background: #fff;  border: 1px solid rgba(107,143,99,0.18);
+  padding: 2rem; margin-bottom: 1px; }
+.card:first-child { border-top: 2px solid var(--sage); }
+
+/* Labels & inputs */
+.label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 0.6rem; }
+
+select, input[type="number"], input[type="text"], textarea {
+  width: 100%; padding: 0.8rem 1rem;
+  background: #fff; border: 1px solid rgba(0,0,0,0.15);
+  color: #1a2e1e; font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 300; outline: none; transition: border-color 0.3s;
+}
+select option { background: #fff; color: #1a2e1e; }
+select:focus, input:focus, textarea:focus { border-color: var(--sage); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+@media(max-width:700px) { .grid, .grid2 { grid-template-columns: 1fr; } }
+
+/* Sliders */
+.slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+.slider-val, .sval { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+  font-weight: 300; color: var(--white); min-width: 70px; flex-shrink: 0; }
+input[type=range] { -webkit-appearance: none; flex: 1; height: 2px;
+  background: rgba(0,0,0,0.12); border: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--leaf); border: 2px solid var(--deep); }
+
+/* Results panels */
+.results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  background: transparent; margin: 2rem 0; }
+.res-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 2rem 1.5rem; text-align: center; }
+.res-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 0.5rem; }
+.res-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+  font-weight: 300; color: #1a2e1e; display: block; line-height: 1; }
+.res-unit { font-size: 0.7rem; color: rgba(107,143,99,0.6); display: block; margin-top: 0.3rem; }
+@media(max-width:700px) { .results { grid-template-columns: 1fr; } }
+
+/* Species info */
+.species-info { font-size: 0.82rem; color: #cde0c5; line-height: 1.7;
+  font-weight: 300; margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08); opacity: 0.8; }
+
+/* Comparison section */
+.comparison { background: #fff; border:1px solid rgba(0,0,0,0.08); border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin-top: 1px; }
+.comp-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1.5rem; font-weight: 500; }
+.comp-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.comp-icon { width: 32px; height: 32px; flex-shrink: 0; opacity: 0.7; }
+.comp-text { font-size: 0.88rem; color: #cde0c5; font-weight: 300; line-height: 1.5; }
+.comp-text strong { color: #1a2e1e; font-weight: 400; }
+
+/* Stats row */
+.stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin: 2rem 0; }
+.stat { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
+.stat-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.stat-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-top: 0.3rem; }
+.stat-u { font-size: 0.75rem; color: rgba(107,143,99,0.5); }
+
+/* Metrics row */
+.metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin: 2rem 0; }
+.metric, .met { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
+.metric-n, .met-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.metric-l, .met-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-top: 0.3rem; }
+.metric-u, .met-u { font-size: 0.72rem; color: rgba(107,143,99,0.5); }
+@media(max-width:700px) { .stats, .metrics { grid-template-columns: 1fr; } }
+
+/* Inputs section (avkastning) */
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
+.inp-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; }
+
+/* Chart */
+.chart-card { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin: 2rem 0; }
+.chart-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1rem; font-weight: 500; }
+.chart-wrap { position: relative; height: 280px; }
+.legend { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+.leg-item { display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: var(--mist); font-weight: 300; }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* Timeline */
+.timeline { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin: 1px 0; }
+.tl-bar-wrap { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+.tl-bar { display: flex; align-items: center; gap: 1rem; }
+.tl-bar-wrap .label { min-width: 60px; margin: 0; }
+.tl-bar-fill { height: 8px; background: var(--leaf); border-radius: 1px; transition: width 0.5s; }
+
+/* Bonitet */
+.main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+@media(max-width:700px) { .main { grid-template-columns: 1fr; } }
+.result-panel { background: #f8fbf6; padding: 2rem; display: flex;
+  flex-direction: column; justify-content: center; }
+.si-card { text-align: center; padding: 1.5rem 0; }
+.si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+  font-weight: 300; color: var(--white); line-height: 1; display: block; }
+.si-desc { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem;
+  font-weight: 300; line-height: 1.6; }
+.metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin-top: 1px; }
+.info-box { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; margin-top: 1px; }
+.scale-card { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin-top: 1px; }
+.scale-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.scale-row { color: #5c6e58; display: grid; grid-template-columns: 60px 1fr 80px 80px;
+  gap: 0.5rem; align-items: center; padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(107,143,99,0.08); font-size: 0.8rem; color: var(--mist); }
+.scale-row.active { background: rgba(107,143,99,0.08); color: var(--frost); }
+.scale-name { font-weight: 500; color: #1a2e1e; }
+.scale-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
+.scale-bar-wrap { flex: 1; height: 4px; background: rgba(107,143,99,0.15); border-radius: 2px; }
+.scale-m3 { font-size: 0.75rem; color: var(--sage); text-align: right; }
+.scale-range { font-size: 0.72rem; color: rgba(168,196,160,0.5); }
+
+/* Värdering steps */
+.step { margin-bottom: 2rem; }
+.step-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.step-num { width: 36px; height: 36px; background: rgba(107,143,99,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--mist); }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.result-block { background: #fff; border: 1px solid rgba(107,143,99,0.18);
+  border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center;
+  margin: 2rem 0; display: none; }
+.result-block.show { display: block; }
+.res-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1rem; font-weight: 500; }
+.res-range { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 300; color: var(--white); line-height: 1; }
+.res-sub { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
+.res-disclaimer { font-size: 0.72rem; color: rgba(107,143,99,0.4); margin-top: 1.5rem;
+  font-style: italic; line-height: 1.6; }
+.btn-calc { background: #76B33B; color: #fff; border: none;
+  padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
+  font-weight: 400; margin-top: 1.5rem; transition: background 0.3s; }
+.btn-calc:hover { background: #2d6010; }
+.cta-box { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2.5rem; text-align: center; margin-top: 1px; }
+.cta-title { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
+  font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
+.cta-title em { font-style: italic; color: var(--mist); }
+.cta-sub { font-size: 0.88rem; color: #5c6e58; font-weight: 300;
+  line-height: 1.7; margin-bottom: 1.5rem; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.5rem; }
+.contact-form textarea { grid-column: 1/-1; height: 100px; resize: none; }
+@media(max-width:600px) { .contact-form { grid-template-columns: 1fr; } }
+
+/* Markägare guide */
+.progress-bar { background: rgba(107,143,99,0.12); height: 4px; margin-bottom: 3rem; }
+.prog-track { height: 4px; background: rgba(107,143,99,0.12); }
+.prog-fill { height: 100%; background: var(--leaf); transition: width 0.5s; }
+.prog-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.prog-count { font-size: 0.82rem; color: var(--mist); font-weight: 300; }
+.phase-header { display: flex; align-items: baseline; gap: 1rem; margin: 2.5rem 0 1rem; }
+.phase-num { color:rgba(118,179,59,0.3); font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 300; color: rgba(107,143,99,0.2); line-height: 1; }
+.phase-title { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.phase-time { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
+  text-transform: uppercase; margin-left: auto; flex-shrink: 0; }
+.checkbox { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.2rem 1.5rem; margin-bottom: 1px; display: flex; align-items: flex-start;
+  gap: 1.2rem; cursor: pointer; transition: background 0.2s; }
+.checkbox:hover { background: #f0f4ee; }
+.checkbox.done { opacity: 0.5; }
+.checkbox input[type=checkbox] { margin-top: 3px; accent-color: var(--sage); flex-shrink: 0;
+  width: 16px; height: 16px; cursor: pointer; }
+.task-title { font-size: 0.88rem; font-weight: 400; color: #1a2e1e;
+  margin-bottom: 0.3rem; line-height: 1.4; }
+.checkbox.done .task-title { text-decoration: line-through; color: var(--mist); }
+.task-desc { font-size: 0.8rem; color: #a8c8a0; font-weight: 300; line-height: 1.6; }
+.task-body { flex: 1; }
+.task-tag { display: inline-block; font-size: 0.58rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.2rem 0.6rem; margin-top: 0.5rem;
+  font-weight: 500; }
+.tag-co2 { background: rgba(107,143,99,0.15); color: var(--sage); }
+.tag-ekonomi { background: rgba(196,162,74,0.1); color: var(--gold-lt); }
+.tag-juridik { background: rgba(168,196,160,0.08); color: var(--mist); }
+.tag-praktiskt { background: rgba(107,143,99,0.08); color: rgba(168,196,160,0.6); }
+.cta-final { background: #f0f4ee; border: 1px solid rgba(107,143,99,0.15);
+  border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center; margin-top: 2rem; }
+.btn-cta { display: inline-block; background: #76B33B; color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 0.9rem 2.2rem; text-decoration: none;
+  font-weight: 400; transition: background 0.3s; margin-top: 1rem; }
+.btn-cta:hover { background: #2d6010; }
+
+/* Prisvärdhet */
+.page-header { text-align: center; margin-bottom: 3rem; }
+.page-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.2rem,4vw,3.2rem); color: var(--white); margin-bottom: 0.5rem; }
+.page-header h1 em { font-style: italic; color: var(--mist); }
+.main-grid { display: grid; grid-template-columns: 1fr 360px; gap: 1px;
+  align-items: start; }
+@media(max-width:900px) { .main-grid { grid-template-columns: 1fr; } }
+.criteria-list { background: #fff; border: 1px solid rgba(107,143,99,0.15); }
+.crit-header { padding: 1.5rem; border-bottom: 1px solid rgba(107,143,99,0.1);
+  display: flex; justify-content: space-between; align-items: baseline; }
+.property-name-bar { background: #f8fbf6; padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(107,143,99,0.1); }
+.property-name-bar input { background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.2);
+  color: #1a2e1e; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  width: 100%; padding: 0.3rem 0; outline: none; }
+.crit-name { font-size: 0.82rem; font-weight: 500; color: #1a2e1e; }
+.crit-abbr { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
+  text-transform: uppercase; }
+.crit-desc { font-size: 0.78rem; color: #a8c8a0; line-height: 1.6;
+  font-weight: 300; margin-top: 0.3rem; }
+.crit-scale-hint { font-size: 0.7rem; color: rgba(107,143,99,0.5); margin-top: 0.3rem; }
+.inverted-note { font-size: 0.68rem; color: var(--gold-lt); margin-top: 0.2rem; }
+
+/* Score ring / breakdown */
+.breakdown-card { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; }
+.breakdown-title { color:#2d6010; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.breakdown-row { margin-bottom: 0.8rem; }
+.br-name { font-size: 0.78rem; color: var(--mist); display: flex;
+  justify-content: space-between; margin-bottom: 0.3rem; }
+.br-val { color: var(--frost); font-weight: 400; }
+.br-bar-wrap { height: 4px; background: rgba(107,143,99,0.12); border-radius: 2px; }
+.br-bar { height: 4px; background: var(--leaf); border-radius: 2px; transition: width 0.4s; }
+
+/* Compare panel */
+.compare-card { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; margin-top: 1px; }
+.compare-title { color:#2d6010; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.compare-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.compare-item { background:#fff; display: flex; justify-content: space-between; align-items: center;
+  padding: 0.6rem 0.8rem; background: rgba(107,143,99,0.06);
+  border: 1px solid rgba(107,143,99,0.1); }
+.compare-item-name { font-size: 0.8rem; color: #5c6e58; }
+.compare-item-score { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.compare-item-del { background: none; border: none; color: rgba(107,143,99,0.4);
+  cursor: pointer; font-size: 1rem; padding: 0 0.3rem; transition: color 0.2s; }
+.compare-item-del:hover { color: var(--mist); }
+.compare-empty { font-size: 0.8rem; color: rgba(107,143,99,0.35);
+  font-style: italic; font-weight: 300; }
+.action-btns { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.btn-save, .btn-reset, .btn-export { font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 400; border: none; transition: all 0.2s; }
+.btn-save { background: #76B33B; color: #fff; }
+.btn-save:hover { background: #2d6010; }
+.btn-reset { background: transparent; border: 1px solid rgba(107,143,99,0.3); color: var(--mist); }
+.btn-reset:hover { border-color: var(--sage); color: var(--frost); }
+.btn-export { background: transparent; border: 1px solid rgba(196,162,74,0.3); color: var(--gold-lt); }
+.btn-export:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.08); padding: 4rem 2rem 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1140px; margin: 0 auto 3rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); display: block; margin-bottom: 0.8rem; }
+.footer-tagline { font-size: 0.78rem; color: rgba(168,196,160,0.35); line-height: 1.7; font-weight: 300; }
+.footer-col h4 { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a { font-size: 0.78rem; color: rgba(168,196,160,0.4); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; max-width: 1140px; margin: 0 auto; }
+.footer-bottom p, .footer-bottom a { font-size: 0.68rem; color: rgba(168,196,160,0.25); font-weight: 300; text-decoration: none; }
+@media(max-width:900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="topbar-logo">Renatum</a>
+  <span class="topbar-title">Prisvärdhetskalkylator</span>
+  <a href="index.html" class="topbar-back">← Tillbaka</a>
+</div>
+
+<div class="page">
+  <div class="page-header">
+    <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:0.6rem;font-weight:500;">Analysverktyg</p>
+    <h1>Bedöm <em>skogens prisvärdhet</em></h1>
+    <p>Poängsätt fastigheten på 8 kriterier. Verktyget viktar och beräknar ett samlat prisvärdhetsindex som hjälper dig att jämföra objekt objektivt.</p>
+  </div>
+
+  <div class="property-name-bar">
+    <label>Fastighetens namn</label>
+    <input type="text" id="propName" placeholder="T.ex. Storängens skogsmark, Dalarna…">
+  </div>
+
+  <div class="main-grid">
+    <!-- LEFT: CRITERIA -->
+    <div class="criteria-list" id="criteriaList"></div>
+
+    <!-- RIGHT: RESULT -->
+    <div class="result-panel">
+      <div class="score-card">
+        <div class="score-label">Prisvärdhetsindex</div>
+        <div class="score-ring">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle class="score-ring-bg" cx="70" cy="70" r="58"/>
+            <circle class="score-ring-fill" id="ringFill" cx="70" cy="70" r="58"
+              stroke="#7a9e6e"
+              stroke-dasharray="364.4"
+              stroke-dashoffset="364.4"/>
+          </svg>
+          <div class="score-number">
+            <span class="score-big" id="scoreBig">0</span>
+            <span class="score-max">/100</span>
+          </div>
+        </div>
+        <div class="score-verdict" id="scoreVerdict">Ange dina värden</div>
+        <div class="score-sub" id="scoreSub">Flytta sliders för att börja</div>
+      </div>
+
+      <div class="breakdown-card">
+        <div class="breakdown-title">Bidrag per kriterium</div>
+        <div id="breakdownRows"></div>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-title">Jämförelse</div>
+        <div class="compare-list" id="compareList">
+          <span class="compare-empty">Spara fastigheter för att jämföra</span>
+        </div>
+      </div>
+
+      <div class="action-btns">
+        <button class="btn-save" onclick="saveCurrent()">+ Spara & jämför</button>
+        <button class="btn-export" onclick="exportResult()">Exportera som text</button>
+        <button class="btn-reset" onclick="resetAll()">Återställ alla värden</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const criteria = [
+  {
+    id: 'IP', name: 'Inköpspris', abbr: 'IP',
+    desc: 'Hur bra är priset jämfört med marknadspriset i området? Lägre pris ger högre poäng.',
+    scaleHint: '10 = >20% under marknadspris · 7–9 = 10–20% under · 4–6 = i nivå · 1–3 = över marknadspris',
+    weight: 2, inverted: false
+  },
+  {
+    id: 'GL', name: 'Geografiskt läge', abbr: 'GL',
+    desc: 'Bedömning av området baserat på efterfrågan och framtida värdeökning (nära städer, infrastruktur, utvecklingsområden).',
+    scaleHint: '10 = nära större stad/hög efterfrågan · 7–9 = god infrastruktur · 4–6 = medelbra · 1–3 = avlägset',
+    weight: 2, inverted: false
+  },
+  {
+    id: 'TT', name: 'Tillväxttid', abbr: 'TT',
+    desc: 'Kortare tillväxttid innebär snabbare avkastning. Hur lång tid till avverkningsbar skog?',
+    scaleHint: '10 = <10 år · 7–9 = 10–20 år · 4–6 = 20–30 år · 1–3 = >30 år',
+    weight: 1, inverted: false
+  },
+  {
+    id: 'SK', name: 'Skogskvalitet', abbr: 'SK',
+    desc: 'Är skogen ung, mogen eller avverkningsbar? Avverkningsbar högkvalitativ skog ger högre poäng.',
+    scaleHint: '10 = fullt avverkningsbar, fria från skador · 7–9 = delvis/högväxande · 4–6 = ungskog · 1–3 = skadad',
+    weight: 2, inverted: false
+  },
+  {
+    id: 'TS', name: 'Trädslag', abbr: 'TS',
+    desc: 'Vissa trädslag har högre marknadsvärde. Ek och gran av hög kvalitet värderas generellt högre.',
+    scaleHint: '10 = ek/gran hög kvalitet · 7–9 = tall/björk · 4–6 = al/asp · 1–3 = lågkvalitativa',
+    weight: 1, inverted: false
+  },
+  {
+    id: 'NT', name: 'Transportläge', abbr: 'NT',
+    desc: 'Ju närmare skogen är transportvägar, desto billigare och enklare avverkning och transport av virke.',
+    scaleHint: '10 = <1 km till huvudväg · 7–9 = 1–5 km · 4–6 = 5–10 km · 1–3 = >10 km',
+    weight: 1, inverted: false
+  },
+  {
+    id: 'MB', name: 'Markens bördighet', abbr: 'MB',
+    desc: 'Hög bonitet ger bättre tillväxt och därmed högre avkastning på sikt.',
+    scaleHint: '10 = >10 m³/ha/år · 7–9 = 7–10 m³/ha/år · 4–6 = 4–7 m³/ha/år · 1–3 = <4 m³/ha/år',
+    weight: 2, inverted: false
+  },
+  {
+    id: 'MR', name: 'Miljörisker', abbr: 'MR',
+    desc: 'Låg risk för stormskador, skadedjur eller bränder ökar prisvärdheten. OBS: Högt värde = hög risk = drar ner poängen.',
+    scaleHint: '10 = mycket hög risk (drar ned) · 7–9 = medelhög · 4–6 = låg · 1–3 = mycket låg risk',
+    weight: 1, inverted: true
+  }
+];
+
+let values = {};
+let weights = {};
+let saved = [];
+
+criteria.forEach(c => { values[c.id] = 5; weights[c.id] = c.weight; });
+
+function renderCriteria() {
+  const list = document.getElementById('criteriaList');
+  list.innerHTML = '';
+  criteria.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'criterion';
+    div.innerHTML = `
+      <div class="crit-header">
+        <span class="crit-name">${c.name}</span>
+        <span class="crit-abbr">${c.abbr}</span>
+      </div>
+      <div class="crit-desc">${c.desc}</div>
+      <div class="crit-scale-hint">${c.scaleHint}</div>
+      <div class="slider-row">
+        <div class="slider-wrap">
+          <input type="range" min="1" max="10" step="1" value="${values[c.id]}"
+            oninput="updateVal('${c.id}', this.value)"
+            style="accent-color: var(--moss);">
+          <div class="slider-labels"><span>1</span><span>5</span><span>10</span></div>
+        </div>
+        <div class="slider-val" id="val-${c.id}">${values[c.id]}</div>
+      </div>
+      ${c.inverted ? '<div class="inverted-note">⚠ Högt värde = hög risk = ger lägre poäng</div>' : ''}
+      <div class="weight-row">
+        <span class="weight-label">Vikt:</span>
+        <div class="weight-btns" id="wbtns-${c.id}">
+          ${[1,2,3].map(w => `<button class="weight-btn ${weights[c.id]===w?'active':''}" onclick="setWeight('${c.id}',${w})">${w==='1'?'Låg':w===2?'Medel':'Hög'}${w===1?'':''}</button>`).join('')}
+        </div>
+        <span class="weight-desc" id="wdesc-${c.id}">${weightDesc(weights[c.id])}</span>
+      </div>
+    `;
+    list.appendChild(div);
+  });
+  // fix weight button labels
+  criteria.forEach(c => {
+    const wrap = document.getElementById(`wbtns-${c.id}`);
+    const btns = wrap.querySelectorAll('.weight-btn');
+    btns[0].textContent = 'Låg';
+    btns[1].textContent = 'Medel';
+    btns[2].textContent = 'Hög';
+  });
+}
+
+function weightDesc(w) {
+  return w === 1 ? 'Normal vikt' : w === 2 ? 'Dubbel vikt' : 'Trippel vikt';
+}
+
+function updateVal(id, v) {
+  values[id] = parseInt(v);
+  document.getElementById(`val-${id}`).textContent = v;
+  updateScore();
+}
+
+function setWeight(id, w) {
+  weights[id] = w;
+  const wrap = document.getElementById(`wbtns-${id}`);
+  wrap.querySelectorAll('.weight-btn').forEach((b, i) => {
+    b.classList.toggle('active', i + 1 === w);
+  });
+  document.getElementById(`wdesc-${id}`).textContent = weightDesc(w);
+  updateScore();
+}
+
+function calcScore() {
+  let weightedSum = 0;
+  let totalWeight = 0;
+  criteria.forEach(c => {
+    const raw = values[c.id];
+    const score = c.inverted ? (11 - raw) : raw;
+    weightedSum += score * weights[c.id];
+    totalWeight += 10 * weights[c.id];
+  });
+  return Math.round((weightedSum / totalWeight) * 100);
+}
+
+function getVerdict(score) {
+  if (score >= 80) return ['Mycket prisvärd', 'Starkt köpläge — sällsynt bra objekt'];
+  if (score >= 65) return ['Prisvärd', 'Bra köpläge med god potential'];
+  if (score >= 50) return ['Godkänd', 'Genomsnittligt objekt, se över svaga faktorer'];
+  if (score >= 35) return ['Under medel', 'Flera faktorer drar ned värdet'];
+  return ['Ej prisvärd', 'Låg prisvärdhet, kräver djupare analys'];
+}
+
+function getRingColor(score) {
+  if (score >= 70) return '#4a6741';
+  if (score >= 50) return '#b8962e';
+  return '#c0392b';
+}
+
+function updateScore() {
+  const score = calcScore();
+  document.getElementById('scoreBig').textContent = score;
+
+  const circ = 2 * Math.PI * 58;
+  const offset = circ - (circ * score / 100);
+  const ring = document.getElementById('ringFill');
+  ring.style.strokeDashoffset = offset;
+  ring.style.stroke = getRingColor(score);
+
+  const [verdict, sub] = getVerdict(score);
+  document.getElementById('scoreVerdict').textContent = verdict;
+  document.getElementById('scoreSub').textContent = sub;
+
+  renderBreakdown(score);
+}
+
+function renderBreakdown(totalScore) {
+  const wrap = document.getElementById('breakdownRows');
+  wrap.innerHTML = '';
+  criteria.forEach(c => {
+    const raw = values[c.id];
+    const score = c.inverted ? (11 - raw) : raw;
+    const contrib = Math.round((score * weights[c.id]) / (10 * weights[c.id]) * 100);
+    const color = contrib >= 70 ? '#4a6741' : contrib >= 50 ? '#b8962e' : '#c0392b';
+    wrap.innerHTML += `
+      <div class="breakdown-row">
+        <span class="br-name">${c.abbr}</span>
+        <div class="br-bar-wrap">
+          <div class="br-bar" style="width:${contrib}%;background:${color};"></div>
+        </div>
+        <span class="br-val">${score}/10</span>
+      </div>`;
+  });
+}
+
+function saveCurrent() {
+  const name = document.getElementById('propName').value.trim() || `Fastighet ${saved.length + 1}`;
+  const score = calcScore();
+  saved.push({ name, score });
+  renderCompare();
+}
+
+function renderCompare() {
+  const list = document.getElementById('compareList');
+  if (saved.length === 0) {
+    list.innerHTML = '<span class="compare-empty">Spara fastigheter för att jämföra</span>';
+    return;
+  }
+  const sorted = [...saved].sort((a, b) => b.score - a.score);
+  list.innerHTML = sorted.map((s, i) => `
+    <div class="compare-item">
+      <span class="compare-item-name">${i === 0 ? '🥇 ' : ''}${s.name}</span>
+      <span class="compare-item-score">${s.score}</span>
+      <button class="compare-item-del" onclick="removeSaved(${saved.indexOf(s)})">×</button>
+    </div>`).join('');
+}
+
+function removeSaved(i) {
+  saved.splice(i, 1);
+  renderCompare();
+}
+
+function exportResult() {
+  const name = document.getElementById('propName').value.trim() || 'Namnlös fastighet';
+  const score = calcScore();
+  const [verdict] = getVerdict(score);
+  let txt = `PRISVÄRDHETSBEDÖMNING — RENATUM\n`;
+  txt += `================================\n`;
+  txt += `Fastighet: ${name}\n`;
+  txt += `Datum: ${new Date().toLocaleDateString('sv-SE')}\n\n`;
+  txt += `PRISVÄRDHETSINDEX: ${score}/100 — ${verdict}\n\n`;
+  txt += `KRITERIEPOÄNG:\n`;
+  criteria.forEach(c => {
+    const raw = values[c.id];
+    const score = c.inverted ? (11 - raw) : raw;
+    txt += `  ${c.name} (${c.abbr}): ${raw}/10 (poäng: ${score}, vikt: ${weights[c.id]})\n`;
+  });
+  if (saved.length > 1) {
+    txt += `\nJÄMFÖRELSE:\n`;
+    [...saved].sort((a,b) => b.score - a.score).forEach((s,i) => {
+      txt += `  ${i+1}. ${s.name}: ${s.score}/100\n`;
+    });
+  }
+  const blob = new Blob([txt], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Prisvardhet-${name.replace(/\s+/g,'-')}.txt`;
+  a.click();
+}
+
+function resetAll() {
+  criteria.forEach(c => { values[c.id] = 5; weights[c.id] = c.weight; });
+  document.getElementById('propName').value = '';
+  renderCriteria();
+  updateScore();
+}
+
+renderCriteria();
+updateScore();
+</script>
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo-text">Renatum</span>
+      <p class="footer-tagline">Specialister på skogens klimatvärden.</p>
+    </div>
+    <div class="footer-col"><h4>Tjänster</h4><ul><li><a href="co2.html">CO₂-analys</a></li><li><a href="priser.html">Certifiering</a></li><li><a href="priser.html">Rådgivning</a></li></ul></div>
+    <div class="footer-col"><h4>Om Renatum</h4><ul><li><a href="om-oss.html">Teamet</a></li><li><a href="case.html">Case</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+46101234567">+46 10 123 45 67</a></li><li><a href="/cdn-cgi/l/email-protection#d1b8bfb7be91a3b4bfb0a5a4bcffa2b4"><span class="__cf_email__" data-cfemail="1c75727a735c6e79727d686971326f79">[email&#160;protected]</span></a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.querySelector('.nav-dropdown');
+  var trigger = dropdown && dropdown.querySelector(':scope > a');
+  if (!trigger) return;
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (dropdown && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

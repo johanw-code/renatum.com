@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Beräkna boniteten (SI-värdet) för din skogsmark med Hägglunds metod. Välj trädslag, höjd och ålder för att få ett exakt bonitetsvärde.">
+  <meta name="keywords" content="bonitet skog, bonitet skog sverige, skogsboniteten, SI värde skog, skogsbruksplan, vad är bonitet, markens bördighet, skog produktivitet">
+  <meta name="author" content="Renatum AB">
+  <meta property="og:title" content="Bonitetsberäkning — Räkna ut SI-värde för din skog | Renatum">
+  <meta property="og:description" content="Beräkna boniteten (SI-värdet) för din skogsmark med Hägglunds metod. Välj trädslag, höjd och ålder för att få ett exakt bonitetsvärde.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Renatum">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bonitetsberäkning (SI-värde) — Renatum">
+  <meta name="twitter:description" content="Beräkna ståndortsindex (SI) för din skog baserat på trädslag, höjd och ålder. Gratis analysverktyg.">
+  <link rel="canonical" href="https://renatum.se/bonitet.html">
+<title>Bonitetsberäkning — Räkna ut SI-värde för din skog | Renatum</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0a1a0d;
+  --deep:    #111f14;
+  --forest:  #1a2e1e;
+  --bark:    #243028;
+  --moss:    #3d5c38;
+  --sage:    #6b8f63;
+  --mist:    #a8c4a0;
+  --frost:   #d4e4cf;
+  --linen:   #f2ede4;
+  --parchment: #e8e1d4;
+  --gold:    #c4a24a;
+  --gold-lt: #e8d49a;
+  --leaf:    #76B33B;
+  --leaf-lt: #93cc52;
+  --white:   #faf8f4;
+  --text:    #1a1a16;
+  --muted:   #5c5c50;
+  --subtle:  #8c8c7c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep);
+  color: var(--frost);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ───────────────────────────────────────────────────────────── */
+.serif        { font-family: 'Cormorant Garamond', serif; }
+.serif-italic { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.1; }
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+.display em { font-style: italic; color: var(--mist); }
+
+.heading-xl {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+}
+.heading-xl em { font-style: italic; color: var(--mist); }
+
+.heading-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.18;
+}
+.heading-lg em { font-style: italic; color: var(--sage); }
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--sage);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.body-lg { font-size: 1rem; line-height: 1.8; font-weight: 300; color: var(--mist); }
+.body-sm { font-size: 0.85rem; line-height: 1.75; font-weight: 300; color: var(--mist); }
+.caption  { font-size: 0.7rem;  line-height: 1.6;  font-weight: 400; color: var(--sage); letter-spacing: 0.08em; }
+
+/* ── NAVIGATION ───────────────────────────────────────────────────────────── */
+.nav { position:sticky; top:0; z-index:100; background:rgba(10,26,13,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
+.nav-logo { text-decoration:none; display:flex; align-items:center; }
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
+.nav-links a:hover { color:#76B33B; opacity:1; }
+.nav-dropdown { position:relative; }
+.nav-dropdown > a { cursor:pointer; user-select:none; }
+.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
+.nav-dropdown-menu::before { content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
+.nav-dropdown.open .nav-dropdown-menu { display:block; }
+.nav-dropdown:hover .nav-dropdown-menu { display:block; }
+.nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
+.nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
+.nav-cta { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.6rem 1.5rem; border:1px solid rgba(118,179,59,0.45); color:#a8d878; text-decoration:none; font-weight:400; transition:all 0.3s; }
+.nav-cta:hover { background:#76B33B; border-color:#76B33B; color:#fff; }
+
+/* ── LAYOUT ───────────────────────────────────────────────────────────────── */
+.container       { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
+.container-sm    { max-width: 780px;  margin: 0 auto; padding: 0 3rem; }
+.section         { padding: 7rem 3rem; }
+.section-sm      { padding: 5rem 3rem; }
+.section-dark    { background: var(--ink); }
+.section-deep    { background: var(--deep); }
+.section-forest  { background: var(--forest); }
+.section-linen   { background: var(--linen); color: var(--text); }
+.section-parch   { background: var(--parchment); color: var(--text); }
+
+/* ── DIVIDERS ─────────────────────────────────────────────────────────────── */
+.divider        { width: 40px; height: 1px; background: var(--sage); margin: 1.5rem 0; }
+.divider-gold   { width: 40px; height: 1px; background: var(--gold); margin: 1.5rem 0; }
+.divider-center { margin-left: auto; margin-right: auto; }
+
+/* ── BUTTONS ──────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-block; font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 400;
+  transition: all 0.3s; cursor: pointer; border: none;
+}
+.btn-primary   { background:#76B33B;color:#fff; }
+.btn-primary:hover { background: #2d6010; }
+.btn-gold      { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-lt); }
+.btn-outline   { border: 1px solid rgba(107,143,99,0.5); color: var(--mist); background: transparent; }
+.btn-outline:hover { border-color: var(--sage); color: var(--frost); }
+.btn-outline-gold { border: 1px solid rgba(196,162,74,0.4); color: var(--gold-lt); background: transparent; }
+.btn-outline-gold:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-ghost { color: var(--mist); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid rgba(168,196,160,0.3); padding-bottom: 2px; transition: all 0.3s; }
+.btn-ghost:hover { color: var(--frost); border-color: var(--mist); }
+
+/* ── CARDS ────────────────────────────────────────────────────────────────── */
+.card-dark {
+  background: var(--forest);
+  border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem;
+}
+.card-linen {
+  background: var(--linen);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-parch {
+  background: var(--parchment);
+  border: 1px solid rgba(107,143,99,0.1);
+  padding: 2rem;
+  color: var(--text);
+}
+.card-inset {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(107,143,99,0.12);
+  padding: 2rem;
+}
+
+/* ── STAT BLOCKS ──────────────────────────────────────────────────────────── */
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem; font-weight: 300; line-height: 1;
+  color: var(--white);
+}
+.stat-unit { font-size: 0.75rem; color: var(--sage); margin-left: 0.3rem; }
+.stat-label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); margin-top: 0.3rem; display: block; }
+
+/* ── FORMS ────────────────────────────────────────────────────────────────── */
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 0.85rem 1.1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(107,143,99,0.2);
+  color: var(--frost); font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 300; outline: none;
+  transition: border-color 0.3s;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(168,196,160,0.35); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--sage); }
+.form-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.5rem; }
+.form-textarea { resize: none; height: 130px; }
+
+/* ── SLIDERS ──────────────────────────────────────────────────────────────── */
+input[type=range] {
+  -webkit-appearance: none; width: 100%; height: 2px;
+  background: rgba(107,143,99,0.25); border-radius: 1px; outline: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--leaf); border: 2px solid var(--deep);
+  box-shadow: 0 0 0 1px var(--sage);
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────────── */
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.1); padding: 5rem 3rem 2.5rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); }
+.footer-col h4 { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.55rem; }
+.footer-col ul li a { font-size: 0.82rem; color: rgba(168,196,160,0.5); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 0.72rem; color: rgba(168,196,160,0.3); font-weight: 300; }
+.footer-bottom a { color: rgba(168,196,160,0.3); text-decoration: none; }
+
+/* ── UTILITIES ────────────────────────────────────────────────────────────── */
+.text-mist   { color: var(--mist); }
+.text-sage   { color: var(--sage); }
+.text-gold   { color: var(--gold-lt); }
+.text-frost  { color: var(--frost); }
+.text-linen  { color: var(--linen); }
+.text-ink    { color: var(--text); }
+.text-muted-dark { color: var(--muted); }
+.bg-dark  { background: var(--deep); }
+.bg-ink   { background: var(--ink); }
+.bg-forest { background: var(--forest); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.gold-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s forwards; }
+@keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+/* ── SCROLL INDICATOR ─────────────────────────────────────────────────────── */
+.scroll-line { width: 1px; height: 70px; background: rgba(107,143,99,0.25); position: relative; overflow: hidden; }
+.scroll-line::after { content:''; position:absolute; top:-70px; left:0; width:1px; height:70px; background: var(--mist); animation: drop 2s 1.5s infinite; }
+@keyframes drop { from{top:-70px} to{top:70px} }
+
+/* ── COOKIE BANNER ────────────────────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: var(--ink); border-top: 1px solid rgba(107,143,99,0.2);
+  padding: 1.2rem 3rem; display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  transform: translateY(100%); transition: transform 0.4s ease;
+}
+.cookie-banner.show { transform: translateY(0); }
+.cookie-text { font-size: 0.8rem; line-height: 1.6; font-weight: 300; color: var(--mist); flex: 1; min-width: 200px; }
+.cookie-text a { color: var(--gold-lt); }
+.cookie-actions { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.cookie-accept { background:#76B33B;color:#fff; border: none; padding: 0.55rem 1.3rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.cookie-decline { background: transparent; color: var(--subtle); border: 1px solid rgba(107,143,99,0.2); padding: 0.55rem 1.1rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav { padding: 0.9rem 1.5rem; }
+  .nav-links { display: none; }
+  .section, .section-sm { padding: 5rem 1.5rem; }
+  .container, .container-sm { padding: 0 1.5rem; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .footer { padding: 4rem 1.5rem 2rem; }
+  .cookie-banner { padding: 1rem 1.5rem; }
+}
+
+
+/* PAGE EXTRAS */
+
+/* ─── TOOL PAGE SPECIFIC STYLES ─────────────────────────────────── */
+
+/* Page layout */
+.page { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 7rem; background: #f8fbf6; min-height: calc(100vh - 80px); }
+.page-wide { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem 7rem; }
+
+/* Page header */
+.ph { text-align: center; margin-bottom: 4rem; }
+.ph h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05; color: var(--white); margin-bottom: 1rem; }
+.ph h1 em { font-style: italic; color: var(--mist); }
+.sub { font-size: 1rem; line-height: 1.8; font-weight: 300; color: #cde0c5;
+  max-width: 600px; margin: 0 auto; opacity: 0.85; }
+.note { font-size: 0.75rem; color: #8fbf80; line-height: 1.7;
+  font-style: italic; margin-top: 1.5rem; }
+
+/* Cards */
+.card { background: #fff;  border: 1px solid rgba(107,143,99,0.18);
+  padding: 2rem; margin-bottom: 1px; }
+.card:first-child { border-top: 2px solid var(--sage); }
+
+/* Labels & inputs */
+.label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 0.6rem; }
+
+select, input[type="number"], input[type="text"], textarea {
+  width: 100%; padding: 0.8rem 1rem;
+  background: #fff; border: 1px solid rgba(0,0,0,0.15);
+  color: #1a2e1e; font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 300; outline: none; transition: border-color 0.3s;
+}
+select option { background: #fff; color: #1a2e1e; }
+select:focus, input:focus, textarea:focus { border-color: var(--sage); }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
+@media(max-width:700px) { .grid, .grid2 { grid-template-columns: 1fr; } }
+
+/* Sliders */
+.slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+.slider-val, .sval { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+  font-weight: 300; color: var(--white); min-width: 70px; flex-shrink: 0; }
+input[type=range] { -webkit-appearance: none; flex: 1; height: 2px;
+  background: rgba(0,0,0,0.12); border: none; cursor: pointer; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--leaf); border: 2px solid var(--deep); }
+
+/* Results panels */
+.results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  background: transparent; margin: 2rem 0; }
+.res-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 2rem 1.5rem; text-align: center; }
+.res-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 0.5rem; }
+.res-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+  font-weight: 300; color: #1a2e1e; display: block; line-height: 1; }
+.res-unit { font-size: 0.7rem; color: rgba(107,143,99,0.6); display: block; margin-top: 0.3rem; }
+@media(max-width:700px) { .results { grid-template-columns: 1fr; } }
+
+/* Species info */
+.species-info { font-size: 0.82rem; color: #cde0c5; line-height: 1.7;
+  font-weight: 300; margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08); opacity: 0.8; }
+
+/* Comparison section */
+.comparison { background: #fff; border:1px solid rgba(0,0,0,0.08); border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin-top: 1px; }
+.comp-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1.5rem; font-weight: 500; }
+.comp-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.comp-icon { width: 32px; height: 32px; flex-shrink: 0; opacity: 0.7; }
+.comp-text { font-size: 0.88rem; color: #cde0c5; font-weight: 300; line-height: 1.5; }
+.comp-text strong { color: #1a2e1e; font-weight: 400; }
+
+/* Stats row */
+.stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin: 2rem 0; }
+.stat { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
+.stat-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.stat-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-top: 0.3rem; }
+.stat-u { font-size: 0.75rem; color: rgba(107,143,99,0.5); }
+
+/* Metrics row */
+.metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin: 2rem 0; }
+.metric, .met { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; text-align: center; }
+.metric-n, .met-n { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.metric-l, .met-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-top: 0.3rem; }
+.metric-u, .met-u { font-size: 0.72rem; color: rgba(107,143,99,0.5); }
+@media(max-width:700px) { .stats, .metrics { grid-template-columns: 1fr; } }
+
+/* Inputs section (avkastning) */
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
+.inp-cell { background: #fff; border:1px solid rgba(0,0,0,0.07); padding: 1.5rem; }
+
+/* Chart */
+.chart-card { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin: 2rem 0; }
+.chart-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1rem; font-weight: 500; }
+.chart-wrap { position: relative; height: 280px; }
+.legend { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+.leg-item { display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; color: var(--mist); font-weight: 300; }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* Timeline */
+.timeline { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin: 1px 0; }
+.tl-bar-wrap { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+.tl-bar { display: flex; align-items: center; gap: 1rem; }
+.tl-bar-wrap .label { min-width: 60px; margin: 0; }
+.tl-bar-fill { height: 8px; background: var(--leaf); border-radius: 1px; transition: width 0.5s; }
+
+/* Bonitet */
+.main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+@media(max-width:700px) { .main { grid-template-columns: 1fr; } }
+.result-panel { background: #f8fbf6; padding: 2rem; display: flex;
+  flex-direction: column; justify-content: center; }
+.si-card { text-align: center; padding: 1.5rem 0; }
+.si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+  font-weight: 300; color: var(--white); line-height: 1; display: block; }
+.si-desc { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem;
+  font-weight: 300; line-height: 1.6; }
+.metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+  background: rgba(107,143,99,0.1); margin-top: 1px; }
+.info-box { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; margin-top: 1px; }
+.scale-card { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2rem; margin-top: 1px; }
+.scale-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.scale-row { color: #5c6e58; display: grid; grid-template-columns: 60px 1fr 80px 80px;
+  gap: 0.5rem; align-items: center; padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(107,143,99,0.08); font-size: 0.8rem; color: var(--mist); }
+.scale-row.active { background: rgba(107,143,99,0.08); color: var(--frost); }
+.scale-name { font-weight: 500; color: #1a2e1e; }
+.scale-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
+.scale-bar-wrap { flex: 1; height: 4px; background: rgba(107,143,99,0.15); border-radius: 2px; }
+.scale-m3 { font-size: 0.75rem; color: var(--sage); text-align: right; }
+.scale-range { font-size: 0.72rem; color: rgba(168,196,160,0.5); }
+
+/* Värdering steps */
+.step { margin-bottom: 2rem; }
+.step-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.step-num { width: 36px; height: 36px; background: rgba(107,143,99,0.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--mist); }
+.step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.result-block { background: #fff; border: 1px solid rgba(107,143,99,0.18);
+  border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center;
+  margin: 2rem 0; display: none; }
+.result-block.show { display: block; }
+.res-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 1rem; font-weight: 500; }
+.res-range { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 300; color: var(--white); line-height: 1; }
+.res-sub { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
+.res-disclaimer { font-size: 0.72rem; color: rgba(107,143,99,0.4); margin-top: 1.5rem;
+  font-style: italic; line-height: 1.6; }
+.btn-calc { background: #76B33B; color: #fff; border: none;
+  padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem;
+  letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
+  font-weight: 400; margin-top: 1.5rem; transition: background 0.3s; }
+.btn-calc:hover { background: #2d6010; }
+.cta-box { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 2.5rem; text-align: center; margin-top: 1px; }
+.cta-title { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
+  font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
+.cta-title em { font-style: italic; color: var(--mist); }
+.cta-sub { font-size: 0.88rem; color: #5c6e58; font-weight: 300;
+  line-height: 1.7; margin-bottom: 1.5rem; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.5rem; }
+.contact-form textarea { grid-column: 1/-1; height: 100px; resize: none; }
+@media(max-width:600px) { .contact-form { grid-template-columns: 1fr; } }
+
+/* Markägare guide */
+.progress-bar { background: rgba(107,143,99,0.12); height: 4px; margin-bottom: 3rem; }
+.prog-track { height: 4px; background: rgba(107,143,99,0.12); }
+.prog-fill { height: 100%; background: var(--leaf); transition: width 0.5s; }
+.prog-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: #2d6010; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.prog-count { font-size: 0.82rem; color: var(--mist); font-weight: 300; }
+.phase-header { display: flex; align-items: baseline; gap: 1rem; margin: 2.5rem 0 1rem; }
+.phase-num { color:rgba(118,179,59,0.3); font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 300; color: rgba(107,143,99,0.2); line-height: 1; }
+.phase-title { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.phase-time { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
+  text-transform: uppercase; margin-left: auto; flex-shrink: 0; }
+.checkbox { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.2rem 1.5rem; margin-bottom: 1px; display: flex; align-items: flex-start;
+  gap: 1.2rem; cursor: pointer; transition: background 0.2s; }
+.checkbox:hover { background: #f0f4ee; }
+.checkbox.done { opacity: 0.5; }
+.checkbox input[type=checkbox] { margin-top: 3px; accent-color: var(--sage); flex-shrink: 0;
+  width: 16px; height: 16px; cursor: pointer; }
+.task-title { font-size: 0.88rem; font-weight: 400; color: #1a2e1e;
+  margin-bottom: 0.3rem; line-height: 1.4; }
+.checkbox.done .task-title { text-decoration: line-through; color: var(--mist); }
+.task-desc { font-size: 0.8rem; color: #a8c8a0; font-weight: 300; line-height: 1.6; }
+.task-body { flex: 1; }
+.task-tag { display: inline-block; font-size: 0.58rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.2rem 0.6rem; margin-top: 0.5rem;
+  font-weight: 500; }
+.tag-co2 { background: rgba(107,143,99,0.15); color: var(--sage); }
+.tag-ekonomi { background: rgba(196,162,74,0.1); color: var(--gold-lt); }
+.tag-juridik { background: rgba(168,196,160,0.08); color: var(--mist); }
+.tag-praktiskt { background: rgba(107,143,99,0.08); color: rgba(168,196,160,0.6); }
+.cta-final { background: #f0f4ee; border: 1px solid rgba(107,143,99,0.15);
+  border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center; margin-top: 2rem; }
+.btn-cta { display: inline-block; background: #76B33B; color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
+  text-transform: uppercase; padding: 0.9rem 2.2rem; text-decoration: none;
+  font-weight: 400; transition: background 0.3s; margin-top: 1rem; }
+.btn-cta:hover { background: #2d6010; }
+
+/* Prisvärdhet */
+.page-header { text-align: center; margin-bottom: 3rem; }
+.page-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(2.2rem,4vw,3.2rem); color: var(--white); margin-bottom: 0.5rem; }
+.page-header h1 em { font-style: italic; color: var(--mist); }
+.main-grid { display: grid; grid-template-columns: 1fr 360px; gap: 1px;
+  align-items: start; }
+@media(max-width:900px) { .main-grid { grid-template-columns: 1fr; } }
+.criteria-list { background: #fff; border: 1px solid rgba(107,143,99,0.15); }
+.crit-header { padding: 1.5rem; border-bottom: 1px solid rgba(107,143,99,0.1);
+  display: flex; justify-content: space-between; align-items: baseline; }
+.property-name-bar { background: #f8fbf6; padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(107,143,99,0.1); }
+.property-name-bar input { background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.2);
+  color: #1a2e1e; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  width: 100%; padding: 0.3rem 0; outline: none; }
+.crit-name { font-size: 0.82rem; font-weight: 500; color: #1a2e1e; }
+.crit-abbr { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
+  text-transform: uppercase; }
+.crit-desc { font-size: 0.78rem; color: #a8c8a0; line-height: 1.6;
+  font-weight: 300; margin-top: 0.3rem; }
+.crit-scale-hint { font-size: 0.7rem; color: rgba(107,143,99,0.5); margin-top: 0.3rem; }
+.inverted-note { font-size: 0.68rem; color: var(--gold-lt); margin-top: 0.2rem; }
+
+/* Score ring / breakdown */
+.breakdown-card { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; }
+.breakdown-title { color:#2d6010; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.breakdown-row { margin-bottom: 0.8rem; }
+.br-name { font-size: 0.78rem; color: var(--mist); display: flex;
+  justify-content: space-between; margin-bottom: 0.3rem; }
+.br-val { color: var(--frost); font-weight: 400; }
+.br-bar-wrap { height: 4px; background: rgba(107,143,99,0.12); border-radius: 2px; }
+.br-bar { height: 4px; background: var(--leaf); border-radius: 2px; transition: width 0.4s; }
+
+/* Compare panel */
+.compare-card { background: #f8fbf6; border: 1px solid rgba(107,143,99,0.15);
+  padding: 1.5rem; margin-top: 1px; }
+.compare-title { color:#2d6010; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: #2d6010; font-weight: 500; display: block; margin-bottom: 1rem; }
+.compare-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.compare-item { background:#fff; display: flex; justify-content: space-between; align-items: center;
+  padding: 0.6rem 0.8rem; background: rgba(107,143,99,0.06);
+  border: 1px solid rgba(107,143,99,0.1); }
+.compare-item-name { font-size: 0.8rem; color: #5c6e58; }
+.compare-item-score { color:#1a2e1e; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+  font-weight: 300; color: var(--white); }
+.compare-item-del { background: none; border: none; color: rgba(107,143,99,0.4);
+  cursor: pointer; font-size: 1rem; padding: 0 0.3rem; transition: color 0.2s; }
+.compare-item-del:hover { color: var(--mist); }
+.compare-empty { font-size: 0.8rem; color: rgba(107,143,99,0.35);
+  font-style: italic; font-weight: 300; }
+.action-btns { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+.btn-save, .btn-reset, .btn-export { font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 400; border: none; transition: all 0.2s; }
+.btn-save { background: #76B33B; color: #fff; }
+.btn-save:hover { background: #2d6010; }
+.btn-reset { background: transparent; border: 1px solid rgba(107,143,99,0.3); color: var(--mist); }
+.btn-reset:hover { border-color: var(--sage); color: var(--frost); }
+.btn-export { background: transparent; border: 1px solid rgba(196,162,74,0.3); color: var(--gold-lt); }
+.btn-export:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+
+.footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.08); padding: 4rem 2rem 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1140px; margin: 0 auto 3rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mist); display: block; margin-bottom: 0.8rem; }
+.footer-tagline { font-size: 0.78rem; color: rgba(168,196,160,0.35); line-height: 1.7; font-weight: 300; }
+.footer-col h4 { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); font-weight: 500; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-col ul li a { font-size: 0.78rem; color: rgba(168,196,160,0.4); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--mist); }
+.footer-bottom { border-top: 1px solid rgba(107,143,99,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; max-width: 1140px; margin: 0 auto; }
+.footer-bottom p, .footer-bottom a { font-size: 0.68rem; color: rgba(168,196,160,0.25); font-weight: 300; text-decoration: none; }
+@media(max-width:900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><svg height="22" viewBox="0 0 877 177" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M659.921 152.209C639.985 152.209 639.985 134.235 639.985 134.235V68.1178C639.985 68.1178 615 68.1178 615 87.9403C615 108.011 615 139.334 615 139.334C615 139.334 615 176.111 659.921 176.111C705.252 176.111 705.252 139.334 705.252 139.334C705.252 139.334 705.252 100.688 705.252 87.9403C705.252 68.1178 680.267 68.1178 680.267 68.1178V134.235C680.267 134.235 679.857 152.209 659.921 152.209Z" fill="#a8c4a0"/><path d="M602.661 67.8931C596.48 67.8931 582.605 67.8931 582.605 67.8931C582.605 67.8931 582.605 57.9225 582.605 51.5337C582.605 31.3501 557.62 31.3501 557.62 31.3501V49.6216V67.8931C557.62 67.8931 537.564 67.8931 537.564 92.1984C544.428 92.1984 557.62 92.1984 557.62 92.1984C557.62 113.078 557.621 138.304 557.621 156.17C557.622 175.992 582.605 175.992 582.605 175.992V92.1984C582.605 92.1984 602.661 92.1984 602.661 67.8931Z" fill="#a8c4a0"/><path d="M369.187 91.9017C349.251 91.9017 349.251 109.876 349.251 109.876V175.993C349.251 175.993 324.266 175.993 324.266 156.171C324.266 136.1 324.266 104.777 324.266 104.777C324.266 104.777 324.266 68 369.187 68C414.518 68 414.518 104.777 414.518 104.777C414.518 104.777 414.518 143.423 414.518 156.171C414.518 175.993 389.533 175.993 389.533 175.993V109.876C389.533 109.876 389.123 91.9017 369.187 91.9017Z" fill="#a8c4a0"/><path d="M484.99 92.5H496C496 92.5 496 107.638 496 120.99C496 140.99 520.99 140.99 520.99 140.99V95.99V68C520.99 68 487.542 68 484.995 68C455.174 68 431 93.6794 431 123.5C431 153.321 455.174 175.99 484.995 175.99C489.479 175.99 520.99 175.99 520.99 175.99C520.99 175.99 520.99 151.5 500.99 151.5C495 151.5 484.99 151.5 484.99 151.5C484.99 151.5 456 151.5 456 123.5C456 92.5 484.99 92.5 484.99 92.5Z" fill="#a8c4a0"/><path d="M831.872 93C811.752 93 811.752 110.031 811.752 110.031V138.422C811.752 158.422 786.767 158.422 786.767 158.422V110.2C786.767 110.2 786.767 93.073 766.7 93C746.485 92.9265 746.485 110.2 746.485 110.2V175.993C746.485 175.993 721.5 175.993 721.5 156.268C721.5 140.844 721.5 120.173 721.5 105.126C721.5 83.8602 729.368 68.1921 770.95 68.0007C779.979 68.0007 786.226 67.9992 798.93 68.0007C811.598 68.0022 818.222 68.0007 826.832 68.0007C868.482 68.1897 876.34 83.8469 876.34 105.126C876.34 120.173 876.34 141.468 876.34 156.268C876.34 175.993 851.525 175.993 851.525 175.993V110.2C851.525 110.2 851.526 93 831.872 93Z" fill="#a8c4a0"/><path d="M262.921 91.9017C242.985 91.9017 242.493 91.9017 242.493 91.9017V121.523V133.171C242.493 133.171 242 151.171 262.921 151.171C275 151.171 278.36 151.171 288.252 151.171C308.252 151.171 308.252 175.993 308.252 175.993C308.252 175.993 280.623 175.993 262.92 175.993C218 175.993 218 138.993 218 138.993V68C218 68 218 68 262.921 68C308.252 68 308.252 104.777 308.252 104.777V134.171H283.267H255.27C255.27 134.171 255.27 112.171 275.267 112.171C277.172 112.171 283.267 112.171 283.267 112.171V109.876C283.267 109.876 282.857 91.9017 262.921 91.9017Z" fill="#a8c4a0"/><path d="M51.5811 9.21094H140.297C174.087 9.21094 190.071 34.7693 190.071 59.7547C190.071 75.167 183.541 90.4378 170.862 99.8772C167.101 102.677 163.177 104.704 168.559 112.116C163.272 113.894 146.756 109.354 140.211 109.354H132.834L124.349 97.9286C124.349 97.9286 113.754 86.5036 128.952 86.5036C130.795 86.5036 132.174 86.5036 133.207 86.5036C153.582 86.5036 158.822 74.1476 158.822 59.7547C158.822 45.3618 153.019 36.5805 132.864 36.5805H102.401C102.401 36.5805 84.2797 36.5805 80.2269 36.5805C51.5811 36.5805 51.5811 9.21094 51.5811 9.21094ZM157.132 96.5541L216.008 175.928H196.786C196.786 175.928 181.183 175.928 171.322 162.35C132.834 109.354 123.228 96.5541 123.228 96.5541H157.132Z" fill="#a8c4a0"/><path d="M3.60739 0C13.7393 18.8823 15.5815 20.2644 25.2529 29.0811C42.0901 44.4301 70.9082 54.267 88.8086 74.6084C106.265 94.446 109.438 113.918 106.769 136.321C104.588 154.639 129.297 175.895 129.336 175.928H105.388C105.388 175.928 107.69 169.941 102.624 162.111C99.4003 157.129 94.0686 155.533 86.9658 157.506C53.806 166.717 34.4629 157.045 22.0283 146.913C3.01277 131.419 -0.880808 111.561 0.15231 89.8057C0.838862 73.5071 4.78134 65.9022 3.14645 40.5283C1.63476 17.0672 0.383541 11.9741 3.60739 0ZM17.291 41.8369C17.291 41.8369 34.512 117.231 65.2011 135.519C69.3198 137.973 74.5673 140.474 78.7763 137.186C83.9061 133.913 84.2338 127.83 79.5224 124.531C38.569 95.8579 17.291 41.8369 17.291 41.8369Z" fill="#76B33B"/></svg></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Hem</a></li>
+    <li><a href="om-oss.html">Om oss</a></li>
+    <li><a href="case.html">Case</a></li>
+    <li><a href="priser.html">Priser</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Verktyg ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="prisvardhet.html">Prisvärdhetskalkylator</a>
+        <a href="co2.html">CO₂-kalkylator</a>
+        <a href="avkastning.html">Avkastningskalkylator</a>
+        <a href="bonitet.html">Bonitetsberäkning</a>
+        <a href="vardering.html">Fastighetsvärdering</a>
+        <a href="markagare.html">Ny markägare — guide</a>
+      </div>
+    </li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a href="index.html#kontakt" class="nav-cta">Kontakta oss</a>
+</nav>
+<div class="page">
+  <div class="ph">
+    <span class="eyebrow">Skogsanalys</span>
+    <h1>Beräkna skogens <em>bonitet (SI)</em></h1>
+    <p class="sub">Ståndortsindex (SI) är måttet på markens produktionsförmåga — grunden för all skogsekonomisk bedömning.</p>
+  </div>
+  <div class="main">
+    <div>
+      <div class="card">
+        <span class="label">Dominerande trädslag</span>
+        <select id="species" onchange="calc()">
+          <option value="gran">Gran (Picea abies) — G</option>
+          <option value="tall">Tall (Pinus sylvestris) — T</option>
+          <option value="bjork">Björk (Betula) — B</option>
+          <option value="ek">Ek (Quercus) — Ek</option>
+        </select>
+        <span class="label">Övre höjd på grundytevägda träd (m)</span>
+        <div class="slider-row">
+          <input type="range" id="height" min="4" max="35" value="18" step="0.5" oninput="sv('height',this.value,'m')">
+          <span class="sval" id="heightV">18 m</span>
+        </div>
+        <span class="label">Beståndets ålder (år)</span>
+        <div class="slider-row">
+          <input type="range" id="age" min="10" max="120" value="50" step="1" oninput="sv('age',this.value,'år')">
+          <span class="sval" id="ageV">50 år</span>
+        </div>
+        <span class="label">Areal (ha)</span>
+        <div class="slider-row">
+          <input type="range" id="areal" min="1" max="300" value="50" step="1" oninput="sv('areal',this.value,'ha')">
+          <span class="sval" id="arealV">50 ha</span>
+        </div>
+      </div>
+      <div class="card" id="infoCard">
+        <span class="label">Om metoden</span>
+        <div class="info-box">
+          <strong>Ståndortsindex (SI)</strong> är ett mått på markens produktionsförmåga, definierat som den förväntade övre höjden vid 100 års ålder. SI beräknas med Hägglunds höjdutvecklingsfunktioner baserade på uppmätt höjd och ålder.<br><br>
+          Metoden är etablerad av Skogsstyrelsen och används av skogsbolag och fastighetsvärderare i hela Sverige.
+        </div>
+        <p class="note">Notera att SI är ett approximativt mått. Faktorer som markfukt, jordart och historisk skogsskötsel kan ge avvikelser. En certifierad skogskonsult rekommenderas för formella värderingar.</p>
+      </div>
+    </div>
+    <div class="result-panel">
+      <div class="si-card">
+        <span class="si-label">Ståndortsindex</span>
+        <div class="si-value" id="siVal">—</div>
+        <div class="si-unit" id="siUnit"></div>
+        <div class="si-class" id="siClass">Ange värden</div>
+        <div class="si-desc" id="siDesc">Flytta sliders för att beräkna</div>
+      </div>
+      <div class="metrics">
+        <div class="met"><span class="met-l">Tillväxt</span><span class="met-n" id="growthVal">—</span><span class="met-u"> m³/ha/år</span></div>
+        <div class="met"><span class="met-l">Total volym</span><span class="met-n" id="totalVol">—</span><span class="met-u"> m³ (tot)</span></div>
+        <div class="met"><span class="met-l">År till avverkning</span><span class="met-n" id="yearsLeft">—</span><span class="met-u"> år</span></div>
+        <div class="met"><span class="met-l">Virkesvärde/ha</span><span class="met-n" id="virkeVal">—</span><span class="met-u"> kr/ha</span></div>
+      </div>
+      <div class="scale-card">
+        <span class="scale-title">SI-skala för gran</span>
+        <div id="scaleRows"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const spData = {
+  gran: { a:0.93, b:1.18, harvestAge:80, name:'G', virke:450 },
+  tall: { a:0.85, b:1.12, harvestAge:100, name:'T', virke:420 },
+  bjork:{ a:0.78, b:1.08, harvestAge:70,  name:'B', virke:380 },
+  ek:   { a:0.70, b:1.05, harvestAge:150, name:'Ek', virke:800 }
+};
+const scaleClasses = [
+  {min:36,max:99,label:'G36+',name:'Extremt hög bonitet',m3:'12–16',color:'#1a4d1e'},
+  {min:32,max:35,label:'G32',name:'Mycket hög bonitet',m3:'10–13',color:'#2d6b30'},
+  {min:28,max:31,label:'G28',name:'Hög bonitet',m3:'8–11',color:'#4a6741'},
+  {min:24,max:27,label:'G24',name:'God bonitet',m3:'6–9',color:'#7a9e6e'},
+  {min:20,max:23,label:'G20',name:'Medelbonitet',m3:'4–7',color:'#c8d9c0'},
+  {min:16,max:19,label:'G16',name:'Låg bonitet',m3:'3–5',color:'#e8e0d0'},
+  {min:0, max:15,label:'G<16',name:'Mycket låg bonitet',m3:'1–3',color:'#b4b2a9'}
+];
+
+function renderScale(si) {
+  document.getElementById('scaleRows').innerHTML = scaleClasses.map(c => {
+    const active = si >= c.min && si <= c.max;
+    return `<div class="scale-row${active?' active':''}">
+      <div class="scale-dot" style="background:${c.color}"></div>
+      <span class="scale-range">${c.label}</span>
+      <span class="scale-name">${c.name}</span>
+      <span class="scale-m3">${c.m3} m³</span>
+    </div>`;
+  }).join('');
+}
+
+const vals = {height:18, age:50, areal:50, species:'gran'};
+
+function sv(id, v, unit) {
+  vals[id] = parseFloat(v);
+  document.getElementById(id+'V').textContent = parseFloat(v).toFixed(unit==='m'?1:0) + ' ' + unit;
+  calc();
+}
+
+function calc() {
+  const sp = document.getElementById('species').value;
+  vals.species = sp;
+  const {height, age, areal} = vals;
+  const {a, b, harvestAge, name, virke} = spData[sp];
+
+  // Hägglund-inspired SI approximation: SI100 = h * (100/age)^a * b correction
+  const si = Math.round(height * Math.pow(100/age, a) * b);
+  const siClamped = Math.max(10, Math.min(50, si));
+
+  // Annual growth from SI (approximate)
+  const growth = Math.max(1, (siClamped - 10) * 0.28 + 1.5);
+  const totalVol = Math.round(growth * areal * Math.min(age, harvestAge));
+  const yearsToHarvest = Math.max(0, harvestAge - age);
+  const virkePerHa = Math.round(growth * harvestAge * virke / 1000);
+
+  document.getElementById('siVal').textContent = siClamped;
+  document.getElementById('siUnit').textContent = name + siClamped;
+  document.getElementById('growthVal').textContent = growth.toFixed(1);
+  document.getElementById('totalVol').textContent = totalVol.toLocaleString('sv-SE');
+  document.getElementById('yearsLeft').textContent = yearsToHarvest;
+  document.getElementById('virkeVal').textContent = virkePerHa.toLocaleString('sv-SE');
+
+  const cls = scaleClasses.find(c => siClamped >= c.min && siClamped <= c.max) || scaleClasses[6];
+  document.getElementById('siClass').textContent = cls.name;
+  document.getElementById('siDesc').textContent = cls.m3 + ' m³/ha/år förväntad tillväxt';
+
+  renderScale(siClamped);
+}
+calc();
+</script>
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo-text">Renatum</span>
+      <p class="footer-tagline">Specialister på skogens klimatvärden.</p>
+    </div>
+    <div class="footer-col"><h4>Tjänster</h4><ul><li><a href="co2.html">CO₂-analys</a></li><li><a href="priser.html">Certifiering</a></li><li><a href="priser.html">Rådgivning</a></li></ul></div>
+    <div class="footer-col"><h4>Om Renatum</h4><ul><li><a href="om-oss.html">Teamet</a></li><li><a href="case.html">Case</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+46101234567">+46 10 123 45 67</a></li><li><a href="/cdn-cgi/l/email-protection#0960676f66497b6c67687d7c64277a6c"><span class="__cf_email__" data-cfemail="a9c0c7cfc6e9dbccc7c8dddcc487dacc">[email&#160;protected]</span></a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Renatum AB</p>
+    <p><a href="integritetspolicy.html">Integritetspolicy</a></p>
+  </div>
+</footer>
+
+
+</script><script>
+(function() {
+  var dropdown = document.querySelector('.nav-dropdown');
+  var trigger = dropdown ? dropdown.querySelector('a') : null;
+  if (!trigger) return;
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation()
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.querySelector('.nav-dropdown');
+  var trigger = dropdown && dropdown.querySelector(':scope > a');
+  if (!trigger) return;
+  trigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (dropdown && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
