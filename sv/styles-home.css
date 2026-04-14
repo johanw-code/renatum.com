@@ -29,7 +29,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 /* HERO */
 .hero { height:calc(100vh - 65px); min-height:600px; position:relative; display:flex; align-items:center; overflow:hidden; }
 @supports (height:100svh) { .hero { height:calc(100svh - 65px); } }
-.hero-bg { position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(15,28,17,0.70) 0%, rgba(15,28,17,0.25) 55%, rgba(15,28,17,0.45) 100%), url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=85') center/cover no-repeat; filter:brightness(1.1) saturate(1.1); animation:slowZoom 14s ease-out forwards; }
+.hero-bg { position:absolute; inset:0; background:linear-gradient(to bottom right, rgba(15,28,17,0.70) 0%, rgba(15,28,17,0.25) 55%, rgba(15,28,17,0.45) 100%), url('skog.webp') center/cover no-repeat; filter:brightness(1.1) saturate(1.1); animation:slowZoom 14s ease-out forwards; }
 @keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1.0)} }
 .hero-inner { position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:0 3rem; width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem; }
 .hero-eyebrow { font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:#8fbf80; font-weight:500; display:block; margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.8s 0.3s forwards; }
