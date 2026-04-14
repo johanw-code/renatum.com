@@ -2,6 +2,9 @@
   border-radius: 50%; background: var(--leaf); border: 2px solid var(--deep); }
 
 /* ── TOOL PAGE OVERRIDES ─────────────────────────────────────────────────── */
+/* Fix text color inheritance: body defaults to var(--frost) but .page uses linen bg */
+.page, .page-wide { color: var(--text); }
+
 /* Cards: dark deep background on all tool pages */
 .card { background: var(--deep) !important; color: var(--frost); border-color: rgba(107,143,99,0.15); }
 
@@ -86,7 +89,8 @@
 /* Inputs section (avkastning) */
 .inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
   background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
-.inp-cell { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; }
+@media(max-width:600px) { .inputs { grid-template-columns: 1fr; } }
+.inp-cell { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; color: var(--frost); }
 
 /* Chart */
 .chart-card { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
@@ -101,7 +105,7 @@
 
 /* Timeline */
 .timeline { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
-  padding: 2rem; margin: 1px 0; }
+  padding: 2rem; margin: 1px 0; color: var(--frost); }
 .tl-bar-wrap { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
 .tl-bar { display: flex; align-items: center; gap: 1rem; }
 .tl-bar-wrap .label { min-width: 60px; margin: 0; }
@@ -111,7 +115,7 @@
 .main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
 @media(max-width:700px) { .main { grid-template-columns: 1fr; } }
 .result-panel { background: #243028; padding: 2rem; display: flex;
-  flex-direction: column; justify-content: center; }
+  flex-direction: column; justify-content: center; color: var(--frost); }
 .si-card { text-align: center; padding: 1.5rem 0; }
 .si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
   font-weight: 300; color: var(--white); line-height: 1; display: block; }
@@ -120,14 +124,19 @@
 .metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin-top: 1px; }
 .info-box { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
-  padding: 1.5rem; margin-top: 1px; }
+  padding: 1.5rem; margin-top: 1px; color: var(--muted); font-size: 0.88rem;
+  line-height: 1.7; font-weight: 300; }
 .scale-card { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin-top: 1px; }
 .scale-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--moss); font-weight: 500; display: block; margin-bottom: 1rem; }
-.scale-row { display: grid; grid-template-columns: 60px 1fr 80px 80px;
+.scale-row { display: grid; grid-template-columns: 16px 1fr 80px 60px;
   gap: 0.5rem; align-items: center; padding: 0.5rem 0;
   border-bottom: 1px solid rgba(107,143,99,0.08); font-size: 0.8rem; color: var(--text); }
+@media(max-width:500px) {
+  .scale-row { grid-template-columns: 16px 1fr 60px; }
+  .scale-row .scale-m3 { display: none; }
+}
 .scale-row.active { background: rgba(107,143,99,0.08); color: var(--forest); font-weight: 500; }
 .scale-name { font-weight: 500; color: var(--forest); }
 .scale-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
@@ -364,3 +373,68 @@
   font-family: 'DM Sans', sans-serif; font-weight: 400; }
 .weight-btns button:hover { background: rgba(107,143,99,0.2); border-color: var(--sage); color: var(--frost); }
 .weight-btns button.active { background: var(--moss); border-color: var(--moss); color: var(--white); }
+
+/* ── SHARED ALIASES & MISSING CLASSES ────────────────────────────────────── */
+
+/* .sval — slider value display (bonitet, avkastning, vardering) */
+.sval { flex-shrink: 0; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 300; color: var(--white); min-width: 60px; text-align: right; }
+
+/* Bonitet — result panel */
+.si-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage); font-weight: 500; display: block; margin-bottom: 1rem; }
+.si-value { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
+  font-weight: 300; color: var(--white); display: block; line-height: 1; }
+.si-unit { font-size: 0.85rem; color: var(--mist); display: block; margin-top: 0.3rem; }
+
+/* Avkastning — timeline rows */
+.tl-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage); font-weight: 500; display: block; margin-bottom: 1rem; }
+.tl-row { display: flex; align-items: center; gap: 1rem; padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(107,143,99,0.08); }
+.tl-year { font-size: 0.68rem; color: var(--sage); min-width: 40px; font-weight: 500; }
+.tl-row .tl-bar-wrap { flex: 1; height: 6px; background: rgba(107,143,99,0.12); border-radius: 3px; }
+.tl-row .tl-bar { height: 6px; background: var(--leaf); border-radius: 3px; transition: width 0.4s; }
+.tl-val { font-size: 0.82rem; color: var(--frost); min-width: 70px; text-align: right; }
+
+/* Vardering — 2-col grid */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+@media(max-width:700px) { .grid2 { grid-template-columns: 1fr; } }
+
+/* Vardering — calculate button */
+.btn { background: #76B33B; color: #fff; border: none; padding: 0.9rem 2.2rem;
+  font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
+  text-transform: uppercase; cursor: pointer; font-weight: 400; transition: background 0.3s; }
+.btn:hover { background: #3d7a20; }
+
+/* ── CONTRAST FIXES ──────────────────────────────────────────────────────── */
+
+/* Page header body text (prisvardhet, linen bg) */
+.page-header p { color: var(--muted); }
+
+/* Info/scale box text (bonitet, linen bg) */
+.info-box p, .info-box h3, .info-box h4, .info-box strong { color: var(--muted); }
+.scale-card p, .scale-card { color: var(--text); }
+
+/* Note paragraphs on linen pages */
+.page > .page > p.note, p.note { color: var(--muted); font-style: italic; }
+.card p.note, .card .note { color: rgba(168,196,160,0.5); }
+
+/* Step number (vardering, linen bg — was var(--mist) which is too light) */
+.step-num { color: var(--moss); }
+
+/* Selects on linen bg (vardering .step and .grid2) */
+.step select, .grid2 select, .step input[type=number], .grid2 input[type=number] {
+  width: 100%; background: rgba(26,46,30,0.05); border: 1px solid rgba(61,92,56,0.25);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  padding: 0.7rem 1rem; outline: none; margin-top: 0.4rem;
+  -webkit-appearance: none; appearance: none; }
+.step select:focus, .grid2 select:focus { border-color: var(--sage); }
+
+/* Inputs in cta-box and contact-form (linen bg) */
+.cta-box input[type=text], .cta-box input[type=email], .cta-box input[type=tel],
+.contact-form input[type=text], .contact-form input[type=email], .contact-form input[type=tel] {
+  width: 100%; background: rgba(26,46,30,0.05); border: 1px solid rgba(61,92,56,0.25);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  padding: 0.7rem 1rem; outline: none; box-sizing: border-box; }
+.cta-box input:focus, .contact-form input:focus { border-color: var(--sage); }
