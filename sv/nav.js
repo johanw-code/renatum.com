@@ -17,18 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ── Full nav links (shared for both .nav and .topbar hamburgers) ───────────
   var NAV_HTML =
-    '<a href="index.html">Hem</a>' +
-    '<a href="om-oss.html">Om oss</a>' +
-    '<a href="case.html">Case</a>' +
-    '<a href="priser.html">Priser</a>' +
+    '<a href="/sv/">Hem</a>' +
+    '<a href="om-oss">Om oss</a>' +
+    '<a href="case">Case</a>' +
+    '<a href="priser">Priser</a>' +
     '<span class="mob-nav-label">Verktyg</span>' +
-    '<a href="prisvardhet.html">Prisvärdhetskalkylator</a>' +
-    '<a href="co2.html">CO₂-kalkylator</a>' +
-    '<a href="avkastning.html">Avkastningskalkylator</a>' +
-    '<a href="bonitet.html">Bonitetsberäkning</a>' +
-    '<a href="vardering.html">Fastighetsvärdering</a>' +
-    '<a href="markagare.html">Ny markägare — guide</a>' +
-    '<a href="faq.html">FAQ</a>';
+    '<a href="prisvardhet">Prisvärdhetskalkylator</a>' +
+    '<a href="co2">CO₂-kalkylator</a>' +
+    '<a href="avkastning">Avkastningskalkylator</a>' +
+    '<a href="bonitet">Bonitetsberäkning</a>' +
+    '<a href="vardering">Fastighetsvärdering</a>' +
+    '<a href="markagare">Ny markägare — guide</a>' +
+    '<a href="faq">FAQ</a>';
 
   // ── .nav hamburger (homepage + inner pages) ────────────────────────────────
   var nav = document.querySelector('.nav');

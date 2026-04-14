@@ -53,7 +53,7 @@
     banner.setAttribute('aria-label', 'Cookie-inställningar');
     banner.innerHTML =
       '<p>Vi använder cookies för att analysera trafik och förbättra din upplevelse. ' +
-      'Läs mer i vår <a href="/integritetspolicy.html">integritetspolicy</a>.</p>' +
+      'Läs mer i vår <a href="/sv/integritetspolicy">integritetspolicy</a>.</p>' +
       '<div class="cookie-actions">' +
         '<button class="cookie-btn cookie-btn-settings" id="cookie-open-settings">Anpassa</button>' +
         '<button class="cookie-btn cookie-btn-decline" id="cookie-decline">Avvisa alla</button>' +
