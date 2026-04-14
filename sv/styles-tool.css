@@ -5,6 +5,10 @@
 /* Fix text color inheritance: body defaults to var(--frost) but .page uses linen bg */
 .page, .page-wide { color: var(--text); }
 
+/* General rule: all light-background containers use proper text colors */
+.scale-card, .result-block, .breakdown-card, .compare-card,
+.score-card, .cta-box, .cta-final { color: var(--text); }
+
 /* Cards: dark deep background on all tool pages */
 .card { background: var(--deep) !important; color: var(--frost); border-color: rgba(107,143,99,0.15); }
 
@@ -14,12 +18,11 @@
 
 /* Input labels */
 .label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.8rem; margin-top: 1.5rem; }
-.label:first-child { margin-top: 0; }
+  color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.8rem; }
 
 /* Selects and number inputs inside dark cards */
 .card select, .card input[type=number] {
-  width: 100%; padding: 0.7rem 1rem;
+  width: 100%; padding: 0.7rem 1rem; margin-bottom: 1.5rem;
   background: rgba(255,255,255,0.05); border: 1px solid rgba(107,143,99,0.2);
   color: var(--frost); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
   font-weight: 300; outline: none; cursor: pointer; transition: border-color 0.3s;
@@ -29,7 +32,7 @@
 .card select option { background: var(--deep); color: var(--frost); }
 
 /* Slider row (co2 / avkastning style — input directly in row) */
-.slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.8rem; }
+.slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.8rem; margin-bottom: 1.5rem; }
 .slider-row input[type=range] { flex: 1; }
 .slider-val { flex-shrink: 0; font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem; font-weight: 300; color: var(--white); min-width: 60px; text-align: right; }
@@ -139,11 +142,11 @@
   .scale-row .scale-m3 { display: none; }
 }
 .scale-row.active { background: rgba(107,143,99,0.08); color: var(--forest); font-weight: 500; }
-.scale-name { font-weight: 500; color: var(--forest); }
+.scale-name { font-weight: 400; color: var(--muted); }
 .scale-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
 .scale-bar-wrap { flex: 1; height: 4px; background: rgba(107,143,99,0.15); border-radius: 2px; }
-.scale-m3 { font-size: 0.75rem; color: var(--sage); text-align: right; }
-.scale-range { font-size: 0.72rem; color: var(--moss); font-weight: 500; }
+.scale-m3 { font-size: 0.75rem; color: var(--muted); text-align: right; }
+.scale-range { font-size: 0.8rem; color: var(--text); font-weight: 500; }
 
 /* Värdering steps */
 .step { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(107,143,99,0.1); }
