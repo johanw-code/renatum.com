@@ -193,25 +193,35 @@
   font-weight: 300; color: var(--forest); }
 .phase-time { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
   text-transform: uppercase; margin-left: auto; flex-shrink: 0; }
-.checkbox { background: #fff; border: 1px solid rgba(107,143,99,0.15);
+/* Markägare — task row (outer container) */
+.task { background: #fff; border: 1px solid rgba(107,143,99,0.15);
   padding: 1.2rem 1.5rem; margin-bottom: 1px; display: flex; align-items: flex-start;
   gap: 1.2rem; cursor: pointer; transition: background 0.2s; }
-.checkbox:hover { background: var(--parchment); }
-.checkbox.done { opacity: 0.5; }
-.checkbox input[type=checkbox] { margin-top: 3px; accent-color: var(--sage); flex-shrink: 0;
-  width: 16px; height: 16px; cursor: pointer; }
+.task:hover { background: var(--parchment); }
+.task.done { opacity: 0.55; }
+.task.done .task-title { text-decoration: line-through; color: var(--mist); }
+
+/* Markägare — checkbox SVG square (inner indicator) */
+.checkbox { width: 20px; height: 20px; min-width: 20px;
+  border: 2px solid rgba(61,92,56,0.25); border-radius: 3px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 2px; transition: all 0.2s; background: transparent; }
+.task.done .checkbox { background: var(--moss); border-color: var(--moss); }
+.checkbox svg { opacity: 0; transition: opacity 0.2s; }
+.task.done .checkbox svg { opacity: 1; }
+
 .task-title { font-size: 0.88rem; font-weight: 400; color: var(--forest);
   margin-bottom: 0.3rem; line-height: 1.4; }
-.checkbox.done .task-title { text-decoration: line-through; color: var(--mist); }
 .task-desc { font-size: 0.8rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
 .task-body { flex: 1; }
 .task-tag { display: inline-block; font-size: 0.58rem; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 0.2rem 0.6rem; margin-top: 0.5rem;
-  font-weight: 500; }
-.tag-co2 { background: rgba(107,143,99,0.15); color: var(--sage); }
-.tag-ekonomi { background: rgba(196,162,74,0.1); color: var(--gold-lt); }
-.tag-juridik { background: rgba(168,196,160,0.08); color: var(--mist); }
-.tag-praktiskt { background: rgba(107,143,99,0.08); color: rgba(168,196,160,0.6); }
+  text-transform: uppercase; padding: 0.2rem 0.6rem; margin-top: 0.5rem; font-weight: 500; }
+.tag-urgent   { background: rgba(184,64,64,0.1);   color: #b84040; }
+.tag-legal    { background: rgba(107,143,99,0.15);  color: var(--sage); }
+.tag-economy  { background: rgba(196,162,74,0.1);   color: var(--gold-lt); }
+.tag-practical{ background: rgba(107,143,99,0.08);  color: var(--moss); }
+.tag-renatum  { background: rgba(118,179,59,0.12);  color: #4a8a1e; }
+
 .cta-final { background: var(--parchment); border: 1px solid rgba(107,143,99,0.15);
   border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center; margin-top: 2rem; }
 .btn-cta { display: inline-block; background: #76B33B; color: #fff;
