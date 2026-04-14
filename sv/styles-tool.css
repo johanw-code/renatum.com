@@ -163,11 +163,11 @@
 .res-sub { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
 .res-disclaimer { font-size: 0.72rem; color: rgba(107,143,99,0.4); margin-top: 1.5rem;
   font-style: italic; line-height: 1.6; }
-.btn-calc { background: #76B33B; color: #fff; border: none;
+.btn-calc { background: #5a9e2f; color: #fff; border: none;
   padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem;
   letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;
   font-weight: 400; margin-top: 1.5rem; transition: background 0.3s; }
-.btn-calc:hover { background: #3d7a20; }
+.btn-calc:hover { background: #3a6c1a; }
 .cta-box { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
   padding: 2.5rem; text-align: center; margin-top: 1px; }
 .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
@@ -224,11 +224,11 @@
 
 .cta-final { background: var(--parchment); border: 1px solid rgba(107,143,99,0.15);
   border-top: 2px solid var(--sage); padding: 2.5rem; text-align: center; margin-top: 2rem; }
-.btn-cta { display: inline-block; background: #76B33B; color: #fff;
+.btn-cta { display: inline-block; background: #5a9e2f; color: #fff;
   font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
   text-transform: uppercase; padding: 0.9rem 2.2rem; text-decoration: none;
   font-weight: 400; transition: background 0.3s; margin-top: 1rem; }
-.btn-cta:hover { background: #3d7a20; }
+.btn-cta:hover { background: #3a6c1a; }
 
 /* Prisvärdhet */
 .page-header { text-align: center; margin-bottom: 3rem; }
@@ -302,8 +302,8 @@
 .btn-save, .btn-reset, .btn-export { font-family: 'DM Sans', sans-serif;
   font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
   padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 400; border: none; transition: all 0.2s; }
-.btn-save { background: #76B33B; color: #fff; }
-.btn-save:hover { background: #3d7a20; }
+.btn-save { background: #5a9e2f; color: #fff; }
+.btn-save:hover { background: #3a6c1a; }
 .btn-reset { background: transparent; border: 1px solid rgba(107,143,99,0.3); color: var(--mist); }
 .btn-reset:hover { border-color: var(--sage); color: var(--frost); }
 .btn-export { background: transparent; border: 1px solid rgba(196,162,74,0.3); color: var(--gold-lt); }
@@ -412,10 +412,10 @@
 @media(max-width:700px) { .grid2 { grid-template-columns: 1fr; } }
 
 /* Vardering — calculate button */
-.btn { background: #76B33B; color: #fff; border: none; padding: 0.9rem 2.2rem;
+.btn { background: #5a9e2f; color: #fff; border: none; padding: 0.9rem 2.2rem;
   font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em;
   text-transform: uppercase; cursor: pointer; font-weight: 400; transition: background 0.3s; }
-.btn:hover { background: #3d7a20; }
+.btn:hover { background: #3a6c1a; }
 
 /* ── CONTRAST FIXES ──────────────────────────────────────────────────────── */
 

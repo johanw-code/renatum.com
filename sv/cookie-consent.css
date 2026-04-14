@@ -27,7 +27,7 @@
   max-width: 620px;
 }
 #cookie-banner p a {
-  color: #76B33B;
+  color: #5a9e2f;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -50,9 +50,9 @@
   background: transparent;
 }
 .cookie-btn-accept {
-  border-color: #76B33B;
+  border-color: #5a9e2f;
   color: #fff;
-  background: #76B33B;
+  background: #5a9e2f;
 }
 .cookie-btn-accept:hover {
   background: #5a9a2a;
@@ -169,11 +169,11 @@
 }
 .cookie-toggle input:checked + .cookie-toggle-slider {
   background: rgba(118,179,59,0.25);
-  border-color: #76B33B;
+  border-color: #5a9e2f;
 }
 .cookie-toggle input:checked + .cookie-toggle-slider::before {
   transform: translateX(18px);
-  background: #76B33B;
+  background: #5a9e2f;
 }
 .cookie-toggle input:disabled + .cookie-toggle-slider {
   opacity: 0.5;

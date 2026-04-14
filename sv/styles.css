@@ -14,8 +14,8 @@
   --parchment: #e8e1d4;
   --gold:    #c4a24a;
   --gold-lt: #e8d49a;
-  --leaf:    #76B33B;
-  --leaf-lt: #93cc52;
+  --leaf:    #5a9e2f;
+  --leaf-lt: #7ac240;
   --white:   #faf8f4;
   --text:    #1a1a16;
   --muted:   #5c5c50;
@@ -82,7 +82,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .nav-logo { text-decoration:none; display:flex; align-items:center; }
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
 .nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
-.nav-links a:hover { color:#76B33B; opacity:1; }
+.nav-links a:hover { color:#5a9e2f; opacity:1; }
 .nav-dropdown { position:relative; }
 .nav-dropdown > a { cursor:pointer; user-select:none; }
 .nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
@@ -92,7 +92,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
 .nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
 .nav-cta { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.6rem 1.5rem; border:1px solid rgba(118,179,59,0.45); color:#a8d878; text-decoration:none; font-weight:400; transition:all 0.3s; }
-.nav-cta:hover { background:#76B33B; border-color:#76B33B; color:#fff; }
+.nav-cta:hover { background:#5a9e2f; border-color:#5a9e2f; color:#fff; }
 
 /* ── LAYOUT ───────────────────────────────────────────────────────────────── */
 .container       { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
@@ -117,8 +117,8 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
   padding: 0.9rem 2.2rem; text-decoration: none; font-weight: 400;
   transition: all 0.3s; cursor: pointer; border: none;
 }
-.btn-primary   { background:#76B33B;color:#fff; }
-.btn-primary:hover { background: #2d6010; }
+.btn-primary   { background:#5a9e2f;color:#fff; }
+.btn-primary:hover { background: #3a6c1a; }
 .btn-gold      { background: var(--gold); color: var(--ink); }
 .btn-gold:hover { background: var(--gold-lt); }
 .btn-outline   { border: 1px solid rgba(107,143,99,0.5); color: var(--mist); background: transparent; }
@@ -233,7 +233,7 @@ input[type=range]::-webkit-slider-thumb {
 .cookie-text { font-size: 0.8rem; line-height: 1.6; font-weight: 300; color: var(--mist); flex: 1; min-width: 200px; }
 .cookie-text a { color: var(--gold-lt); }
 .cookie-actions { display: flex; gap: 0.7rem; flex-shrink: 0; }
-.cookie-accept { background:#76B33B;color:#fff; border: none; padding: 0.55rem 1.3rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.cookie-accept { background:#5a9e2f;color:#fff; border: none; padding: 0.55rem 1.3rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
 .cookie-decline { background: transparent; color: var(--subtle); border: 1px solid rgba(107,143,99,0.2); padding: 0.55rem 1.1rem; font-family: 'DM Sans',sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
 
 /* ── HAMBURGER ─────────────────────────────────────────────────────────────── */
