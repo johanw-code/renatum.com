@@ -14,7 +14,8 @@
 
 /* Input labels */
 .label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.8rem; }
+  color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.8rem; margin-top: 1.5rem; }
+.label:first-child { margin-top: 0; }
 
 /* Selects and number inputs inside dark cards */
 .card select, .card input[type=number] {
@@ -142,7 +143,7 @@
 .scale-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--leaf); }
 .scale-bar-wrap { flex: 1; height: 4px; background: rgba(107,143,99,0.15); border-radius: 2px; }
 .scale-m3 { font-size: 0.75rem; color: var(--sage); text-align: right; }
-.scale-range { font-size: 0.72rem; color: rgba(168,196,160,0.5); }
+.scale-range { font-size: 0.72rem; color: var(--moss); font-weight: 500; }
 
 /* Värdering steps */
 .step { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(107,143,99,0.1); }
