@@ -1,6 +1,41 @@
 ::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px;
   border-radius: 50%; background: var(--leaf); border: 2px solid var(--deep); }
 
+/* ── TOOL PAGE OVERRIDES ─────────────────────────────────────────────────── */
+/* Cards: dark deep background on all tool pages */
+.card { background: var(--deep) !important; color: var(--frost); border-color: rgba(107,143,99,0.15); }
+
+/* 2-col grid for card pairs */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+@media(max-width:700px) { .grid { grid-template-columns: 1fr; } }
+
+/* Input labels */
+.label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage); font-weight: 500; display: block; margin-bottom: 0.8rem; }
+
+/* Selects and number inputs inside dark cards */
+.card select, .card input[type=number] {
+  width: 100%; padding: 0.7rem 1rem;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(107,143,99,0.2);
+  color: var(--frost); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  font-weight: 300; outline: none; cursor: pointer; transition: border-color 0.3s;
+  -webkit-appearance: none; appearance: none;
+}
+.card select:focus, .card input[type=number]:focus { border-color: var(--sage); }
+.card select option { background: var(--deep); color: var(--frost); }
+
+/* Slider row (co2 / avkastning style — input directly in row) */
+.slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.8rem; }
+.slider-row input[type=range] { flex: 1; }
+.slider-val { flex-shrink: 0; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 300; color: var(--white); min-width: 60px; text-align: right; }
+
+/* Note text in dark sections */
+.comparison .note, .comparison p.note {
+  color: rgba(168,196,160,0.4); font-size: 0.68rem; margin-top: 1.5rem;
+  line-height: 1.6; font-style: italic;
+}
+
 /* Results panels */
 .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   background: transparent; margin: 2rem 0; }
