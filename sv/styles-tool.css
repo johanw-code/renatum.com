@@ -145,11 +145,12 @@
 .scale-range { font-size: 0.72rem; color: rgba(168,196,160,0.5); }
 
 /* Värdering steps */
-.step { margin-bottom: 2rem; }
+.step { margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(107,143,99,0.1); }
+.step:last-child { border-bottom: none; }
 .step-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
 .step-num { width: 36px; height: 36px; background: rgba(107,143,99,0.15);
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--mist); }
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--moss); }
 .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
   font-weight: 300; color: var(--forest); }
 .result-block { background: var(--linen); border: 1px solid rgba(107,143,99,0.18);
@@ -161,7 +162,7 @@
 .res-range { font-family: 'Cormorant Garamond', serif; font-size: 3rem;
   font-weight: 300; color: var(--forest); line-height: 1; }
 .res-sub { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
-.res-disclaimer { font-size: 0.72rem; color: rgba(107,143,99,0.4); margin-top: 1.5rem;
+.res-disclaimer { font-size: 0.72rem; color: var(--muted); margin-top: 1.5rem;
   font-style: italic; line-height: 1.6; }
 .btn-calc { background: #5a9e2f; color: #fff; border: none;
   padding: 1rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem;
@@ -186,9 +187,11 @@
 .prog-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--moss); display: block; margin-bottom: 0.5rem; font-weight: 500; }
 .prog-count { font-size: 0.82rem; color: var(--mist); font-weight: 300; }
-.phase-header { display: flex; align-items: baseline; gap: 1rem; margin: 2.5rem 0 1rem; }
-.phase-num { color:rgba(118,179,59,0.3); font-family: 'Cormorant Garamond', serif; font-size: 3rem;
-  font-weight: 300; color: rgba(107,143,99,0.2); line-height: 1; }
+.phase { margin-bottom: 2.5rem; }
+.phase-header { display: flex; align-items: baseline; gap: 1rem; margin: 0 0 1rem; padding-top: 3rem; border-top: 1px solid rgba(107,143,99,0.1); }
+.phase:first-child .phase-header { border-top: none; padding-top: 0; }
+.phase-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem;
+  font-weight: 300; color: rgba(90,158,47,0.45); line-height: 1; }
 .phase-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
   font-weight: 300; color: var(--forest); }
 .phase-time { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
@@ -259,7 +262,7 @@
   text-transform: uppercase; }
 .crit-desc { font-size: 0.78rem; color: var(--mist); line-height: 1.6;
   font-weight: 300; padding: 0 1.5rem 0.5rem; }
-.crit-scale-hint { font-size: 0.68rem; color: rgba(107,143,99,0.45); padding: 0 1.5rem 0.5rem; }
+.crit-scale-hint { font-size: 0.68rem; color: rgba(107,143,99,0.65); padding: 0 1.5rem 0.5rem; }
 .inverted-note { font-size: 0.68rem; color: var(--gold-lt); padding: 0 1.5rem 0.3rem; }
 
 /* Slider row */
@@ -296,7 +299,7 @@
 .compare-item-del { background: none; border: none; color: rgba(107,143,99,0.4);
   cursor: pointer; font-size: 1rem; padding: 0 0.3rem; transition: color 0.2s; }
 .compare-item-del:hover { color: var(--mist); }
-.compare-empty { font-size: 0.8rem; color: rgba(107,143,99,0.35);
+.compare-empty { font-size: 0.8rem; color: rgba(107,143,99,0.6);
   font-style: italic; font-weight: 300; }
 .action-btns { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
 .btn-save, .btn-reset, .btn-export { font-family: 'DM Sans', sans-serif;
