@@ -77,12 +77,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub">En komplett checklista för nya markägare. Bocka av allt du gjort och håll koll på vad som återstår.</p>
   </div>
 
-  <div class="progress-bar">
-    <span class="prog-label">Framsteg</span>
-    <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
-    <span class="prog-count" id="progCount">0 / 0 klart</span>
-  </div>
-
   <div id="phases"></div>
 
   <div class="cta-final">
@@ -169,20 +163,11 @@ function render() {
     });
     container.appendChild(div);
   });
-  updateProgress();
 }
 
 function toggle(id, el) {
   if (done.has(id)) done.delete(id); else done.add(id);
   el.classList.toggle('done');
-  updateProgress();
-}
-
-function updateProgress() {
-  const total = phases.reduce((s,p) => s + p.tasks.length, 0);
-  const pct = Math.round(done.size / total * 100);
-  document.getElementById('progFill').style.width = pct + '%';
-  document.getElementById('progCount').textContent = done.size + ' / ' + total + ' klart';
 }
 
 render();
