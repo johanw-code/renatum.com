@@ -42,7 +42,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 .hero-stat { background:rgba(10,26,13,0.82); border:1px solid rgba(107,143,99,0.3); backdrop-filter:blur(12px); padding:1.5rem 2rem; text-align:right; width:100%; }
 .hero-stat-num { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:#ffffff; line-height:1; text-shadow:0 1px 4px rgba(0,0,0,0.3); }
 .hero-stat-label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#8fbf80; margin-top:0.3rem; display:block; }
-.hero-scroll { position:absolute; bottom:3rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.8rem; z-index:2; opacity:0; animation:fadeUp 0.8s 1.5s forwards; }
+.hero-scroll { position:absolute; bottom:calc(3rem + env(safe-area-inset-bottom, 0px)); left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.8rem; z-index:2; opacity:0; animation:fadeUp 0.8s 1.5s forwards; }
+@media(max-width:900px) { .hero-scroll { bottom:calc(4.5rem + env(safe-area-inset-bottom, 0px)); } }
 .hero-scroll span { font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(168,196,160,0.4); }
 .scroll-line { width:1px; height:60px; background:rgba(107,143,99,0.2); position:relative; overflow:hidden; }
 .scroll-line::after { content:''; position:absolute; top:-60px; left:0; width:1px; height:60px; background:var(--mist); animation:drop 2s 2s infinite; }
