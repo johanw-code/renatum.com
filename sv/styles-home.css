@@ -114,6 +114,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 .tool-cat { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#8fbf80; font-weight:500; display:block; margin-bottom:0.5rem; }
 .tool-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; color:var(--white); margin-bottom:0.6rem; }
 .tool-desc { font-size:0.8rem; color:#cde0c5; line-height:1.7; font-weight:300; }
+.tool-cta { display:block; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; color:#5a9e2f; font-weight:500; transition:color 0.2s; }
+.tool-card:hover .tool-cta { color:#7ac240; }
 
 /* TESTIMONIALS */
 .testimonials { padding:8rem 3rem; background:#1e3325; }
