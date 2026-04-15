@@ -448,6 +448,18 @@
   -webkit-appearance: none; appearance: none; }
 .step select:focus, .grid2 select:focus { border-color: var(--sage); }
 
+/* ── TOOL LEAD FUNNEL ────────────────────────────────────────────────────── */
+.tool-lead { border-top: 2px solid var(--sage); background: var(--linen); padding: 3rem 2.5rem; margin-top: 1px; text-align: center; }
+.tool-lead-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); font-weight: 500; display: block; margin-bottom: 1rem; }
+.tool-lead-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 300; color: var(--forest); margin-bottom: 0.8rem; line-height: 1.2; }
+.tool-lead-p { font-size: 0.88rem; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 480px; margin: 0 auto 2rem; }
+.tool-lead-form { display: flex; gap: 0.5rem; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
+.tool-lead-form input[type=email] { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1px solid rgba(61,92,56,0.25); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); outline: none; }
+.tool-lead-form input[type=email]:focus { border-color: var(--sage); }
+.tool-lead-form button { background: #5a9e2f; color: #fff; border: none; padding: 0.85rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-weight: 400; white-space: nowrap; transition: background 0.3s; }
+.tool-lead-form button:hover { background: #3a6c1a; }
+.tool-lead-trust { display: block; margin-top: 1rem; font-size: 0.72rem; color: var(--muted); font-weight: 300; }
+
 /* Inputs in cta-box and contact-form (linen bg) */
 .cta-box input[type=text], .cta-box input[type=email], .cta-box input[type=tel],
 .contact-form input[type=text], .contact-form input[type=email], .contact-form input[type=tel] {

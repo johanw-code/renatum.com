@@ -95,3 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// ── Tool lead capture (shared across all tool pages) ──────────────────────
+function submitToolLead(e, form) {
+  e.preventDefault();
+  form.innerHTML = '<p style="font-family:\'DM Sans\',sans-serif;font-size:0.9rem;color:#3d5c38;font-weight:500;padding:0.5rem 0;">Tack — vi hör av oss inom 24h med en konkret bedömning.</p>';
+}
