@@ -121,9 +121,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Plan selector -->
     <div style="display:flex;gap:0.5rem;margin:1.5rem 0 1rem;flex-wrap:wrap;">
-      <button id="plan-month" onclick="selectPlan('month')" style="font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1.4rem;border:1px solid rgba(61,92,56,0.25);background:rgba(61,92,56,0.06);color:#3d5c38;cursor:pointer;transition:all 0.2s;">1 månad</button>
-      <button id="plan-year"  onclick="selectPlan('year')"  style="font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1.4rem;border:1px solid #3d5c38;background:#3d5c38;color:#fff;cursor:pointer;transition:all 0.2s;">12 månader</button>
-      <button id="plan-custom" onclick="selectPlan('custom')" style="font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1.4rem;border:1px solid rgba(61,92,56,0.25);background:rgba(61,92,56,0.06);color:#3d5c38;cursor:pointer;transition:all 0.2s;">Anpassa</button>
+      <button id="plan-month"  class="btn btn-sm btn-plan"        onclick="selectPlan('month')">1 månad</button>
+      <button id="plan-year"   class="btn btn-sm btn-plan active"  onclick="selectPlan('year')">12 månader</button>
+      <button id="plan-custom" class="btn btn-sm btn-plan"         onclick="selectPlan('custom')">Anpassa</button>
     </div>
 
     <!-- Custom tons input -->
@@ -148,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Primary CTA -->
-    <button id="payBtn" onclick="initiatePayment()" style="display:block;width:100%;background:#5a9e2f;color:#fff;border:none;padding:1.1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background 0.3s;text-align:center;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Kompensera mina utsläpp →</button>
+    <button id="payBtn" class="btn btn-primary btn-full" onclick="initiatePayment()">Kompensera mina utsläpp →</button>
     <p style="font-size:0.74rem;color:var(--muted);margin-top:0.8rem;font-weight:300;">Nästa steg: vi bekräftar din order och skickar dokumentation per e-post.</p>
     <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem;font-weight:300;">Ingen bindning. Du kan pausa när som helst.</p>
   </div>
@@ -163,7 +163,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="tier" id="leadTier" value="mid">
       <input type="hidden" name="calc_value" id="leadValue" value="">
       <input type="email" name="email" placeholder="Din e-postadress" required style="flex:1;min-width:180px;">
-      <button type="submit" style="background:transparent;border:1px solid rgba(61,92,56,0.4);color:var(--forest);padding:0.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:all 0.2s;" onmouseover="this.style.background='rgba(61,92,56,0.08)'" onmouseout="this.style.background='transparent'">Få mer information →</button>
+      <button type="submit" class="btn btn-sm btn-outline-light" style="white-space:nowrap;">Få mer information →</button>
     </form>
     <span class="tool-lead-trust" style="display:block;margin-top:0.6rem;">Ingen förpliktelse. Du tar nästa steg när du är redo.</span>
   </div>
@@ -259,15 +259,7 @@ function selectPlan(mode) {
   ['month', 'year', 'custom'].forEach(function(p) {
     var btn = document.getElementById('plan-' + p);
     if (!btn) return;
-    if (p === mode) {
-      btn.style.background   = '#3d5c38';
-      btn.style.color        = '#fff';
-      btn.style.borderColor  = '#3d5c38';
-    } else {
-      btn.style.background   = 'rgba(61,92,56,0.06)';
-      btn.style.color        = '#3d5c38';
-      btn.style.borderColor  = 'rgba(61,92,56,0.25)';
-    }
+    btn.classList.toggle('active', p === mode);
   });
   var row = document.getElementById('customTonsRow');
   if (row) row.style.display = mode === 'custom' ? '' : 'none';

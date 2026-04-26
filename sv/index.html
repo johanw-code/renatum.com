@@ -127,8 +127,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-divider"></div>
       <p class="hero-desc" style="text-shadow:0 1px 6px rgba(0,0,0,0.5);">Vi kopplar ihop markägare, företag och privatpersoner i konkreta klimataffärer — med spårbarhet, transparens och verkligt värde.</p>
       <div class="hero-actions">
-        <a href="co2" style="display:inline-block;background:#5a9e2f;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 2.2rem;text-decoration:none;font-weight:400;transition:background 0.3s;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Beräkna din skogs potential →</a>
-        <a href="#for-vem" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 2.2rem;text-decoration:none;font-weight:400;transition:background 0.3s;" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">Klimatlösning för ert bolag →</a>
+        <a href="co2" class="btn btn-primary">Beräkna din skogs potential →</a>
+        <a href="#for-vem" class="btn btn-gold">Klimatlösning för ert bolag →</a>
       </div>
       <div style="margin-top:1.2rem;">
         <a href="klimatkompensera" style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:rgba(168,196,160,0.85);text-decoration:none;letter-spacing:0.08em;border-bottom:1px solid rgba(168,196,160,0.3);padding-bottom:1px;transition:color 0.2s;" onmouseover="this.style.color='rgba(168,196,160,1)'" onmouseout="this.style.color='rgba(168,196,160,0.85)'">Privatperson? Beräkna dina utsläpp →</a>
@@ -184,7 +184,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li>Skräddarsydda paket för er verksamhet</li>
       <li>Kommunikationsunderlag ingår</li>
     </ul>
-    <a href="#kontakt" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 2.2rem;text-decoration:none;font-weight:400;transition:background 0.3s;margin-top:0.5rem;" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">Boka kostnadsfri genomgång</a>
+    <a href="#kontakt" class="btn btn-gold" style="margin-top:0.5rem;">Boka kostnadsfri genomgång</a>
   </div>
 </section>
 
@@ -229,12 +229,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="width:40px;height:1px;background:var(--sage);margin:1.5rem 0;"></div>
       <p style="font-size:0.88rem;line-height:1.85;font-weight:300;color:var(--muted);margin-bottom:1rem;">Använd vår CO₂-kalkylator för att få en snabb uppskattning av din skogs klimatpotential. Välj trädslag, åldersklass och areal.</p>
       <p style="font-size:0.88rem;line-height:1.85;font-weight:300;color:var(--muted);margin-bottom:2.5rem;">En genomsnittsskog på 100 hektar kan binda <strong style="color:var(--forest);font-weight:500;">500–700 ton CO₂ per år</strong> — värt upp till 700 000 kr på den frivilliga marknaden.</p>
-      <a href="co2" style="display:inline-block;background:#5a9e2f;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.9rem 2.2rem;text-decoration:none;font-weight:400;transition:background 0.3s;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Beräkna din skogs CO₂</a>
+      <a href="co2" class="btn btn-primary">Beräkna din skogs CO₂</a>
       <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(74,103,65,0.18);">
         <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--moss);margin-bottom:0.8rem;font-weight:500;">Vill du ha en professionell analys?</p>
         <form id="co2LeadForm" style="display:flex;gap:0.5rem;flex-wrap:wrap;" onsubmit="submitCo2Lead(event)">
           <input type="email" id="co2Email" placeholder="Din e-postadress" required style="flex:1;min-width:200px;padding:0.75rem 1rem;background:rgba(26,46,30,0.04);border:1px solid rgba(61,92,56,0.25);color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;">
-          <button type="submit" style="background:#5a9e2f;color:#fff;border:none;padding:0.75rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background 0.3s;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Skicka</button>
+          <button type="submit" class="btn btn-sm btn-primary" style="white-space:nowrap;">Skicka</button>
         </form>
         <p id="co2LeadMsg" style="display:none;margin-top:0.8rem;font-size:0.82rem;color:var(--muted);">Tack — vi återkommer med en konkret bedömning.</p>
       </div>
@@ -356,7 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div style="text-align:center;margin-top:3rem;">
-      <a href="#kontakt" style="display:inline-block;background:#5a9e2f;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;font-weight:400;transition:background 0.3s;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Jag vill veta vad mitt alternativ är →</a>
+      <a href="#kontakt" class="btn btn-primary">Jag vill veta vad mitt alternativ är →</a>
     </div>
   </div>
 </section>
@@ -388,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input class="form-input" type="email" name="epost" placeholder="E-postadress" required>
       <input class="form-input" type="tel" name="telefon" placeholder="Telefonnummer (valfritt)">
       <textarea class="form-textarea" name="meddelande" placeholder="Berätta kort om din fastighet eller ditt ärende…"></textarea>
-      <button type="submit" style="background:#5a9e2f;color:#fff;border:none;padding:1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;font-weight:400;align-self:flex-start;transition:background 0.3s;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Boka genomgång</button>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Boka genomgång</button>
       <p style="font-size:0.78rem;color:var(--muted);margin-top:1.8rem;font-weight:300;">Ingen förpliktelse. Du tar nästa steg när du är redo.</p>
     </form>
   </div>
