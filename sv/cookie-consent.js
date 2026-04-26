@@ -2,36 +2,41 @@
   'use strict';
 
   var STORAGE_KEY = 'renatum_consent';
-  var GTM_ID = 'GTM-53FKLKLN';
+  var CONSENT_TTL = 180 * 24 * 60 * 60 * 1000; // 6 months in ms
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   function gtag() { window.dataLayer.push(arguments); }
 
-  function loadGTM() {
-    if (document.getElementById('gtm-script')) return;
-    var s = document.createElement('script');
-    s.id = 'gtm-script';
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
-    document.head.appendChild(s);
-  }
-
   function applyConsent(prefs) {
     gtag('consent', 'update', {
-      analytics_storage:    prefs.analytics  ? 'granted' : 'denied',
-      ad_storage:           prefs.marketing  ? 'granted' : 'denied',
-      ad_user_data:         prefs.marketing  ? 'granted' : 'denied',
-      ad_personalization:   prefs.marketing  ? 'granted' : 'denied'
+      analytics_storage:    prefs.analytics ? 'granted' : 'denied',
+      ad_storage:           prefs.marketing ? 'granted' : 'denied',
+      ad_user_data:         prefs.marketing ? 'granted' : 'denied',
+      ad_personalization:   prefs.marketing ? 'granted' : 'denied',
+      functionality_storage: 'granted'
     });
-    loadGTM();
   }
 
   function savePrefs(prefs) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch(e) {}
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        prefs: prefs,
+        expires: Date.now() + CONSENT_TTL
+      }));
+    } catch(e) {}
   }
 
   function loadPrefs() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) { return null; }
+    try {
+      var stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (!stored) return null;
+      if (stored.expires && Date.now() > stored.expires) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+      // handle old format without expiry wrapper
+      return stored.prefs || stored;
+    } catch(e) { return null; }
   }
 
   function hideBanner() {
