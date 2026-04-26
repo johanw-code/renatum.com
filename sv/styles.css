@@ -26,7 +26,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--deep);
+  background: var(--linen);
   color: var(--frost);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -81,18 +81,19 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .nav { position:sticky; top:0; z-index:100; background:rgba(10,26,13,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
 .nav-logo { text-decoration:none; display:flex; align-items:center; }
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
-.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
-.nav-links a:hover { color:#5a9e2f; opacity:1; }
+.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; font-weight:400; transition:color 0.3s; }
+.nav-links a:hover { color:#ffffff; }
+.nav-links a.nav-active { color:#ffffff; border-bottom:1px solid #5a9e2f; padding-bottom:2px; }
 .nav-dropdown { position:relative; }
 .nav-dropdown > a { cursor:pointer; user-select:none; }
-.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
+.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:200px; z-index:200; padding:0.6rem 0; }
 .nav-dropdown-menu::before { content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
 .nav-dropdown.open .nav-dropdown-menu { display:block; }
 .nav-dropdown:hover .nav-dropdown-menu { display:block; }
 .nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
 .nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
-.nav-cta { font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.6rem 1.5rem; border:1px solid rgba(118,179,59,0.45); color:#a8d878; text-decoration:none; font-weight:400; transition:all 0.3s; }
-.nav-cta:hover { background:#5a9e2f; border-color:#5a9e2f; color:#fff; }
+.nav-cta { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; padding:0.65rem 1.6rem; background:#5a9e2f; border:1px solid #5a9e2f; color:#ffffff; text-decoration:none; font-weight:500; transition:all 0.25s; border-radius:2px; white-space:nowrap; }
+.nav-cta:hover { background:#3a6c1a; border-color:#3a6c1a; color:#fff; }
 
 /* ── LAYOUT ───────────────────────────────────────────────────────────────── */
 .container       { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
@@ -254,6 +255,7 @@ input[type=range]::-webkit-slider-thumb {
 .mob-nav-overlay a { color:#ffffff; text-decoration:none; font-size:0.9rem; padding:0.9rem 0;
   border-bottom:1px solid rgba(107,143,99,0.12); letter-spacing:0.06em; }
 .mob-nav-overlay a:hover { color:#a8c4a0; }
+.mob-nav-overlay a.mob-nav-cta { margin-top:1.5rem; background:#5a9e2f; border:none; padding:1rem 0; text-align:center; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; font-weight:500; }
 .mob-nav-label { font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase;
   color:#6b8f63; font-weight:500; padding-top:1.5rem; padding-bottom:0.3rem; }
 
@@ -299,6 +301,7 @@ input[type=range]::-webkit-slider-thumb {
 .arr.open { transform: rotate(180deg); }
 
 /* Footer */
+footer, .footer { background: var(--ink); color: var(--frost); border-top: 1px solid rgba(107,143,99,0.08); padding: 4rem 2rem 2rem; }
 .footer { background: var(--ink); border-top: 1px solid rgba(107,143,99,0.08); padding: 4rem 2rem 2rem; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1140px; margin: 0 auto 3rem; }
 .footer-brand { }

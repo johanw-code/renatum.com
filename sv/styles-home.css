@@ -85,13 +85,13 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 .aud-corp .aud-list li::before { background:var(--gold); }
 
 /* CO2 HIGHLIGHT */
-.co2-section { padding:8rem 3rem; background:#1a2e1e; }
+.co2-section { padding:8rem 3rem; background:var(--linen); }
 .co2-inner { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
-.co2-stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(107,143,99,0.1); }
+.co2-stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(74,103,65,0.15); }
 .co2-stat { background:#1a2e1e; border:1px solid rgba(107,143,99,0.15); padding:2rem; text-align:center; }
 .co2-stat-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--white); line-height:1; }
 .co2-stat-label { font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--sage); margin-top:0.4rem; display:block; }
-.co2-note { font-size:0.68rem; color:rgba(168,196,160,0.4); margin-top:1rem; font-style:italic; line-height:1.5; }
+.co2-note { font-size:0.68rem; color:var(--subtle); margin-top:1rem; font-style:italic; line-height:1.5; }
 
 /* ABOUT */
 .about-section { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
@@ -132,7 +132,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 .contact-info .eyebrow { color:var(--moss); }
 .contact-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; color:var(--forest); line-height:1.15; margin-bottom:1.2rem; }
 .contact-h2 em { font-style:italic; color:var(--moss); }
-.contact-p { font-size:0.88rem; color:var(--muted); line-height:1.8; font-weight:300; margin-bottom:2.5rem; }
+.contact-p { font-size:0.88rem; color:var(--muted); line-height:1.8; font-weight:300; margin-bottom:0.9rem; }
 .contact-detail { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
 .contact-detail .lbl { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); width:60px; flex-shrink:0; font-weight:500; }
 .contact-detail a, .contact-detail span { font-size:0.88rem; color:var(--text); text-decoration:none; font-weight:300; transition:color 0.3s; }

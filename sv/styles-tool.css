@@ -1,6 +1,9 @@
 ::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px;
   border-radius: 50%; background: var(--leaf); border: 2px solid var(--deep); }
 
+/* Tool pages: linen background edge-to-edge (nav + footer have their own dark bg) */
+body { background: var(--linen); }
+
 /* ── TOOL PAGE OVERRIDES ─────────────────────────────────────────────────── */
 /* Fix text color inheritance: body defaults to var(--frost) but .page uses linen bg */
 .page, .page-wide { color: var(--text); }
@@ -410,7 +413,7 @@
 .tl-row { display: flex; align-items: center; gap: 1rem; padding: 0.4rem 0;
   border-bottom: 1px solid rgba(107,143,99,0.08); }
 .tl-year { font-size: 0.68rem; color: var(--sage); min-width: 40px; font-weight: 500; }
-.tl-row .tl-bar-wrap { flex: 1; height: 6px; background: rgba(107,143,99,0.12); border-radius: 3px; }
+.tl-row .tl-bar-wrap { flex: 1; height: 6px; background: rgba(107,143,99,0.12); border-radius: 3px; overflow: hidden; }
 .tl-row .tl-bar { height: 6px; background: var(--leaf); border-radius: 3px; transition: width 0.4s; }
 .tl-val { font-size: 0.82rem; color: var(--frost); min-width: 70px; text-align: right; }
 
@@ -459,6 +462,36 @@
 .tool-lead-form button { background: #5a9e2f; color: #fff; border: none; padding: 0.85rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-weight: 400; white-space: nowrap; transition: background 0.3s; }
 .tool-lead-form button:hover { background: #3a6c1a; }
 .tool-lead-trust { display: block; margin-top: 1rem; font-size: 0.72rem; color: var(--muted); font-weight: 300; }
+
+/* Process steps block */
+.tool-lead-process { margin: 1.8rem auto 0; max-width: 360px; text-align: left; }
+.tool-lead-process-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); font-weight: 500; display: block; margin-bottom: 0.7rem; }
+.tool-lead-steps { margin: 0; padding: 0 0 0 1.2rem; list-style: decimal; }
+.tool-lead-steps li { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.6; margin-bottom: 0.25rem; }
+
+/* Benchmark message (co2 tool — below results grid) */
+.results-note { font-size: 0.68rem; color: var(--subtle); text-align: center;
+  margin: 0.4rem 0 0; font-style: italic; font-weight: 300; }
+.benchmark-msg { font-size: 0.85rem; font-weight: 300; line-height: 1.6;
+  padding: 0.6rem 1rem; text-align: center; min-height: 0; transition: color 0.3s; }
+.benchmark-msg:empty { display: none; }
+.benchmark-high { color: #3d7a1e; font-weight: 500; }
+.benchmark-mid { color: var(--muted); }
+.benchmark-low { color: var(--muted); }
+
+/* Tool lead — areal select + phone + alt CTA */
+.tool-lead-select { flex: 1; min-width: 160px; padding: 0.85rem 1rem;
+  border: 1px solid rgba(61,92,56,0.25); background: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text);
+  outline: none; -webkit-appearance: none; appearance: none; cursor: pointer; }
+.tool-lead-select:focus { border-color: var(--sage); }
+.tool-lead-phone { flex: 1 1 100%; width: 100%; padding: 0.85rem 1rem;
+  border: 1px solid rgba(61,92,56,0.25); background: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); outline: none; }
+.tool-lead-phone:focus { border-color: var(--sage); }
+.tool-lead-alt-cta { font-size: 0.85rem; color: var(--moss); font-weight: 500;
+  text-decoration: none; transition: color 0.2s; }
+.tool-lead-alt-cta:hover { color: var(--leaf); }
 
 /* Inputs in cta-box and contact-form (linen bg) */
 .cta-box input[type=text], .cta-box input[type=email], .cta-box input[type=tel],
