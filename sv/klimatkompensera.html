@@ -106,6 +106,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="benchmarkMsg" class="benchmark-msg"></div>
   <p id="benchmarkExtra" style="font-size:0.82rem;color:var(--muted);margin-top:0.4rem;font-weight:300;min-height:1.2em;"></p>
+  <p id="contextMsg" style="font-size:0.82rem;color:var(--muted);margin-top:0.2rem;font-weight:300;font-style:italic;min-height:1.2em;"></p>
+
+  <!-- ── EMOTIONAL BRIDGE ── -->
+  <div style="padding:2rem 1.8rem;background:var(--linen);border-top:2px solid rgba(61,92,56,0.08);margin-top:2rem;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:300;color:var(--forest);line-height:1.25;margin-bottom:0.9rem;">Gör något konkret av din klimatpåverkan</h2>
+    <p style="font-size:0.88rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:560px;">Din beräkning visar inte bara ett problem — den visar också vad du kan göra åt det. Genom att koppla din klimatpåverkan till svensk skog skapas en faktisk klimatnytta — inte bara en kompensation på papper.</p>
+  </div>
 
   <!-- ── PAYMENT BLOCK ── -->
   <div class="tool-lead" id="paymentBlock">
@@ -133,25 +140,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Trust bullets -->
     <div style="margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(61,92,56,0.12);">
-      <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.8rem;">Hur din kompensation fungerar</p>
-      <div class="comp-row" style="margin-bottom:0.6rem;">
-        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><path d="M12 22V12m0 0C12 7 7 4 2 6m10 6c0-5 5-8 10-6"/></svg></div>
-        <span class="comp-text">Din kompensation kopplas till ett specifikt skogsprojekt i Sverige</span>
-      </div>
-      <div class="comp-row" style="margin-bottom:0.6rem;">
-        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <span class="comp-text">Projekten är spårbara och verifierbara — du kan följa upp dem</span>
-      </div>
-      <div class="comp-row">
-        <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <span class="comp-text">Du får dokumentation du kan spara och dela</span>
-      </div>
+      <p style="font-size:0.78rem;color:var(--forest);font-weight:300;line-height:1.9;margin:0;">
+        ✓ Klimatnytta kopplad till svensk skog<br>
+        ✓ Spårbart — inte anonyma globala projekt<br>
+        ✓ Bidrar till riktiga klimataffärer
+      </p>
     </div>
 
     <!-- Primary CTA -->
     <button id="payBtn" onclick="initiatePayment()" style="display:block;width:100%;background:#5a9e2f;color:#fff;border:none;padding:1.1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background 0.3s;text-align:center;" onmouseover="this.style.background='#3a6c1a'" onmouseout="this.style.background='#5a9e2f'">Kompensera mina utsläpp →</button>
     <p style="font-size:0.74rem;color:var(--muted);margin-top:0.8rem;font-weight:300;">Nästa steg: vi bekräftar din order och skickar dokumentation per e-post.</p>
+    <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem;font-weight:300;">Ingen bindning. Du kan pausa när som helst.</p>
   </div>
+
+  <p style="font-size:0.78rem;color:var(--muted);font-weight:300;font-style:italic;margin-top:1.2rem;">Fler privatpersoner börjar nu koppla sin klimatpåverkan till lokal klimatnytta.</p>
 
   <!-- ── LEAD FALLBACK ── -->
   <div style="margin-top:2rem;padding-top:1.8rem;border-top:1px solid rgba(61,92,56,0.1);">
@@ -243,6 +245,12 @@ function updateBenchmark(tons) {
     msg.className = 'benchmark-msg benchmark-low';
     if (extra) extra.textContent = 'Det här är en nivå många väljer att börja kompensera.';
     if (tier) tier.value = 'high';
+  }
+
+  var ctx = document.getElementById('contextMsg');
+  if (ctx) {
+    var flights = Math.round(tons / 0.5);
+    ctx.textContent = 'Det motsvarar ungefär ' + flights + ' envägsresor med flyg inom Europa.';
   }
 }
 
