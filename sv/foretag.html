@@ -193,11 +193,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div id="riskBlock" style="padding:1.5rem;background:rgba(10,26,13,0.4);margin-top:0.5rem;">
         <span class="comp-title" id="riskLabel"></span>
         <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--frost);line-height:1.2;margin-bottom:0.8rem;" id="riskHeading"></p>
-        <p style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.7;" id="riskText"></p>
-        <div style="margin-top:1.4rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
-          <button class="btn btn-primary" onclick="scrollToForm()">Få en konkret bedömning av ert upplägg →</button>
-          <button onclick="restartQuiz()" style="background:none;border:none;color:var(--sage);font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Gör om</button>
+        <p style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.7;margin-bottom:0.6rem;" id="riskText"></p>
+        <p style="font-size:0.85rem;color:rgba(168,196,160,0.6);font-weight:300;line-height:1.7;font-style:italic;" id="riskDirection"></p>
+        <div style="margin-top:1.4rem;display:flex;flex-direction:column;gap:0.6rem;align-items:flex-start;">
+          <button class="btn btn-primary" onclick="scrollToForm()">Se om ert upplägg håller vid granskning →</button>
+          <p style="font-size:0.72rem;color:rgba(168,196,160,0.45);font-weight:300;margin:0;">Ingen förpliktelse. En första genomgång baserad på era uppgifter.</p>
         </div>
+        <p style="margin-top:1.2rem;font-size:0.68rem;color:rgba(168,196,160,0.3);font-weight:300;line-height:1.6;border-top:1px solid rgba(107,143,99,0.1);padding-top:1rem;">Detta är en förenklad bedömning baserad på era svar — en full analys ger en mer exakt bild.</p>
+        <button onclick="restartQuiz()" style="background:none;border:none;color:rgba(168,196,160,0.35);font-family:'DM Sans',sans-serif;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:0.4rem;padding:0;">Gör om</button>
       </div>
     </div>
   </div>
@@ -312,9 +315,24 @@ var scores = {1:null, 2:null, 3:null};
 var labels = {1:'',    2:'',    3:''};
 
 var RISK = {
-  high: { label:'Förhöjd risk vid extern granskning', heading:'Nuvarande upplägg innebär förhöjd risk vid revision', text:'Intern uppskattning och otydliga projektbeskrivningar håller inte under CSRD. Utan spårbar dokumentation riskerar ni att inte kunna styrka era klimatpåståenden inför revisor eller tillsynsmyndighet — vilket kan leda till anmärkning i hållbarhetsrapporten.' },
-  mid:  { label:'Dokumentationsluckor som behöver åtgärdas', heading:'Det finns luckor som kan bli problematiska vid revision', text:'Er process har en grund men saknar den spårbarhet CSRD kräver. Att hänvisa till ett klimatprojekt räcker inte — ni behöver kunna visa vad som gjorts, hur det verifierats och av vem.' },
-  low:  { label:'Relativt stabilt — men kontrollera spårbarheten', heading:'Ert upplägg är starkare än de flesta, men CSRD ställer specifika krav', text:'Ni har en bättre grund än många bolag — men CSRD:s krav på extern verifiering är specifika. En genomgång kan bekräfta att er dokumentation håller, eller identifiera luckor innan revisionen.' }
+  high: {
+    label:     'Förhöjd risk vid extern granskning',
+    heading:   'Förhöjd risk vid extern granskning',
+    text:      'Nuvarande klimatåtgärder saknar tydlig spårbarhet och koppling till faktisk klimatnytta. Det gör upplägget svårt att försvara vid revision.',
+    direction: 'Detta är ett upplägg vi normalt rekommenderar att se över inför nästa rapporteringscykel.'
+  },
+  mid: {
+    label:     'Vissa delar fungerar — men risk finns vid granskning',
+    heading:   'Vissa delar fungerar — men risk finns vid granskning',
+    text:      'Det finns delar som fungerar, men vissa komponenter saknar spårbarhet eller tydlig koppling till effekt. Detta blir ofta synligt vid granskning.',
+    direction: 'Det finns en stabil grund, men upplägget behöver ofta justeras för att hålla vid granskning.'
+  },
+  low: {
+    label:     'Nuvarande upplägg saknar tillräcklig verifierbarhet',
+    heading:   'Nuvarande upplägg saknar tillräcklig verifierbarhet',
+    text:      'Nuvarande upplägg bygger ofta på uppskattningar eller externa projekt där kopplingen till faktisk klimatnytta är otydlig.',
+    direction: 'För att detta ska fungera i rapportering krävs normalt en tydligare koppling mellan åtgärd och verifierbar klimatnytta.'
+  }
 };
 
 function selectOpt(step, score, el) {
@@ -350,6 +368,7 @@ function showResult() {
   document.getElementById('riskLabel').style.color   = tier==='high'?'#e06050':tier==='mid'?'var(--gold)':'var(--leaf)';
   document.getElementById('riskHeading').textContent = d.heading;
   document.getElementById('riskText').textContent    = d.text;
+  document.getElementById('riskDirection').textContent = d.direction;
   document.getElementById('quizResult').classList.add('visible');
 
   document.getElementById('formTier').value = tier;
