@@ -198,9 +198,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="margin-top:1.4rem;display:flex;flex-direction:column;gap:0.6rem;align-items:flex-start;">
           <button class="btn btn-primary" onclick="scrollToForm()">Se om ert upplägg håller vid granskning →</button>
           <p style="font-size:0.72rem;color:rgba(168,196,160,0.45);font-weight:300;margin:0;">Ingen förpliktelse. En första genomgång baserad på era uppgifter.</p>
+          <p style="font-size:0.72rem;color:rgba(168,196,160,0.3);font-weight:300;margin:0;">Bolag inom fastighet, industri och energi ser just nu över sina klimatupplägg inför CSRD.</p>
         </div>
         <p style="margin-top:1.2rem;font-size:0.68rem;color:rgba(168,196,160,0.3);font-weight:300;line-height:1.6;border-top:1px solid rgba(107,143,99,0.1);padding-top:1rem;">Detta är en förenklad bedömning baserad på era svar — en full analys ger en mer exakt bild.</p>
         <button onclick="restartQuiz()" style="background:none;border:none;color:rgba(168,196,160,0.35);font-family:'DM Sans',sans-serif;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:0.4rem;padding:0;">Gör om</button>
+      </div>
+
+      <!-- MINI-CASE -->
+      <div style="margin-top:1px;padding:1.4rem 1.5rem;background:rgba(255,255,255,0.03);border-left:2px solid rgba(196,162,74,0.3);">
+        <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,162,74,0.6);font-weight:500;margin-bottom:0.7rem;">Exempel från verkligheten</p>
+        <p style="font-size:0.85rem;color:rgba(168,196,160,0.7);font-weight:300;line-height:1.75;margin-bottom:1rem;">Ett svenskt fastighetsbolag gick från generella klimatkrediter till spårbar skogsbaserad lösning — vilket förenklade deras rapportering och minskade osäkerheten vid revision.</p>
+        <button onclick="scrollToForm()" style="background:none;border:none;padding:0;color:var(--sage);font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Se hur det kan se ut för er →</button>
       </div>
     </div>
   </div>
@@ -293,8 +301,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input type="text" id="f-tons" name="volym_co2" placeholder="t.ex. 500 ton">
         </div>
         <div class="full">
-          <button type="submit" class="btn-cta" style="width:100%;margin-top:0.5rem;">Få en konkret bedömning av ert upplägg →</button>
+          <button type="submit" class="btn-cta" style="width:100%;margin-top:0.5rem;">Se om ert upplägg håller vid granskning →</button>
           <p style="font-size:0.72rem;color:var(--muted);font-weight:300;margin-top:0.6rem;text-align:center;">Ingen förpliktelse. Första bedömning baserad på era uppgifter.</p>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(61,92,56,0.12);">
+            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Baserat på faktiska svenska fastigheter</p>
+            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Anpassat för CSRD och extern granskning</p>
+            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Ingen förpliktelse — endast en första bedömning</p>
+          </div>
         </div>
       </div>
     </form>
