@@ -89,31 +89,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
 
 /* ── Feedback widgets ─────────────────────────────────────────────────────── */
-#exit-feedback {
-  position: fixed; top: -220px; right: 1.5rem; z-index: 500;
-  width: 290px; background: var(--ink);
-  border: 1px solid rgba(107,143,99,0.22); padding: 1.4rem 1.6rem 1.2rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.45); transition: top 0.35s ease;
-}
-#exit-feedback.visible { top: 5rem; }
-/* ── Exit-feedback (dark, top-right) ── */
-#exit-feedback { position: fixed; top: -240px; right: 1.5rem; z-index: 500; width: 290px;
-  background: var(--ink); border: 1px solid rgba(107,143,99,0.22);
-  padding: 1.4rem 1.6rem 1.2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.45); transition: top 0.35s ease; }
-#exit-feedback.visible { top: 5rem; }
-#exit-feedback .fb-title { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--sage); font-weight: 500; margin-bottom: 1rem; display: block; }
-#exit-feedback .fb-opts { display: flex; flex-direction: column; gap: 0.55rem; }
-#exit-feedback .fb-opts label { display: flex; align-items: flex-start; gap: 0.55rem; cursor: pointer;
-  font-size: 0.8rem; color: rgba(168,196,160,0.6); font-weight: 300; line-height: 1.4; }
-#exit-feedback .fb-opts label:hover { color: var(--mist); }
-#exit-feedback .fb-opts input[type="radio"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--sage); cursor: pointer; }
-#exit-feedback .fb-submit { margin-top: 1rem; background: none; border: 1px solid rgba(107,143,99,0.28);
-  color: var(--sage); font-family: 'DM Sans', sans-serif; font-size: 0.68rem;
-  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.1rem; cursor: pointer; transition: all 0.2s; }
-#exit-feedback .fb-submit:hover { border-color: var(--sage); color: var(--frost); }
-#exit-feedback .fb-thanks { font-size: 0.82rem; color: var(--sage); font-weight: 300; line-height: 1.6; }
-
 /* ── Timed-feedback (light card, bottom-right) ── */
 #timed-feedback {
   position: fixed; bottom: -420px; right: 1.5rem; z-index: 500; width: 310px;
@@ -542,23 +517,6 @@ function submitForetagLead(e, form) {
   function markShown() { try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e) {} }
   function formDone() { try { return sessionStorage.getItem('foretag_form_done'); } catch(e) { return false; } }
 
-  function buildInner(id) {
-    var title = id === 'exit-feedback' ? 'Innan du går — vad saknar du?' : 'Vad skulle du behöva för att ta nästa steg?';
-    var opts = OPTIONS.map(function(o) {
-      return '<label><input type="radio" name="fb_' + id + '" value="' + o + '"><span>' + o + '</span></label>';
-    }).join('');
-    var close = id === 'exit-feedback' ? '<button class="fb-close" onclick="fbClose()" aria-label="Stäng">×</button>' : '';
-    return close +
-      '<span class="fb-title">' + title + '</span>' +
-      '<div class="fb-opts">' + opts + '</div>' +
-      '<button class="fb-submit" onclick="fbSubmit(\'' + id + '\')">Skicka</button>';
-  }
-
-  window.fbClose = function() {
-    var el = document.getElementById('exit-feedback');
-    if (el) { el.classList.remove('visible'); }
-  };
-
   window.fbTimedClose = function() {
     var el = document.getElementById('timed-feedback');
     if (el) { el.classList.remove('visible'); }
@@ -568,32 +526,14 @@ function submitForetagLead(e, form) {
     var el = document.getElementById(id);
     var checked = el && el.querySelector('input[type="radio"]:checked');
     if (!checked) return;
-    var trigger = id === 'exit-feedback' ? 'exit_intent' : 'timed_20s';
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'conversion_feedback', feedback_option: checked.value, feedback_trigger: trigger, page: 'foretag' });
+    window.dataLayer.push({ event: 'conversion_feedback', feedback_option: checked.value, feedback_trigger: 'timed_20s', page: 'foretag' });
     el.innerHTML = '<p class="fb-thanks">Stort tack — det hjälper oss förbättra.</p>';
-    if (id !== 'timed-feedback') setTimeout(window.fbClose, 2500);
-    else setTimeout(window.fbTimedClose, 2500);
+    setTimeout(window.fbTimedClose, 2500);
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    // Inject exit-intent widget
-    var exitEl = document.createElement('div');
-    exitEl.id = 'exit-feedback';
-    document.body.appendChild(exitEl);
-
-    // Desktop exit intent
-    if (window.innerWidth >= 900) {
-      document.addEventListener('mouseleave', function handler(e) {
-        if (e.clientY > 10 || isShown() || formDone()) return;
-        document.removeEventListener('mouseleave', handler);
-        exitEl.innerHTML = buildInner('exit-feedback');
-        markShown();
-        requestAnimationFrame(function() { exitEl.classList.add('visible'); });
-      });
-    }
-
-    // Timed popup — after 40 seconds
+    // Timed popup — after 20 seconds
     var timedEl = document.createElement('div');
     timedEl.id = 'timed-feedback';
     document.body.appendChild(timedEl);
