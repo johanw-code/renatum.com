@@ -96,7 +96,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   box-shadow: 0 8px 32px rgba(0,0,0,0.45); transition: top 0.35s ease;
 }
 #exit-feedback.visible { top: 1rem; }
-/* ── Exit-feedback (dark fixed overlay) ── */
+/* ── Exit-feedback (dark, top-right) ── */
+#exit-feedback { position: fixed; top: -240px; right: 1.5rem; z-index: 500; width: 290px;
+  background: var(--ink); border: 1px solid rgba(107,143,99,0.22);
+  padding: 1.4rem 1.6rem 1.2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.45); transition: top 0.35s ease; }
+#exit-feedback.visible { top: 1rem; }
 #exit-feedback .fb-title { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--sage); font-weight: 500; margin-bottom: 1rem; display: block; }
 #exit-feedback .fb-opts { display: flex; flex-direction: column; gap: 0.55rem; }
@@ -106,31 +110,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 #exit-feedback .fb-opts input[type="radio"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--sage); cursor: pointer; }
 #exit-feedback .fb-submit { margin-top: 1rem; background: none; border: 1px solid rgba(107,143,99,0.28);
   color: var(--sage); font-family: 'DM Sans', sans-serif; font-size: 0.68rem;
-  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.1rem;
-  cursor: pointer; transition: all 0.2s; }
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.1rem; cursor: pointer; transition: all 0.2s; }
 #exit-feedback .fb-submit:hover { border-color: var(--sage); color: var(--frost); }
-.fb-close { position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: none;
-  color: rgba(168,196,160,0.25); font-size: 1.1rem; cursor: pointer; padding: 0; line-height: 1; }
-.fb-close:hover { color: rgba(168,196,160,0.6); }
 #exit-feedback .fb-thanks { font-size: 0.82rem; color: var(--sage); font-weight: 300; line-height: 1.6; }
 
-/* ── Scroll-feedback (inline, light bg) ── */
-#scroll-feedback { display: none; padding: 2rem 2rem 1.6rem; margin: 1.5rem 0;
-  background: var(--linen); border: 1px solid rgba(61,92,56,0.12); border-top: 2px solid var(--sage); }
-#scroll-feedback.visible { display: block; }
-#scroll-feedback .fb-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
-  font-weight: 300; color: var(--forest); line-height: 1.3; margin-bottom: 1.2rem; display: block; }
-#scroll-feedback .fb-opts { display: flex; flex-direction: column; gap: 0.4rem; }
-#scroll-feedback .fb-opts label { display: flex; align-items: center; gap: 0.7rem; cursor: pointer;
-  font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.4;
-  padding: 0.55rem 0.8rem; border: 1px solid rgba(61,92,56,0.12); background: #fff; transition: all 0.15s; }
-#scroll-feedback .fb-opts label:hover { border-color: var(--sage); color: var(--forest); background: rgba(61,92,56,0.04); }
-#scroll-feedback .fb-opts input[type="radio"] { flex-shrink: 0; accent-color: var(--moss); cursor: pointer; }
-#scroll-feedback .fb-submit { margin-top: 1rem; background: var(--moss); border: none; color: #fff;
-  font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em;
+/* ── Timed-feedback (light card, bottom-right) ── */
+#timed-feedback { position: fixed; bottom: -360px; right: 1.5rem; z-index: 500; width: 300px;
+  background: #fff; border: 1px solid rgba(61,92,56,0.15); border-top: 2px solid var(--sage);
+  padding: 1.6rem 1.6rem 1.4rem; box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  transition: bottom 0.4s cubic-bezier(0.34,1.2,0.64,1); }
+#timed-feedback.visible { bottom: 1.5rem; }
+#timed-feedback .fb-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+  font-weight: 300; color: var(--forest); line-height: 1.3; margin-bottom: 1.1rem; display: block; }
+#timed-feedback .fb-opts { display: flex; flex-direction: column; gap: 0.35rem; }
+#timed-feedback .fb-opts label { display: flex; align-items: center; gap: 0.6rem; cursor: pointer;
+  font-size: 0.8rem; color: var(--muted); font-weight: 300; line-height: 1.4;
+  padding: 0.5rem 0.7rem; border: 1px solid rgba(61,92,56,0.1); background: var(--linen); transition: all 0.15s; }
+#timed-feedback .fb-opts label:hover { border-color: var(--sage); color: var(--forest); background: rgba(61,92,56,0.04); }
+#timed-feedback .fb-opts input[type="radio"] { flex-shrink: 0; accent-color: var(--moss); cursor: pointer; }
+#timed-feedback .fb-submit { margin-top: 0.9rem; background: var(--moss); border: none; color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 0.66rem; letter-spacing: 0.12em;
   text-transform: uppercase; padding: 0.6rem 1.4rem; cursor: pointer; transition: background 0.2s; }
-#scroll-feedback .fb-submit:hover { background: var(--forest); }
-#scroll-feedback .fb-thanks { font-size: 0.88rem; color: var(--moss); font-weight: 300; line-height: 1.6; }
+#timed-feedback .fb-submit:hover { background: var(--forest); }
+#timed-feedback .fb-thanks { font-size: 0.85rem; color: var(--moss); font-weight: 300; line-height: 1.6; }
+
+/* ── Shared close button ── */
+.fb-close { position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: none;
+  color: rgba(61,92,56,0.3); font-size: 1.2rem; cursor: pointer; padding: 0; line-height: 1; }
+.fb-close:hover { color: var(--moss); }
 </style>
 </head>
 <body>
@@ -312,9 +319,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="note">Till skillnad från globala projekt bygger detta på faktiska fastigheter i Sverige — med spårbarhet ner till fastighetsnivå.</p>
   </div>
-
-  <!-- SCROLL FEEDBACK (inline, 70% scroll trigger) -->
-  <div id="scroll-feedback"></div>
 
   <!-- CTA FORM -->
   <div class="tool-lead" id="kontakt">
@@ -517,19 +521,21 @@ function submitForetagLead(e, form) {
     if (el) { el.classList.remove('visible'); }
   };
 
+  window.fbTimedClose = function() {
+    var el = document.getElementById('timed-feedback');
+    if (el) { el.classList.remove('visible'); }
+  };
+
   window.fbSubmit = function(id) {
     var el = document.getElementById(id);
     var checked = el && el.querySelector('input[type="radio"]:checked');
     if (!checked) return;
+    var trigger = id === 'exit-feedback' ? 'exit_intent' : 'timed_40s';
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'conversion_feedback',
-      feedback_option: checked.value,
-      feedback_trigger: id === 'exit-feedback' ? 'exit_intent' : 'scroll_70',
-      page: 'foretag'
-    });
+    window.dataLayer.push({ event: 'conversion_feedback', feedback_option: checked.value, feedback_trigger: trigger, page: 'foretag' });
     el.innerHTML = '<p class="fb-thanks">Stort tack — det hjälper oss förbättra.</p>';
-    if (id === 'exit-feedback') { setTimeout(window.fbClose, 2500); }
+    if (id !== 'timed-feedback') setTimeout(window.fbClose, 2500);
+    else setTimeout(window.fbTimedClose, 2500);
   };
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -549,17 +555,19 @@ function submitForetagLead(e, form) {
       });
     }
 
-    // Scroll 70% trigger
-    var scrollDone = false;
-    window.addEventListener('scroll', function() {
-      if (scrollDone || isShown() || formDone()) return;
-      if ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight >= 0.70) {
-        scrollDone = true;
-        var el = document.getElementById('scroll-feedback');
-        if (el) { el.innerHTML = buildInner('scroll-feedback'); el.classList.add('visible'); }
-        markShown();
-      }
-    }, { passive: true });
+    // Timed popup — after 40 seconds
+    var timedEl = document.createElement('div');
+    timedEl.id = 'timed-feedback';
+    document.body.appendChild(timedEl);
+
+    setTimeout(function() {
+      if (isShown() || formDone()) return;
+      timedEl.innerHTML =
+        '<button class="fb-close" onclick="fbTimedClose()" aria-label="Stäng">×</button>' +
+        buildInner('timed-feedback');
+      markShown();
+      requestAnimationFrame(function() { timedEl.classList.add('visible'); });
+    }, 40000);
   });
 })();
 </script>
