@@ -568,7 +568,7 @@ function submitForetagLead(e, form) {
     var el = document.getElementById(id);
     var checked = el && el.querySelector('input[type="radio"]:checked');
     if (!checked) return;
-    var trigger = id === 'exit-feedback' ? 'exit_intent' : 'timed_40s';
+    var trigger = id === 'exit-feedback' ? 'exit_intent' : 'timed_20s';
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: 'conversion_feedback', feedback_option: checked.value, feedback_trigger: trigger, page: 'foretag' });
     el.innerHTML = '<p class="fb-thanks">Stort tack — det hjälper oss förbättra.</p>';
