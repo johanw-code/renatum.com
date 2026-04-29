@@ -71,17 +71,32 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
 .how-step.accent .how-title { color:#fff !important; font-weight:400; }
 .how-step.accent .how-desc { color:rgba(255,255,255,0.88) !important; }
 
-/* AUDIENCES */
-.audiences { display:grid; grid-template-columns:1fr 1fr; }
-.aud { padding:7rem 5rem; }
-.aud-owner { background:var(--linen); }
-.aud-owner .aud-list li { color:var(--muted); }
-.aud-owner .aud-list li::before { background:var(--sage); }
-.aud-corp  { background:var(--deep); }
-.aud-list { list-style:none; margin:2rem 0 2.5rem; display:flex; flex-direction:column; gap:0.9rem; }
-.aud-list li { display:flex; align-items:flex-start; gap:0.9rem; font-size:0.85rem; color:var(--mist); font-weight:300; line-height:1.6; }
-.aud-list li::before { content:''; width:5px; height:5px; background:var(--sage); border-radius:50%; flex-shrink:0; margin-top:6px; }
-.aud-corp .aud-list li::before { background:var(--gold); }
+/* AUDIENCE CARDS */
+.aud-cards-section { padding:8rem 3rem; background:var(--linen); }
+.aud-cards-inner { max-width:1140px; margin:0 auto; }
+.aud-cards-header { text-align:center; margin-bottom:4rem; }
+.aud-cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(74,103,65,0.12); margin-bottom:0; }
+.aud-card { background:var(--white); padding:3rem 2.5rem 2.5rem; display:flex; flex-direction:column; text-decoration:none; color:inherit; border-top:2px solid transparent; transition:background 0.25s, border-color 0.25s; }
+.aud-card:hover { background:rgba(74,103,65,0.04); border-top-color:var(--sage); }
+.aud-card-accent { background:var(--forest); border-top-color:transparent; }
+.aud-card-accent:hover { background:#1a3020; border-top-color:var(--sage); }
+.aud-card-eyebrow { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--moss); font-weight:500; display:block; margin-bottom:1.2rem; }
+.aud-card-accent .aud-card-eyebrow { color:var(--sage); }
+.aud-card-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2vw,1.85rem); font-weight:300; color:var(--forest); line-height:1.2; margin-bottom:1rem; }
+.aud-card-accent .aud-card-title { color:var(--white); }
+.aud-card-desc { font-size:0.84rem; line-height:1.8; color:var(--muted); font-weight:300; flex:1; margin-bottom:2rem; }
+.aud-card-accent .aud-card-desc { color:rgba(255,255,255,0.58); }
+.aud-card-link { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--moss); font-weight:500; transition:letter-spacing 0.25s; }
+.aud-card:hover .aud-card-link { letter-spacing:0.18em; }
+.aud-card-accent .aud-card-link { color:var(--leaf); }
+
+/* PLATFORM STEPS */
+.platform-steps { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; background:rgba(74,103,65,0.06); border-top:1px solid rgba(74,103,65,0.1); }
+.platform-step { padding:3rem 3rem 2.5rem; text-align:center; }
+.platform-step-divider { background:rgba(74,103,65,0.12); }
+.platform-step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:rgba(61,92,56,0.18); line-height:1; margin-bottom:0.8rem; }
+.platform-step-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--forest); margin-bottom:0.5rem; }
+.platform-step-desc { font-size:0.82rem; line-height:1.75; color:var(--muted); font-weight:300; max-width:260px; margin:0 auto; }
 
 /* CO2 HIGHLIGHT */
 .co2-section { padding:8rem 3rem; background:var(--linen); }
@@ -182,8 +197,13 @@ body { font-family:'DM Sans',sans-serif; background:var(--linen); color:var(--te
   .hero { height:calc(100svh - 60px); height:calc(100vh - 60px); min-height:520px; align-items:flex-start; }
   .hero-inner { grid-template-columns:1fr; padding:3rem 1.5rem 5rem; align-items:flex-start; } .hero-right { display:none; }
   .how-steps, .test-grid, .tools-grid { grid-template-columns:1fr; }
-  .audiences, .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }
-  .about-img { min-height:300px; } .aud { padding:5rem 2rem; }
+  .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }
+  .about-img { min-height:300px; }
+  .aud-cards-section { padding:5rem 1.5rem; }
+  .aud-cards-grid { grid-template-columns:1fr; }
+  .platform-steps { grid-template-columns:1fr; }
+  .platform-step-divider { display:none; }
+  .platform-step { padding:2rem 1.5rem; }
   .how, .co2-section, .tools-section, .testimonials, .contact { padding:5rem 1.5rem; }
   .band { padding:1.5rem; } .footer { padding:4rem 1.5rem 2rem; }
   .form-row { grid-template-columns:1fr; } .cookie-banner { padding:1rem 1.5rem; }
