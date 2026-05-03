@@ -74,6 +74,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .risk-mid  .comp-title { color: var(--gold); }
 .risk-low  .comp-title { color: var(--leaf); }
 
+/* Institutional tone — left-align form, remove centering bias */
+.tool-lead { text-align: left; }
+.tool-lead-p { max-width: 600px; margin: 0 0 2rem; }
+.quiz-pips { margin-bottom: 2.5rem; }
+
 /* Contact form inside tool-lead — light background */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.5rem; }
 .contact-grid .full { grid-column: 1 / -1; }
@@ -165,17 +170,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- HEADER -->
   <div class="ph">
-    <span class="eyebrow">Tusentals svenska bolag omfattas av CSRD de kommande åren.</span>
+    <span class="eyebrow">CSRD &amp; hållbarhetsredovisning</span>
     <h1>Klimatdata som håller vid granskning — <em>inte bara i rapporten</em></h1>
     <p class="sub">Från 2025 krävs att era klimatåtgärder kan verifieras externt. De flesta bolag saknar idag den spårbarhet som revision kräver.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;align-items:center;margin-top:2rem;flex-wrap:wrap;">
+    <div style="display:flex;gap:1.5rem;justify-content:center;align-items:center;margin-top:2rem;flex-wrap:wrap;">
       <a href="#bedomning" class="btn btn-primary">Få en konkret bedömning av ert upplägg →</a>
-      <a href="#kontakt" class="btn btn-outline-light">Se vad detta innebär för er →</a>
+      <a href="#kontakt" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(168,196,160,0.65);text-decoration:none;border-bottom:1px solid rgba(168,196,160,0.2);padding-bottom:2px;">Kontakta oss direkt</a>
     </div>
   </div>
 
   <!-- PROBLEM -->
-  <div class="comparison" style="margin-bottom:2rem;">
+  <div class="comparison" style="margin-bottom:3.5rem;">
     <span class="comp-title">De flesta bolag sitter med samma problem</span>
     <div class="comp-row">
       <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
@@ -193,12 +198,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
       <span class="comp-text">Otydlig koppling mellan åtgärd och effekt</span>
     </div>
-    <p class="note" style="margin-top:1.5rem;font-style:normal;font-size:0.9rem;color:rgba(168,196,160,0.7);border-left:2px solid rgba(196,162,74,0.4);padding-left:1rem;">Det här är inte ett marknadsproblem — det är ett revisionsproblem.</p>
+    <p class="note" style="margin-top:1.5rem;font-style:italic;font-size:0.88rem;color:rgba(168,196,160,0.5);">Det här är inte ett marknadsproblem — det är ett revisionsproblem.</p>
   </div>
 
   <!-- CONSEQUENCES -->
-  <div class="comparison" style="margin-bottom:2rem;">
-    <span class="comp-title">Vad händer om inget förändras?</span>
+  <div class="comparison" style="margin-bottom:3.5rem;">
+    <span class="comp-title">Konsekvenser vid granskning</span>
     <div class="comp-row">
       <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
       <span class="comp-text">Klimatpåståenden kan inte styrkas vid revision — risk för anmärkning i hållbarhetsrapporten.</span>
@@ -215,7 +220,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- QUIZ -->
   <div class="comparison" id="bedomning">
-    <span class="comp-title">Självbedömning — testa ert läge på 30 sekunder</span>
+    <span class="comp-title">Strukturerad bedömning av ert upplägg</span>
 
     <div class="quiz-pips">
       <div class="quiz-pip active" id="pip1"></div>
@@ -261,16 +266,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="font-size:0.85rem;color:rgba(168,196,160,0.6);font-weight:300;line-height:1.7;font-style:italic;" id="riskDirection"></p>
         <div style="margin-top:1.4rem;display:flex;flex-direction:column;gap:0.6rem;align-items:flex-start;">
           <button class="btn btn-primary" onclick="scrollToForm()">Se om ert upplägg håller vid granskning →</button>
-          <p style="font-size:0.72rem;color:rgba(168,196,160,0.45);font-weight:300;margin:0;">Ingen förpliktelse. En första genomgång baserad på era uppgifter.</p>
-          <p style="font-size:0.72rem;color:rgba(168,196,160,0.3);font-weight:300;margin:0;">Bolag inom fastighet, industri och energi ser just nu över sina klimatupplägg inför CSRD.</p>
+          <p style="font-size:0.72rem;color:rgba(168,196,160,0.4);font-weight:300;margin:0;">Ingen förpliktelse.</p>
         </div>
         <p style="margin-top:1.2rem;font-size:0.68rem;color:rgba(168,196,160,0.3);font-weight:300;line-height:1.6;border-top:1px solid rgba(107,143,99,0.1);padding-top:1rem;">Detta är en förenklad bedömning baserad på era svar — en full analys ger en mer exakt bild.</p>
         <button onclick="restartQuiz()" style="background:none;border:none;color:rgba(168,196,160,0.35);font-family:'DM Sans',sans-serif;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:0.4rem;padding:0;">Gör om</button>
       </div>
 
       <!-- MINI-CASE -->
-      <div style="margin-top:1px;padding:1.4rem 1.5rem;background:rgba(255,255,255,0.03);border-left:2px solid rgba(196,162,74,0.3);">
-        <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(196,162,74,0.6);font-weight:500;margin-bottom:0.7rem;">Exempel från verkligheten</p>
+      <div style="margin-top:2rem;padding:1.4rem 0 0;border-top:1px solid rgba(107,143,99,0.12);">
+        <p style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(168,196,160,0.35);font-weight:500;margin-bottom:0.7rem;">Exempel</p>
         <p style="font-size:0.85rem;color:rgba(168,196,160,0.7);font-weight:300;line-height:1.75;margin-bottom:1rem;">Ett svenskt fastighetsbolag gick från generella klimatkrediter till spårbar skogsbaserad lösning — vilket förenklade deras rapportering och minskade osäkerheten vid revision.</p>
         <button onclick="scrollToForm()" style="background:none;border:none;padding:0;color:var(--sage);font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px;">Se hur det kan se ut för er →</button>
       </div>
@@ -278,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- SOLUTION -->
-  <div style="background:var(--forest);padding:3rem;margin-top:2rem;">
+  <div style="background:var(--forest);padding:3rem 3rem 3.5rem;margin-top:3.5rem;">
     <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:1.2rem;">Hur vi arbetar</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--white);margin-bottom:2rem;line-height:1.2;">Så fungerar det</h2>
     <div style="display:flex;flex-direction:column;gap:0;">
@@ -286,35 +290,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(168,196,160,0.2);line-height:1;">01</span>
         <div>
           <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:0.4rem;">Analys av ert nuvarande klimatupplägg</p>
-          <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.7;">Vi kartlägger er klimatdata, befintliga åtgärder och luckor — utifrån det ramverk ni rapporterar mot.</p>
+          <p style="font-size:0.85rem;color:rgba(168,196,160,0.78);font-weight:300;line-height:1.7;">Vi kartlägger er klimatdata, befintliga åtgärder och luckor — utifrån det ramverk ni rapporterar mot.</p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:48px 1fr;padding:1.4rem 0;border-bottom:1px solid rgba(107,143,99,0.12);">
         <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(168,196,160,0.2);line-height:1;">02</span>
         <div>
           <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:0.4rem;">Identifiering av verifierbara åtgärder</p>
-          <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.7;">Vi identifierar klimatåtgärder relevanta för er verksamhet, kopplade till spårbar dokumentation.</p>
+          <p style="font-size:0.85rem;color:rgba(168,196,160,0.78);font-weight:300;line-height:1.7;">Vi identifierar klimatåtgärder relevanta för er verksamhet, kopplade till spårbar dokumentation.</p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:48px 1fr;padding:1.4rem 0;border-bottom:1px solid rgba(107,143,99,0.12);">
         <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(168,196,160,0.2);line-height:1;">03</span>
         <div>
           <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:0.4rem;">Koppling till svensk skog</p>
-          <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.7;">Era åtgärder kopplas till specifika skogsfastigheter — med fastighetsbeteckning och markägare ni kan referera till.</p>
+          <p style="font-size:0.85rem;color:rgba(168,196,160,0.78);font-weight:300;line-height:1.7;">Era åtgärder kopplas till specifika skogsfastigheter — med fastighetsbeteckning och markägare ni kan referera till.</p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:48px 1fr;padding:1.4rem 0;">
         <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(168,196,160,0.2);line-height:1;">04</span>
         <div>
           <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:0.4rem;">Underlag för rapportering och kommunikation</p>
-          <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.7;">Strukturerat underlag med projektdata, metodik och tidsperiod — utformat för hållbarhetsredovisning och revisorsgenomgång.</p>
+          <p style="font-size:0.85rem;color:rgba(168,196,160,0.78);font-weight:300;line-height:1.7;">Strukturerat underlag med projektdata, metodik och tidsperiod — utformat för hållbarhetsredovisning och revisorsgenomgång.</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- WHY RENATUM -->
-  <div class="comparison" style="margin-top:2rem;">
+  <div class="comparison" style="margin-top:3.5rem;">
     <span class="comp-title">Skillnaden mot traditionell klimatkompensation</span>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem;">
       <div>
@@ -366,12 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="full">
           <button type="submit" class="btn btn-primary btn-full" style="margin-top:0.5rem;">Se om ert upplägg håller vid granskning →</button>
-          <p style="font-size:0.72rem;color:var(--muted);font-weight:300;margin-top:0.6rem;text-align:center;">Ingen förpliktelse. Första bedömning baserad på era uppgifter.</p>
-          <div style="display:flex;flex-direction:column;gap:0.3rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(61,92,56,0.12);">
-            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Baserat på faktiska svenska fastigheter</p>
-            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Anpassat för CSRD och extern granskning</p>
-            <p style="font-size:0.75rem;color:var(--moss);font-weight:300;margin:0;">✓ Ingen förpliktelse — endast en första bedömning</p>
-          </div>
+          <p style="font-size:0.72rem;color:var(--subtle);font-weight:300;margin-top:0.6rem;">Ingen förpliktelse.</p>
         </div>
       </div>
     </form>
