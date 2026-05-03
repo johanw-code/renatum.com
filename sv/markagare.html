@@ -43,6 +43,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles-tool.css">
+<style>
+@media(max-width:700px) {
+  .process-blocks { grid-template-columns: 1fr; }
+  .process-block-div { display: none; }
+  .process-block { padding: 1.4rem 0; border-bottom: 1px solid rgba(74,103,65,0.1); }
+  .process-block:last-child { border-bottom: none; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -55,28 +63,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO -->
   <div class="ph">
     <span class="eyebrow">För markägare</span>
-    <h1>Din skog kanske är mer värd <em>än du tror</em></h1>
+    <h1>Det finns värde i din skog <em>utöver timret</em></h1>
     <p class="sub">Utöver timmer och jakt finns det en marknad som betalar för skogens naturliga koldioxidbindning. Renatum hjälper dig ta reda på om din fastighet är relevant — kostnadsfritt och utan förpliktelse.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
       <a href="co2" class="btn btn-primary">Beräkna min skogs CO₂</a>
-      <a href="#checklista" class="btn btn-outline-light">Ny markägare? Se checklistan ↓</a>
+      <a href="#checklista" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(168,196,160,0.65);text-decoration:none;border-bottom:1px solid rgba(168,196,160,0.2);padding-bottom:2px;">Ny markägare? Se guiden ↓</a>
     </div>
   </div>
 
   <!-- INTRO STRIP: 3 key facts -->
-  <div class="grid-3" style="background:rgba(74,103,65,0.1);margin-bottom:3rem;">
+  <div class="grid-3" style="background:rgba(74,103,65,0.1);margin-bottom:4.5rem;">
     <div style="background:var(--white);padding:1.8rem 1.6rem;">
-      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Kostnadsfritt</div>
+      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Analysen</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--forest);margin-bottom:0.5rem;line-height:1.25;">Vi analyserar din fastighet</div>
       <p style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.7;">Ingen kostnad och ingen förpliktelse. Du får ett ärligt svar om din skog är relevant för klimatmarknaden.</p>
     </div>
     <div style="background:var(--white);padding:1.8rem 1.6rem;">
-      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Renatum gör jobbet</div>
+      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Vår roll</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--forest);margin-bottom:0.5rem;line-height:1.25;">Analys och affärsunderlag</div>
       <p style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.7;">Vi tar fram underlag, bedömer genomförbarhet och hittar rätt klimatköpare. Du behöver inte göra något av det arbetet.</p>
     </div>
     <div style="background:var(--white);padding:1.8rem 1.6rem;">
-      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Du behåller allt</div>
+      <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;margin-bottom:0.5rem;">Dina villkor</div>
       <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--forest);margin-bottom:0.5rem;line-height:1.25;">Din mark, dina villkor</div>
       <p style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.7;">Klimataffärer bygger på skogens naturliga tillväxt — inte på avverkning. Du äger alltid marken och bestämmer alltid själv.</p>
     </div>
@@ -86,19 +94,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="checklista" style="scroll-margin-top:5rem;padding-top:0.5rem;">
     <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);font-weight:500;display:block;margin-bottom:0.6rem;">Kom igång-checklista</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--forest);line-height:1.2;margin-bottom:0.6rem;">Allt du behöver göra som <em style="font-style:italic;color:var(--moss);">ny markägare</em></h2>
-    <p style="font-size:0.84rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:2rem;">Bocka av uppgifterna allteftersom. Uppgifter taggade med <span style="font-size:0.7rem;background:rgba(61,92,56,0.1);color:var(--moss);padding:0.15rem 0.5rem;border-radius:2px;font-weight:400;">Renatum kan hjälpa</span> är sådant vi gärna stöttar med.</p>
+    <p style="font-size:0.84rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:2rem;max-width:600px;">Bocka av uppgifterna allteftersom. Uppgifter taggade med <span style="font-size:0.7rem;background:rgba(61,92,56,0.1);color:var(--moss);padding:0.15rem 0.5rem;border-radius:2px;font-weight:400;">Renatum kan hjälpa</span> är sådant vi gärna stöttar med.</p>
   </div>
   <div id="phases"></div>
 
   <!-- WHAT YOU GET / WHAT IT REQUIRES -->
   <div class="grid-2" style="background:rgba(107,143,99,0.1);margin:3rem 0;">
     <div style="background:var(--card-dark);padding:2.5rem;">
-      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:1.2rem;">Vad du faktiskt kan få</span>
+      <span style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:1.2rem;">Vad det kan innebära</span>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:0.9rem;">
         <li style="display:flex;gap:0.7rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;flex-shrink:0;margin-top:6px;"></div><span style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.65;">En ny intäktskälla utan avverkning</span></li>
         <li style="display:flex;gap:0.7rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;flex-shrink:0;margin-top:6px;"></div><span style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.65;">Tydlig bild av fastighetens klimatvärde</span></li>
         <li style="display:flex;gap:0.7rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;flex-shrink:0;margin-top:6px;"></div><span style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.65;">Konkret affärsunderlag om fastigheten passar</span></li>
-        <li style="display:flex;gap:0.7rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;flex-shrink:0;margin-top:6px;"></div><span style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.65;">Stabil intäkt vid sidan av timmerproduktionen</span></li>
+        <li style="display:flex;gap:0.7rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;flex-shrink:0;margin-top:6px;"></div><span style="font-size:0.85rem;color:var(--mist);font-weight:300;line-height:1.65;">Kompletterande intäkt vid sidan av timmerproduktionen</span></li>
       </ul>
     </div>
     <div style="background:var(--section-dark);padding:2.5rem;">
@@ -113,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- OBJECTIONS -->
-  <div class="process-strip">
+  <div class="process-strip" style="margin-top:4rem;">
     <div class="process-strip-title">Vanliga frågor</div>
     <p class="process-strip-ingress">Skepticism är rimlig. Här är de vanligaste frågorna vi får från markägare.</p>
     <div class="process-blocks">
@@ -138,7 +146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CTA -->
   <div class="cta-final">
     <div class="cta-title">Undrar du om din skog är relevant?</div>
-    <div class="cta-sub">Börja med den kostnadsfria CO₂-kalkylatorn. Fem minuter — och du har en första uppskattning av skogens klimatpotential.</div>
+    <div class="cta-sub">Börja med den kostnadsfria CO₂-kalkylatorn — du får en första uppskattning av skogens klimatpotential.</div>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
       <a href="co2" class="btn btn-primary">Beräkna min skogs CO₂</a>
       <a href="/sv/#kontakt" class="btn btn-outline-light">Prata med oss</a>
