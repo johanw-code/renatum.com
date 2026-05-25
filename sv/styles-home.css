@@ -54,7 +54,7 @@
 .how-step { background:var(--card-dark); padding:3rem 2.5rem; position:relative; }
 .how-step::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:transparent; transition:background 0.3s; }
 .how-step:hover::before { background:var(--sage); }
-.how-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:rgba(168,196,160,0.25); line-height:1; margin-bottom:1.5rem; }
+.how-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:rgba(168,196,160,0.45); line-height:1; margin-bottom:1.5rem; }
 .how-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--frost); margin-bottom:0.8rem; }
 .how-desc { font-size:0.83rem; color:var(--mist); line-height:1.8; font-weight:300; }
 .how-step.accent { background:rgba(118,179,59,0.07); }
@@ -84,7 +84,7 @@
 .platform-steps { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; background:rgba(74,103,65,0.06); border-top:1px solid rgba(74,103,65,0.1); }
 .platform-step { padding:3rem 3rem 2.5rem; text-align:center; }
 .platform-step-divider { background:rgba(74,103,65,0.12); }
-.platform-step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:rgba(61,92,56,0.18); line-height:1; margin-bottom:0.8rem; }
+.platform-step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:var(--sage); line-height:1; margin-bottom:0.8rem; }
 .platform-step-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--forest); margin-bottom:0.5rem; }
 .platform-step-desc { font-size:0.82rem; line-height:1.75; color:var(--muted); font-weight:300; max-width:260px; margin:0 auto; }
 
@@ -104,7 +104,7 @@
 .why-inner { max-width:1140px; margin:0 auto; }
 .why-header { text-align:center; margin-bottom:4rem; }
 .why-points { display:grid; grid-template-columns:repeat(3,1fr); gap:4rem; margin-bottom:4rem; }
-.why-point-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:rgba(61,92,56,0.18); line-height:1; margin-bottom:0.8rem; }
+.why-point-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--sage); line-height:1; margin-bottom:0.8rem; }
 .why-point-title { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; color:var(--forest); margin-bottom:0.6rem; }
 .why-point-desc { font-size:0.83rem; line-height:1.8; color:var(--muted); font-weight:300; }
 .why-closing { text-align:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; font-style:italic; color:var(--forest); border-top:1px solid rgba(74,103,65,0.15); padding-top:3rem; }

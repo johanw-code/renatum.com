@@ -193,7 +193,7 @@ body { background: var(--linen); }
 .phase-header { display: flex; align-items: baseline; gap: 1rem; margin: 0 0 1rem; padding-top: 3rem; border-top: 1px solid rgba(107,143,99,0.1); }
 .phase:first-child .phase-header { border-top: none; padding-top: 0; }
 .phase-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem;
-  font-weight: 300; color: rgba(90,158,47,0.45); line-height: 1; }
+  font-weight: 300; color: var(--sage); line-height: 1; }
 .phase-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
   font-weight: 300; color: var(--forest); }
 .phase-time { font-size: 0.65rem; letter-spacing: 0.12em; color: var(--sage);
