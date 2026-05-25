@@ -37,6 +37,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles-tool.css">
+<style>
+#paymentBlock { margin-top: 2.5rem; }
+@media(max-width:700px) {
+  .process-blocks { grid-template-columns: 1fr; }
+  .process-block-div { display: none; }
+  .process-block { padding: 1.4rem 0; border-bottom: 1px solid rgba(74,103,65,0.1); }
+  .process-block:last-child { border-bottom: none; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -50,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ph">
     <span class="eyebrow">För privatpersoner</span>
     <h1>Klimatkompensera med <em>svensk skog</em></h1>
-    <p class="sub">Se dina utsläpp på några sekunder — och vad det kostar att kompensera dem.</p>
+    <p class="sub">Se din klimatpåverkan i siffror — och hur den kan kopplas till verklig klimatnytta.</p>
   </div>
 
   <div class="grid">
@@ -109,21 +118,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p id="contextMsg" style="font-size:0.82rem;color:var(--muted);margin-top:0.2rem;font-weight:300;font-style:italic;min-height:1.2em;"></p>
 
   <!-- ── EMOTIONAL BRIDGE ── -->
-  <div style="padding:2rem 1.8rem;background:var(--linen);border-top:2px solid rgba(61,92,56,0.08);margin-top:2rem;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:300;color:var(--forest);line-height:1.25;margin-bottom:0.9rem;">Gör något konkret av din klimatpåverkan</h2>
-    <p style="font-size:0.88rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:560px;">Din beräkning visar inte bara ett problem — den visar också vad du kan göra åt det. Genom att koppla din klimatpåverkan till svensk skog skapas en faktisk klimatnytta — inte bara en kompensation på papper.</p>
+  <div style="padding:2rem 1.8rem;background:var(--linen);border-top:2px solid rgba(61,92,56,0.08);margin-top:3.5rem;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:300;color:var(--forest);line-height:1.25;margin-bottom:0.9rem;">Från beräkning till konkret klimatnytta</h2>
+    <p style="font-size:0.88rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:560px;">Din beräkning ger en konkret bild av din klimatpåverkan. Genom att koppla den till svensk skog skapas faktisk klimatnytta — inte bara en kompensation på papper.</p>
   </div>
 
   <!-- ── PAYMENT BLOCK ── -->
   <div class="tool-lead" id="paymentBlock">
-    <span class="tool-lead-eyebrow">Klimatkompensera direkt</span>
-    <h3 class="tool-lead-h">Du kan klimatkompensera detta — kopplat till svensk skog</h3>
+    <span class="tool-lead-eyebrow">Nästa steg</span>
+    <h3 class="tool-lead-h">Klimatkompensation kopplad till svensk skog</h3>
 
     <!-- Plan selector -->
     <div style="display:flex;gap:0.5rem;margin:1.5rem 0 1rem;flex-wrap:wrap;">
-      <button id="plan-month"  class="btn btn-sm btn-plan"        onclick="selectPlan('month')">1 månad</button>
-      <button id="plan-year"   class="btn btn-sm btn-plan active"  onclick="selectPlan('year')">12 månader</button>
-      <button id="plan-custom" class="btn btn-sm btn-plan"         onclick="selectPlan('custom')">Anpassa</button>
+      <button id="plan-month"  class="btn btn-sm btn-plan"        onclick="selectPlan('month')">1 månads utsläpp</button>
+      <button id="plan-year"   class="btn btn-sm btn-plan active"  onclick="selectPlan('year')">Helårskompensation</button>
+      <button id="plan-custom" class="btn btn-sm btn-plan"         onclick="selectPlan('custom')">Anpassa mängd</button>
     </div>
 
     <!-- Custom tons input -->
@@ -133,31 +142,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <!-- Price display -->
-    <div style="margin:0.5rem 0 1.8rem;padding:1.2rem 1.5rem;background:rgba(61,92,56,0.05);border-left:3px solid var(--leaf);">
+    <div style="margin:0.5rem 0 1.8rem;padding:1.2rem 1.5rem;background:rgba(61,92,56,0.05);border:1px solid rgba(61,92,56,0.12);">
       <span id="priceMain" style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--forest);letter-spacing:-0.01em;">—</span>
       <span id="priceSub" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--muted);font-weight:300;display:block;margin-top:0.2rem;"></span>
     </div>
 
-    <!-- Trust bullets -->
-    <div style="margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid rgba(61,92,56,0.12);">
-      <p style="font-size:0.78rem;color:var(--forest);font-weight:300;line-height:1.9;margin:0;">
-        ✓ Klimatnytta kopplad till svensk skog<br>
-        ✓ Spårbart — inte anonyma globala projekt<br>
-        ✓ Bidrar till riktiga klimataffärer
-      </p>
-    </div>
-
     <!-- Primary CTA -->
-    <button id="payBtn" class="btn btn-primary btn-full" onclick="initiatePayment()">Kompensera mina utsläpp →</button>
-    <p style="font-size:0.74rem;color:var(--muted);margin-top:0.8rem;font-weight:300;">Nästa steg: vi bekräftar din order och skickar dokumentation per e-post.</p>
-    <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem;font-weight:300;">Ingen bindning. Du kan pausa när som helst.</p>
+    <button id="payBtn" class="btn btn-primary btn-full" onclick="initiatePayment()">Kompensera mina utsläpp</button>
+    <p style="font-size:0.74rem;color:var(--muted);margin-top:0.8rem;font-weight:300;">Vi bekräftar din klimatkompensation och skickar dokumentation per e-post.</p>
+    <p style="font-size:0.74rem;color:var(--muted);margin-top:0.3rem;font-weight:300;">Ingen bindning.</p>
   </div>
-
-  <p style="font-size:0.78rem;color:var(--muted);font-weight:300;font-style:italic;margin-top:1.2rem;">Fler privatpersoner börjar nu koppla sin klimatpåverkan till lokal klimatnytta.</p>
 
   <!-- ── LEAD FALLBACK ── -->
   <div style="margin-top:2rem;padding-top:1.8rem;border-top:1px solid rgba(61,92,56,0.1);">
-    <p style="font-size:0.8rem;color:var(--muted);font-weight:300;margin-bottom:0.8rem;">Vill du läsa mer först, eller prata med oss?</p>
+    <p style="font-size:0.8rem;color:var(--muted);font-weight:300;margin-bottom:0.8rem;">Vill du läsa mer om hur det fungerar?</p>
     <form class="tool-lead-form" style="flex-wrap:wrap;gap:0.5rem;" onsubmit="submitToolLead(event,this)">
       <input type="hidden" name="tool" value="klimatkompensera">
       <input type="hidden" name="tier" id="leadTier" value="mid">
@@ -170,7 +168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- PROCESS TRANSPARENCY -->
   <div class="process-strip">
-    <div class="process-strip-title">Vad händer faktiskt när du klimatkompenserar här?</div>
+    <div class="process-strip-title">Vad händer när du klimatkompenserar här?</div>
     <p class="process-strip-ingress">Renatum säljer inte anonyma klimatcertifikat från andra sidan världen. Modellen bygger på verkliga svenska fastigheter, analys och spårbar klimatnytta.</p>
     <div class="process-blocks">
       <div class="process-block">
@@ -191,7 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="process-strip-note">Alla fastigheter passar inte för klimatmarknaden. Därför bygger modellen på analys före löften.</p>
   </div>
 
-  <div class="comparison">
+  <div class="comparison" style="margin-top:3rem;">
     <span class="comp-title">Varför klimatkompensera med svensk skog?</span>
     <div class="comp-row">
       <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4a6741" stroke-width="1.8"><path d="M12 22V12m0 0C12 7 7 4 2 6m10 6c0-5 5-8 10-6"/></svg></div>
@@ -256,7 +254,7 @@ function updateBenchmark(tons) {
   if (tons < 5) {
     msg.innerHTML = 'Du ligger <strong>under genomsnittet</strong> i Sverige (~7 ton CO₂/år)';
     msg.className = 'benchmark-msg benchmark-high';
-    if (extra) extra.textContent = 'Du ligger bra till — men kan fortfarande kompensera det som återstår.';
+    if (extra) extra.textContent = 'Du ligger under genomsnittet för en vuxen i Sverige.';
     if (tier) tier.value = 'low';
   } else if (tons <= 7) {
     msg.innerHTML = 'Du ligger <strong>i linje med genomsnittet</strong> i Sverige (~7 ton CO₂/år)';
@@ -266,7 +264,7 @@ function updateBenchmark(tons) {
   } else {
     msg.innerHTML = 'Du ligger <strong>över genomsnittet</strong> i Sverige (~7 ton CO₂/år)';
     msg.className = 'benchmark-msg benchmark-low';
-    if (extra) extra.textContent = 'Det här är en nivå många väljer att börja kompensera.';
+    if (extra) extra.textContent = 'Du ligger över genomsnittet för en vuxen i Sverige.';
     if (tier) tier.value = 'high';
   }
 
@@ -301,16 +299,16 @@ function updatePaymentUI() {
   if (_planMode === 'month') {
     amount   = _krMon;
     subLabel = 'kr — kompenserar ' + (_tons / 12).toFixed(1) + ' ton CO₂ (en månads utsläpp)';
-    btnLabel = 'Kompensera en månads utsläpp →';
+    btnLabel = 'Kompensera en månads utsläpp';
   } else if (_planMode === 'year') {
     amount   = _krYear;
     subLabel = 'kr/år — full kompensation för ' + _tons.toFixed(1) + ' ton CO₂';
-    btnLabel = 'Kompensera ett års utsläpp →';
+    btnLabel = 'Kompensera ett års utsläpp';
   } else {
     var ct   = parseFloat(document.getElementById('customTons').value) || 1;
     amount   = Math.round(ct * PRICE_PER_TON / 10) * 10;
     subLabel = 'kr — kompenserar ' + ct.toFixed(1) + ' ton CO₂';
-    btnLabel = 'Kompensera ' + ct.toFixed(1) + ' ton CO₂ →';
+    btnLabel = 'Kompensera ' + ct.toFixed(1) + ' ton CO₂';
   }
 
   priceMain.textContent = amount.toLocaleString('sv-SE');
