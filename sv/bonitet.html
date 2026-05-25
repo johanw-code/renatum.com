@@ -114,7 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="results-note">Baserat på Skogsstyrelsens boniteringssystem och verkliga klimataffärer</p>
   <div id="benchmarkMsg" class="benchmark-msg"></div>
   <div class="tool-lead">
-    <span class="tool-lead-eyebrow">Vad ger din mark faktiskt</span>
+    <span class="tool-lead-eyebrow">Vad ger din mark</span>
     <h3 class="tool-lead-h">SI-värdet är grunden — intäkten är det vi sätter siffror på</h3>
     <p class="tool-lead-p">Hög bonitet betyder hög koldioxidbindning och möjlig intäkt från klimatmarknaden. Vi räknar ut vad just din klass ger dig per år.</p>
     <form class="tool-lead-form" onsubmit="submitToolLead(event,this)">
@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option value="over-500">Över 500 ha</option>
       </select>
       <input type="tel" id="leadPhone" name="phone" placeholder="Ditt telefonnummer" class="tool-lead-phone" style="display:none;">
-      <button type="submit">Ja, vad innebär min bonitet i faktiska intäkter? →</button>
+      <button type="submit">Beräkna vad min bonitet ger i intäkter</button>
     </form>
     <div id="altLeadCta" style="display:none;margin-top:1.2rem;">
       <a href="markagare" class="tool-lead-alt-cta">Vill du se hur klimatvärdet kan frigöras ändå? →</a>
@@ -236,7 +236,7 @@ function updateBenchmarkBon(si, areal) {
     if (phoneField) phoneField.style.display = showPhone ? '' : 'none';
     if (altCta) altCta.style.display = 'none';
   } else {
-    msg.textContent = 'Lägre bonitet behöver inte betyda lägre intäkt — med rätt strategi kan marken ändå ge klimatvärde.';
+    msg.textContent = 'Lägre bonitetsklass innebär begränsad avkastnings- och klimatpotential.';
     msg.className = 'benchmark-msg benchmark-low';
     if (tierField) tierField.value = 'low';
     if (phoneField) phoneField.style.display = 'none';

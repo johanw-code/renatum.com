@@ -54,7 +54,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ph">
     <span class="eyebrow">Värderingsverktyg</span>
     <h1>Vad är din mark <em>värd?</em></h1>
-    <p class="sub">Få en snabb indikativ uppskattning på marknadsvärdet. Fyll i uppgifterna nedan — det tar under 2 minuter.</p>
+    <p class="sub">Få en indikativ uppskattning på marknadsvärdet baserat på areal, bonitet och läge.</p>
   </div>
 
   <div class="step">
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <button class="btn btn-primary" onclick="showResult()">Beräkna uppskattning →</button>
+  <button class="btn btn-primary" onclick="showResult()">Beräkna uppskattning</button>
 
   <div class="result-block" id="resultBlock">
     <span class="res-eyebrow">Indikativt marknadsvärde</span>
@@ -154,7 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="results-note" style="margin-top:1.5rem;">Baserat på faktiska marknadstransaktioner och klimatprojekt i Sverige</p>
     <div id="benchmarkMsg" class="benchmark-msg"></div>
     <div class="cta-box" style="margin-top:1rem;">
-      <div class="cta-title">Nu vet du vad fastigheten är värd — <em>låt oss visa hur du kan tjäna på den</em></div>
+      <div class="cta-title">Nu vet du vad fastigheten är värd — <em>låt oss beräkna vad den kan ge</em></div>
       <div class="cta-sub">Marknadsvärdet är grunden. Renatum lägger till CO₂-potential, realistisk intäktsplan och en affärsstruktur som fungerar. Kostnadsfri genomgång.</div>
       <form class="tool-lead-form" onsubmit="submitToolLead(event,this)" style="max-width:100%;margin:1.5rem 0 0;">
         <input type="hidden" name="tool" value="vardering">
@@ -169,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <option value="over-500">Över 500 ha</option>
         </select>
         <input type="tel" id="leadPhone" name="phone" placeholder="Ditt telefonnummer" class="tool-lead-phone" style="display:none;">
-        <button type="submit">Ja, visa mig hur en affär kan se ut →</button>
+        <button type="submit">Visa hur en affär kan se ut</button>
       </form>
       <div id="altLeadCta" style="display:none;margin-top:1.2rem;">
         <a href="markagare" class="tool-lead-alt-cta">Vill du se hur fastighetens värde kan höjas? →</a>
@@ -254,23 +254,12 @@ function updateBenchmarkVar(totalVal) {
     if (phoneField) phoneField.style.display = 'none';
     if (altCta) altCta.style.display = 'none';
   } else {
-    msg.textContent = 'Fastighetens storlek begränsar affären — men klimatvärdet kan ändå vara intressant beroende på bonitet.';
+    msg.textContent = 'Fastighetens storlek begränsar klimataffärens skala.';
     msg.className = 'benchmark-msg benchmark-low';
     if (tierField) tierField.value = 'low';
     if (phoneField) phoneField.style.display = 'none';
     if (altCta) altCta.style.display = 'block';
   }
-}
-
-function submitLead() {
-  const name = document.getElementById('cfName').value;
-  const phone = document.getElementById('cfPhone').value;
-  const email = document.getElementById('cfEmail').value;
-  if (!name || !phone) { alert('Fyll i minst namn och telefon så kontaktar vi dig.'); return; }
-  const btn = document.querySelector('.cta-box .btn');
-  btn.textContent = 'Tack — vi återkommer med en bedömning.';
-  btn.style.background = '#1a2e1e';
-  btn.disabled = true;
 }
 </script>
 <div id="site-footer"></div>

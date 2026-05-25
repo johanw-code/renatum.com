@@ -125,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="tool-lead">
     <span class="tool-lead-eyebrow">Nästa steg</span>
-    <h3 class="tool-lead-h">Vad är din skog faktiskt värd på klimatmarknaden?</h3>
+    <h3 class="tool-lead-h">Vad är din skog värd på klimatmarknaden?</h3>
     <p class="tool-lead-p">Vi går igenom dina siffror och berättar exakt vad din fastighet kan ge — potential, pris per ton och förväntad årsintäkt. Kostnadsfritt.</p>
     <form class="tool-lead-form" onsubmit="submitToolLead(event,this)">
       <input type="hidden" name="tool" value="co2">
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option value="over-500">Över 500 ha</option>
       </select>
       <input type="tel" id="leadPhone" name="phone" placeholder="Ditt telefonnummer" class="tool-lead-phone" style="display:none;">
-      <button type="submit">Ja, berätta vad min skog kan ge →</button>
+      <button type="submit">Berätta vad min skog kan ge</button>
     </form>
     <div id="altLeadCta" style="display:none;margin-top:1.2rem;">
       <a href="markagare" class="tool-lead-alt-cta">Vill du se hur potentialen kan förbättras? →</a>
@@ -209,7 +209,7 @@ function updateBenchmark(mval, ha, sp){
     if(phoneField) phoneField.style.display='none';
     if(altCta) altCta.style.display='none';
   } else {
-    msg.textContent='Fastighetens potential är begränsad vid nuvarande skötsel — men kan förbättras.';
+    msg.textContent='Fastighetens CO₂-potential är begränsad vid nuvarande parametrar.';
     msg.className='benchmark-msg benchmark-low';
     if(tierField) tierField.value='low';
     if(phoneField) phoneField.style.display='none';

@@ -54,10 +54,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="site-nav"></div>
 
 <div class="page">
-  <div class="page-header">
-    <p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:0.6rem;font-weight:500;">Analysverktyg</p>
+  <div class="ph">
+    <span class="eyebrow">Analysverktyg</span>
     <h1>Bedöm <em>skogens prisvärdhet</em></h1>
-    <p>Poängsätt fastigheten på 8 kriterier. Verktyget viktar och beräknar ett samlat prisvärdhetsindex som hjälper dig att jämföra objekt objektivt.</p>
+    <p class="sub">Poängsätt fastigheten på 8 kriterier. Verktyget viktar och beräknar ett samlat prisvärdhetsindex som hjälper dig att jämföra objekt objektivt.</p>
   </div>
 
   <div class="property-name-bar">
@@ -128,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option value="over-500">Över 500 ha</option>
       </select>
       <input type="tel" id="leadPhone" name="phone" placeholder="Ditt telefonnummer" class="tool-lead-phone" style="display:none;">
-      <button type="submit">Ja, ta mig vidare till en konkret affärsbedömning →</button>
+      <button type="submit">Ta mig vidare till en affärsbedömning</button>
     </form>
     <div id="altLeadCta" style="display:none;margin-top:1.2rem;">
       <a href="markagare" class="tool-lead-alt-cta">Vill du se hur fastigheten kan stärkas före köp? →</a>
@@ -319,7 +319,7 @@ function updateBenchmarkPrv(score) {
   if (!msg) return;
   if (valueField) valueField.value = score;
   if (score >= 70) {
-    msg.textContent = 'Fastigheten ser ut som ett starkt investeringscase — poängen indikerar tydlig potential och klimatintäkt.';
+    msg.textContent = 'Poängen indikerar en fastighet med tydlig klimat- och avkastningspotential.';
     msg.className = 'benchmark-msg benchmark-high';
     if (tierField) tierField.value = 'high';
     if (phoneField) phoneField.style.display = '';
@@ -374,7 +374,7 @@ function renderCompare() {
   const sorted = [...saved].sort((a, b) => b.score - a.score);
   list.innerHTML = sorted.map((s, i) => `
     <div class="compare-item">
-      <span class="compare-item-name">${i === 0 ? '🥇 ' : ''}${s.name}</span>
+      <span class="compare-item-name">${i === 0 ? '① ' : ''}${s.name}</span>
       <span class="compare-item-score">${s.score}</span>
       <button class="compare-item-del" onclick="removeSaved(${saved.indexOf(s)})">×</button>
     </div>`).join('');

@@ -119,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <option value="over-500">Över 500 ha</option>
       </select>
       <input type="tel" id="leadPhone" name="phone" placeholder="Ditt telefonnummer" class="tool-lead-phone" style="display:none;">
-      <button type="submit">Ja, räkna ut vad min skog ger i faktiska kronor →</button>
+      <button type="submit">Räkna ut skogens avkastning i kronor</button>
     </form>
     <div id="altLeadCta" style="display:none;margin-top:1.2rem;">
       <a href="markagare" class="tool-lead-alt-cta">Vill du se hur avkastningen kan förbättras? →</a>
@@ -237,7 +237,7 @@ function updateBenchmarkAvk(roi) {
     if (phoneField) phoneField.style.display = 'none';
     if (altCta) altCta.style.display = 'none';
   } else {
-    msg.textContent = 'Avkastningspotentialen ser begränsad ut vid nuvarande parametrar — men det finns sätt att höja den.';
+    msg.textContent = 'Avkastningspotentialen ser begränsad ut vid nuvarande parametrar.';
     msg.className = 'benchmark-msg benchmark-low';
     if (tierField) tierField.value = 'low';
     if (phoneField) phoneField.style.display = 'none';
