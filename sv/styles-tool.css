@@ -58,7 +58,7 @@ body { background: var(--linen); }
 @media(max-width:700px) { .results { grid-template-columns: 1fr; } }
 
 /* Species info */
-.species-info { font-size: 0.82rem; color: var(--mist); line-height: 1.7;
+.species-info { font-size: 1rem; color: var(--mist); line-height: 1.7;
   font-weight: 300; margin-top: 1rem; padding-top: 1rem;
   border-top: 1px solid rgba(107,143,99,0.15); opacity: 0.85; }
 
@@ -69,7 +69,7 @@ body { background: var(--linen); }
   color: var(--sage); display: block; margin-bottom: 1.5rem; font-weight: 500; }
 .comp-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .comp-icon { width: 32px; height: 32px; flex-shrink: 0; opacity: 0.7; }
-.comp-text { font-size: 0.88rem; color: var(--mist); font-weight: 300; line-height: 1.5; }
+.comp-text { font-size: 1rem; color: var(--mist); font-weight: 300; line-height: 1.5; }
 .comp-text strong { color: var(--frost); font-weight: 400; }
 
 /* Stats row */
@@ -126,12 +126,12 @@ body { background: var(--linen); }
 .si-card { text-align: center; padding: 1.5rem 0; }
 .si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
   font-weight: 300; color: var(--white); line-height: 1; display: block; }
-.si-desc { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem;
+.si-desc { font-size: 1rem; color: var(--mist); margin-top: 0.5rem;
   font-weight: 300; line-height: 1.6; }
 .metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin-top: 1px; }
 .info-box { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
-  padding: 1.5rem; margin-top: 1px; color: var(--muted); font-size: 0.88rem;
+  padding: 1.5rem; margin-top: 1px; color: var(--muted); font-size: 1rem;
   line-height: 1.7; font-weight: 300; }
 .scale-card { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin-top: 1px; }
@@ -176,7 +176,7 @@ body { background: var(--linen); }
 .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
   font-weight: 300; color: var(--forest); margin-bottom: 0.5rem; }
 .cta-title em { font-style: italic; color: var(--moss); }
-.cta-sub { font-size: 0.88rem; color: var(--muted); font-weight: 300;
+.cta-sub { font-size: 1rem; color: var(--muted); font-weight: 300;
   line-height: 1.7; margin-bottom: 1.5rem; }
 .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1.5rem; }
 .contact-form textarea { grid-column: 1/-1; height: 100px; resize: none; }
@@ -217,7 +217,7 @@ body { background: var(--linen); }
 
 .task-title { font-size: 0.88rem; font-weight: 400; color: var(--frost);
   margin-bottom: 0.3rem; line-height: 1.4; }
-.task-desc { font-size: 0.8rem; color: var(--mist); font-weight: 300; line-height: 1.6; }
+.task-desc { font-size: 1rem; color: var(--mist); font-weight: 300; line-height: 1.6; }
 .task-body { flex: 1; }
 .task-tag { display: inline-block; font-size: 0.58rem; letter-spacing: 0.12em;
   text-transform: uppercase; padding: 0.2rem 0.6rem; margin-top: 0.5rem; font-weight: 500; }
@@ -257,7 +257,7 @@ body { background: var(--linen); }
 .crit-name { font-size: 0.88rem; font-weight: 500; color: var(--frost); }
 .crit-abbr { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--sage);
   text-transform: uppercase; }
-.crit-desc { font-size: 0.78rem; color: var(--mist); line-height: 1.6;
+.crit-desc { font-size: 1rem; color: var(--mist); line-height: 1.6;
   font-weight: 300; padding: 0 1.5rem 0.5rem; }
 .crit-scale-hint { font-size: 0.68rem; color: rgba(107,143,99,0.65); padding: 0 1.5rem 0.5rem; }
 .inverted-note { font-size: 0.68rem; color: var(--gold-lt); padding: 0 1.5rem 0.3rem; }
@@ -427,7 +427,7 @@ body { background: var(--linen); }
 .tool-lead { border-top: 2px solid var(--sage); background: var(--linen); padding: 3rem 2.5rem; margin-top: 1px; text-align: center; }
 .tool-lead-eyebrow { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--moss); font-weight: 500; display: block; margin-bottom: 1rem; }
 .tool-lead-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 300; color: var(--forest); margin-bottom: 0.8rem; line-height: 1.2; }
-.tool-lead-p { font-size: 0.88rem; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 480px; margin: 0 auto 2rem; }
+.tool-lead-p { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 480px; margin: 0 auto 2rem; }
 .tool-lead-form { display: flex; gap: 0.5rem; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
 .tool-lead-form input[type=email] { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1px solid rgba(61,92,56,0.25); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); outline: none; }
 .tool-lead-form input[type=email]:focus { border-color: var(--sage); }
@@ -439,7 +439,7 @@ body { background: var(--linen); }
 .tool-lead-process { margin: 1.8rem auto 0; max-width: 360px; text-align: left; }
 .tool-lead-process-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss); font-weight: 500; display: block; margin-bottom: 0.7rem; }
 .tool-lead-steps { margin: 0; padding: 0 0 0 1.2rem; list-style: decimal; }
-.tool-lead-steps li { font-size: 0.82rem; color: var(--muted); font-weight: 300; line-height: 1.6; margin-bottom: 0.25rem; }
+.tool-lead-steps li { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.6; margin-bottom: 0.25rem; }
 
 /* Benchmark message (co2 tool — below results grid) */
 .results-note { font-size: 0.68rem; color: var(--subtle); text-align: center;
