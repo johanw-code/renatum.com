@@ -37,6 +37,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="canonical" href="https://renatum.com/sv/priser">
+<style>
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:3rem; }
+@media(max-width:700px) { .pricing-grid { grid-template-columns:1fr; } }
+.pricing-item-text { font-size:1rem; color:var(--muted); font-weight:300; line-height:1.6; }
+.pricing-item-text-dark { font-size:1rem; color:rgba(255,255,255,0.65); font-weight:300; line-height:1.6; }
+.pricing-price-sub { font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem; }
+.pricing-price-sub-dark { font-size:0.88rem; color:rgba(255,255,255,0.45); margin-bottom:1.5rem; }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -52,16 +60,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="sub">Vi tror på tydlighet. Här är vad våra tjänster kostar — och vad du får för pengarna.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:3rem;">
+  <div class="pricing-grid">
     <div style="background:var(--white);border:1px solid rgba(74,103,65,0.1);padding:2.5rem;display:flex;flex-direction:column;">
       <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Analys</span>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--forest);line-height:1;margin-bottom:0.6rem;">0 kr</div>
-      <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1.5rem;">Kostnadsfritt, inga förpliktelser</div>
+      <div class="pricing-price-sub">Kostnadsfritt, inga förpliktelser</div>
       <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">CO₂-analys via vår kalkylator</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Indikativt intäktsintervall</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">30 min introduktionsmöte</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Rekommendation om nästa steg</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">CO₂-analys via vår kalkylator</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Indikativt intäktsintervall</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">30 min introduktionsmöte</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Rekommendation om nästa steg</span></div>
       </div>
       <a href="co2" class="btn btn-outline-light btn-full">Kom igång gratis</a>
     </div>
@@ -70,13 +78,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#3a6c1a;color:var(--white);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 1rem;font-weight:500;">Populärast</div>
       <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Klimataffär</span>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);line-height:1;margin-bottom:0.6rem;">15%</div>
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;">av kreditintäkterna + fast startavgift</div>
+      <div class="pricing-price-sub-dark">av kreditintäkterna + fast startavgift</div>
       <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Djupgående fastighetsanalys och affärsunderlag</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Bedömning av intäktspotential per år</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Vägledning om rätt klimatstandard (Gold Standard el. Plan Vivo)</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Löpande rapportering och uppföljning</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.6;">Matchning med potentiella köpare</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text-dark">Djupgående fastighetsanalys och affärsunderlag</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text-dark">Bedömning av intäktspotential per år</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text-dark">Vägledning om rätt klimatstandard (Gold Standard el. Plan Vivo)</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text-dark">Löpande rapportering och uppföljning</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:var(--leaf);border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text-dark">Matchning med potentiella köpare</span></div>
       </div>
       <a href="/sv/#kontakt" style="display:block;text-align:center;background:#3a6c1a;color:var(--white);padding:0.85rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:background 0.3s;" onmouseover="this.style.background='#3a5332'" onmouseout="this.style.background='#4a6741'">Kontakta oss</a>
     </div>
@@ -84,13 +92,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="background:var(--white);border:1px solid rgba(74,103,65,0.1);padding:2.5rem;display:flex;flex-direction:column;">
       <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:0.8rem;">Enterprise</span>
       <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--forest);line-height:1;margin-bottom:0.6rem;">Offert</div>
-      <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1.5rem;">Skräddarsytt för stora innehav & företag</div>
+      <div class="pricing-price-sub">Skräddarsytt för stora innehav & företag</div>
       <div style="flex:1;display:flex;flex-direction:column;gap:0.7rem;margin-bottom:2rem;">
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Allt i Klimataffär</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Dedikerad kontaktperson</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Juridisk hjälp och avtalshjälp</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Kommunikationsunderlag för hållbarhetsrapport</span></div>
-        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span style="font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.6;">Direkt köpare-säljare-matchning</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Allt i Klimataffär</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Dedikerad kontaktperson</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Juridisk hjälp och avtalshjälp</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Kommunikationsunderlag för hållbarhetsrapport</span></div>
+        <div style="display:flex;gap:0.6rem;align-items:flex-start;"><div style="width:5px;height:5px;background:#3a6c1a;border-radius:50%;margin-top:6px;flex-shrink:0;"></div><span class="pricing-item-text">Direkt köpare-säljare-matchning</span></div>
       </div>
       <a href="/sv/#kontakt" class="btn btn-outline-light btn-full">Begär offert</a>
     </div>
@@ -98,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div style="background:rgba(74,103,65,0.06);border:1px solid rgba(74,103,65,0.15);padding:2rem;text-align:center;">
     <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--forest);margin-bottom:0.8rem;">Osäker på vilket alternativ som passar dig?</p>
-    <p style="font-size:0.85rem;color:var(--muted);font-weight:300;margin-bottom:1.2rem;">Börja med den kostnadsfria analysen — så berättar vi vad som är rätt nästa steg för just din fastighet.</p>
+    <p style="font-size:1rem;color:var(--muted);font-weight:300;margin-bottom:1.2rem;">Börja med den kostnadsfria analysen — så berättar vi vad som är rätt nästa steg för just din fastighet.</p>
     <a href="co2" class="btn btn-primary">Starta gratis analys</a>
   </div>
 </div>
