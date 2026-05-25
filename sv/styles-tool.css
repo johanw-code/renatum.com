@@ -73,7 +73,7 @@ body { background: var(--linen); }
 .comp-text strong { color: var(--frost); font-weight: 400; }
 
 /* Stats row */
-.stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+.stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin: 2rem 0; }
 .stat { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
 .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
@@ -94,9 +94,8 @@ body { background: var(--linen); }
 @media(max-width:700px) { .stats, .metrics { grid-template-columns: 1fr; } }
 
 /* Inputs section (avkastning) */
-.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+.inputs { display: grid; grid-template-columns: 1fr; gap: 1px;
   background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
-@media(max-width:600px) { .inputs { grid-template-columns: 1fr; } }
 .inp-cell { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; color: var(--frost); }
 
 /* Chart */
