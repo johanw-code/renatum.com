@@ -93,6 +93,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .contact-grid textarea { height: 90px; resize: none; }
 @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
 
+.comp-cols { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:1.5rem; }
+@media(max-width:700px) { .comp-cols { grid-template-columns:1fr; } }
+
 /* ── Feedback widgets ─────────────────────────────────────────────────────── */
 /* ── Timed-feedback (light card, bottom-right) ── */
 #timed-feedback {
@@ -320,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- WHY RENATUM -->
   <div class="comparison" style="margin-top:3.5rem;">
     <span class="comp-title">Skillnaden mot traditionell klimatkompensation</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:1.5rem;">
+    <div class="comp-cols">
       <div>
         <p style="font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(168,196,160,0.4);font-weight:500;margin-bottom:0.8rem;">Globala marknadsbaserade projekt</p>
         <div class="comp-row" style="margin-bottom:0.5rem;"><div class="comp-icon" style="color:#c0392b;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</div><span class="comp-text">Svåra att verifiera oberoende</span></div>
