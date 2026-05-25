@@ -168,7 +168,7 @@ body { background: var(--linen); }
   color: var(--moss); display: block; margin-bottom: 1rem; font-weight: 500; }
 .res-range { font-family: 'Cormorant Garamond', serif; font-size: 3rem;
   font-weight: 300; color: var(--forest); line-height: 1; }
-.res-sub { font-size: 0.82rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
+.res-sub { font-size: 1rem; color: var(--mist); margin-top: 0.5rem; font-weight: 300; }
 .res-disclaimer { font-size: 0.72rem; color: var(--muted); margin-top: 1.5rem;
   font-style: italic; line-height: 1.6; }
 .cta-box { background: var(--linen); border: 1px solid rgba(107,143,99,0.15);
@@ -215,7 +215,7 @@ body { background: var(--linen); }
 .checkbox svg { opacity: 0; transition: opacity 0.2s; }
 .task.done .checkbox svg { opacity: 1; }
 
-.task-title { font-size: 0.88rem; font-weight: 400; color: var(--frost);
+.task-title { font-size: 1rem; font-weight: 400; color: var(--frost);
   margin-bottom: 0.3rem; line-height: 1.4; }
 .task-desc { font-size: 1rem; color: var(--mist); font-weight: 300; line-height: 1.6; }
 .task-body { flex: 1; }
@@ -254,7 +254,7 @@ body { background: var(--linen); }
 
 .crit-header { padding: 1.2rem 1.5rem 0.5rem; display: flex;
   justify-content: space-between; align-items: baseline; }
-.crit-name { font-size: 0.88rem; font-weight: 500; color: var(--frost); }
+.crit-name { font-size: 1rem; font-weight: 500; color: var(--frost); }
 .crit-abbr { font-size: 0.62rem; letter-spacing: 0.14em; color: var(--sage);
   text-transform: uppercase; }
 .crit-desc { font-size: 1rem; color: var(--mist); line-height: 1.6;
@@ -444,7 +444,7 @@ body { background: var(--linen); }
 /* Benchmark message (co2 tool — below results grid) */
 .results-note { font-size: 0.68rem; color: var(--subtle); text-align: center;
   margin: 0.4rem 0 0; font-style: italic; font-weight: 300; }
-.benchmark-msg { font-size: 0.85rem; font-weight: 300; line-height: 1.6;
+.benchmark-msg { font-size: 1rem; font-weight: 300; line-height: 1.6;
   padding: 0.6rem 1rem; text-align: center; min-height: 0; transition: color 0.3s; }
 .benchmark-msg:empty { display: none; }
 .benchmark-high { color: #3d7a1e; font-weight: 500; }

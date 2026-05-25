@@ -56,7 +56,7 @@
 .how-step:hover::before { background:var(--sage); }
 .how-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:rgba(168,196,160,0.45); line-height:1; margin-bottom:1.5rem; }
 .how-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--frost); margin-bottom:0.8rem; }
-.how-desc { font-size:0.83rem; color:var(--mist); line-height:1.8; font-weight:300; }
+.how-desc { font-size:1rem; color:var(--mist); line-height:1.8; font-weight:300; }
 .how-step.accent { background:rgba(118,179,59,0.07); }
 .how-step.accent::before { background:var(--leaf); }
 .how-step.accent .how-title { font-weight:400; }
@@ -74,7 +74,7 @@
 .aud-card-accent .aud-card-eyebrow { color:var(--sage); }
 .aud-card-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2vw,1.85rem); font-weight:300; color:var(--forest); line-height:1.2; margin-bottom:1rem; }
 .aud-card-accent .aud-card-title { color:var(--white); }
-.aud-card-desc { font-size:0.84rem; line-height:1.8; color:var(--muted); font-weight:300; flex:1; margin-bottom:2rem; }
+.aud-card-desc { font-size:1rem; line-height:1.8; color:var(--muted); font-weight:300; flex:1; margin-bottom:2rem; }
 .aud-card-accent .aud-card-desc { color:rgba(255,255,255,0.58); }
 .aud-card-link { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--moss); font-weight:500; transition:letter-spacing 0.25s; }
 .aud-card:hover .aud-card-link { letter-spacing:0.18em; }
@@ -86,7 +86,7 @@
 .platform-step-divider { background:rgba(74,103,65,0.12); }
 .platform-step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:var(--sage); line-height:1; margin-bottom:0.8rem; }
 .platform-step-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--forest); margin-bottom:0.5rem; }
-.platform-step-desc { font-size:0.82rem; line-height:1.75; color:var(--muted); font-weight:300; max-width:260px; margin:0 auto; }
+.platform-step-desc { font-size:1rem; line-height:1.75; color:var(--muted); font-weight:300; max-width:260px; margin:0 auto; }
 
 /* WHAT RENATUM DOES */
 .what-section { padding:8rem 3rem; background:var(--section-dark); }
@@ -97,7 +97,7 @@
 .what-card:hover { background:rgba(118,179,59,0.08); border-top-color:var(--sage); }
 .what-card-icon { margin-bottom:1.5rem; }
 .what-card-title { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; color:var(--frost); line-height:1.25; margin-bottom:0.7rem; }
-.what-card-desc { font-size:0.83rem; line-height:1.8; color:var(--mist); font-weight:300; }
+.what-card-desc { font-size:1rem; line-height:1.8; color:var(--mist); font-weight:300; }
 
 /* WHY SWEDISH FOREST */
 .why-section { padding:8rem 3rem; background:var(--linen); }
@@ -106,19 +106,19 @@
 .why-points { display:grid; grid-template-columns:repeat(3,1fr); gap:4rem; margin-bottom:4rem; }
 .why-point-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--sage); line-height:1; margin-bottom:0.8rem; }
 .why-point-title { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; color:var(--forest); margin-bottom:0.6rem; }
-.why-point-desc { font-size:0.83rem; line-height:1.8; color:var(--muted); font-weight:300; }
+.why-point-desc { font-size:1rem; line-height:1.8; color:var(--muted); font-weight:300; }
 .why-closing { text-align:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; font-style:italic; color:var(--forest); border-top:1px solid rgba(74,103,65,0.15); padding-top:3rem; }
 
 /* PROOF LAYER */
 .proof-section { padding:8rem 3rem; background:var(--parchment); }
 .proof-inner { max-width:1140px; margin:0 auto; }
 .proof-header { max-width:680px; margin:0 auto 4rem; text-align:center; }
-.proof-ingress { font-size:0.88rem; line-height:1.85; color:var(--muted); font-weight:300; margin-top:1.2rem; }
+.proof-ingress { font-size:1rem; line-height:1.85; color:var(--muted); font-weight:300; margin-top:1.2rem; }
 .proof-cases { display:flex; flex-direction:column; }
 .proof-case { display:grid; grid-template-columns:160px 1fr; gap:5rem; padding:3.5rem 0; border-top:1px solid rgba(74,103,65,0.12); align-items:start; }
 .proof-case:last-child { border-bottom:1px solid rgba(74,103,65,0.12); }
 .proof-label { font-size:0.6rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--moss); font-weight:500; padding-top:0.3rem; }
-.proof-text { font-size:0.88rem; line-height:1.85; color:var(--muted); font-weight:300; margin-bottom:0.9rem; }
+.proof-text { font-size:1rem; line-height:1.85; color:var(--muted); font-weight:300; margin-bottom:0.9rem; }
 .proof-closing { font-size:0.82rem; color:var(--subtle); font-style:italic; font-weight:300; }
 
 /* SIGNAL BAR */
@@ -143,7 +143,7 @@
 .about-content .eyebrow { color:var(--sage); }
 .about-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,2.8rem); font-weight:300; color:var(--white); line-height:1.15; margin-bottom:1.5rem; }
 .about-h2 em { font-style:italic; color:var(--mist); }
-.about-p { font-size:0.9rem; line-height:1.85; font-weight:300; color:var(--mist); margin-bottom:1rem; }
+.about-p { font-size:1rem; line-height:1.85; font-weight:300; color:var(--mist); margin-bottom:1rem; }
 .about-link { display:inline-flex; align-items:center; gap:0.6rem; margin-top:1.5rem; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--mist); text-decoration:none; font-weight:500; border-bottom:1px solid rgba(168,196,160,0.3); padding-bottom:2px; transition:gap 0.3s; }
 .about-link:hover { gap:1rem; color:var(--frost); }
 
@@ -155,7 +155,7 @@
 .tool-icon { width:40px; height:40px; background:rgba(107,143,99,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
 .tool-cat { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#8fbf80; font-weight:500; display:block; margin-bottom:0.5rem; }
 .tool-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; color:var(--white); margin-bottom:0.6rem; }
-.tool-desc { font-size:0.8rem; color:#cde0c5; line-height:1.7; font-weight:300; }
+.tool-desc { font-size:1rem; color:#cde0c5; line-height:1.7; font-weight:300; }
 .tool-cta { display:block; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; color:#5a9e2f; font-weight:500; transition:color 0.2s; }
 .tool-card:hover .tool-cta { color:#7ac240; }
 
@@ -164,7 +164,7 @@
 .test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; background:transparent; max-width:1140px; margin:3rem auto 0; }
 .test-card { background:var(--section-dark); padding:2.5rem; position:relative; border:1px solid rgba(107,143,99,0.15); }
 .test-quote { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:rgba(107,143,99,0.15); line-height:0.8; margin-bottom:1rem; }
-.test-text { font-size:0.9rem; line-height:1.8; color:var(--mist); font-weight:300; font-style:italic; margin-bottom:1.5rem; }
+.test-text { font-size:1rem; line-height:1.8; color:var(--mist); font-weight:300; font-style:italic; margin-bottom:1.5rem; }
 .test-author strong { font-size:0.82rem; font-weight:500; color:var(--frost); display:block; }
 .test-author span { font-size:0.72rem; color:var(--sage); }
 
@@ -174,10 +174,10 @@
 .contact-info .eyebrow { color:var(--moss); }
 .contact-h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:300; color:var(--forest); line-height:1.15; margin-bottom:1.2rem; }
 .contact-h2 em { font-style:italic; color:var(--moss); }
-.contact-p { font-size:0.88rem; color:var(--muted); line-height:1.8; font-weight:300; margin-bottom:0.9rem; }
+.contact-p { font-size:1rem; color:var(--muted); line-height:1.8; font-weight:300; margin-bottom:0.9rem; }
 .contact-detail { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
 .contact-detail .lbl { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); width:60px; flex-shrink:0; font-weight:500; }
-.contact-detail a, .contact-detail span { font-size:0.88rem; color:var(--text); text-decoration:none; font-weight:300; transition:color 0.3s; }
+.contact-detail a, .contact-detail span { font-size:1rem; color:var(--text); text-decoration:none; font-weight:300; transition:color 0.3s; }
 .contact-detail a:hover { color:var(--forest); }
 .form { display:flex; flex-direction:column; gap:1rem; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
