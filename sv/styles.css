@@ -108,7 +108,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .section-deep    { background: var(--deep); }
 .section-forest  { background: var(--forest); }
 .section-linen   { background: var(--linen); color: var(--text); }
-.section-parch   { background: var(--parchment); color: var(--text); }
+.section-parch   { background: var(--white); color: var(--text); }
 
 /* ── DIVIDERS ─────────────────────────────────────────────────────────────── */
 .divider        { width: 40px; height: 1px; background: var(--sage); margin: 1.5rem 0; }
@@ -156,7 +156,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
   color: var(--text);
 }
 .card-parch {
-  background: var(--parchment);
+  background: var(--white);
   border: 1px solid rgba(107,143,99,0.1);
   padding: 2rem;
   color: var(--text);

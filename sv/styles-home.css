@@ -110,7 +110,7 @@
 .why-closing { text-align:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; font-style:italic; color:var(--forest); border-top:1px solid rgba(74,103,65,0.15); padding-top:3rem; }
 
 /* PROOF LAYER */
-.proof-section { padding:8rem 3rem; background:var(--parchment); }
+.proof-section { padding:8rem 3rem; background:var(--white); }
 .proof-inner { max-width:1140px; margin:0 auto; }
 .proof-header { max-width:680px; margin:0 auto 4rem; text-align:center; }
 .proof-ingress { font-size:1rem; line-height:1.85; color:var(--muted); font-weight:300; margin-top:1.2rem; }
