@@ -1,18 +1,4 @@
-/* Homepage-specific overrides — base variables defined in styles.css */
-
-.nav { position:sticky; top:0; z-index:100; background:var(--ink); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
-.nav-logo { text-decoration:none; display:flex; align-items:center; }
-.nav-links { display:flex; gap:2.5rem; list-style:none; }
-.nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#ffffff; text-decoration:none; font-weight:400; transition:color 0.3s; }
-.nav-links a:hover { color:#5a9e2f; opacity:1; }
-.nav-dropdown { position:relative; }
-.nav-dropdown > a { cursor:pointer; user-select:none; }
-.nav-dropdown-menu { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--forest); border:1px solid rgba(107,143,99,0.2); min-width:230px; z-index:200; padding:0.6rem 0; }
-.nav-dropdown-menu::before { content:''; position:absolute; top:-12px; left:0; right:0; height:12px; }
-.nav-dropdown.open .nav-dropdown-menu { display:block; }
-.nav-dropdown:hover .nav-dropdown-menu { display:block; }
-.nav-dropdown-menu a { display:block; padding:0.65rem 1.4rem; font-size:0.75rem; color:#ffffff; text-decoration:none; letter-spacing:0.03em; opacity:1; transition:background 0.2s, color 0.2s; text-transform:none; }
-.nav-dropdown-menu a:hover { background:rgba(118,179,59,0.15); color:var(--frost); }
+/* Homepage-specific styles — nav/cookie/hamburger rules live in styles.css */
 .nav-accent { height:1px; background:linear-gradient(to right, transparent, rgba(118,179,59,0.3), transparent); }
 
 /* HERO */
@@ -192,21 +178,6 @@
 .form-textarea { height:120px; resize:none; }
 
 
-/* COOKIE */
-.cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:999; background:var(--ink); border-top:1px solid rgba(107,143,99,0.15); padding:1.2rem 3rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; transform:translateY(100%); transition:transform 0.4s ease; }
-.cookie-banner.show { transform:translateY(0); }
-.cookie-text { font-size:0.8rem; line-height:1.6; font-weight:300; color:var(--mist); flex:1; min-width:200px; }
-.cookie-text a { color:var(--gold-lt); }
-.cookie-actions { display:flex; gap:0.7rem; flex-shrink:0; }
-.cookie-accept { background:#5a9e2f; color:var(--white); border:none; padding:0.55rem 1.3rem; font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; }
-.cookie-decline { background:transparent; color:rgba(168,196,160,0.4); border:1px solid rgba(107,143,99,0.2); padding:0.55rem 1.1rem; font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; }
-
-/* HAMBURGER */
-.nav-toggle { display:none; flex-direction:column; justify-content:space-between; width:24px; height:17px; background:none; border:none; cursor:pointer; padding:0; flex-shrink:0; }
-.nav-toggle span { display:block; width:100%; height:1.5px; background:#ffffff; transition:transform 0.25s, opacity 0.25s; transform-origin:center; }
-.nav.nav-open .nav-toggle span:nth-child(1) { transform:translateY(7.75px) rotate(45deg); }
-.nav.nav-open .nav-toggle span:nth-child(2) { opacity:0; }
-.nav.nav-open .nav-toggle span:nth-child(3) { transform:translateY(-7.75px) rotate(-45deg); }
 
 /* RESPONSIVE */
 @media(max-width:900px) {
