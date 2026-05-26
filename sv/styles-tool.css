@@ -302,7 +302,7 @@ body { background: var(--linen); }
   font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
   padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 400; border: none; transition: all 0.2s; }
 .btn-save { background: var(--leaf); color: var(--white); }
-.btn-save:hover { background: #3a6c1a; }
+.btn-save:hover { background: #3a5332; }
 .btn-reset { background: transparent; border: 1px solid rgba(107,143,99,0.3); color: var(--mist); }
 .btn-reset:hover { border-color: var(--sage); color: var(--frost); }
 .btn-export { background: transparent; border: 1px solid rgba(196,162,74,0.3); color: var(--gold-lt); }
@@ -431,7 +431,7 @@ body { background: var(--linen); }
 .tool-lead-form input[type=email] { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1px solid rgba(61,92,56,0.25); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); outline: none; }
 .tool-lead-form input[type=email]:focus { border-color: var(--sage); }
 .tool-lead-form button { background: var(--leaf); color: var(--white); border: none; padding: 0.85rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-weight: 400; white-space: nowrap; transition: background 0.3s; }
-.tool-lead-form button:hover { background: #3a6c1a; }
+.tool-lead-form button:hover { background: #3a5332; }
 .tool-lead-trust { display: block; margin-top: 1rem; font-size: 0.72rem; color: var(--muted); font-weight: 300; }
 
 /* Process steps block */
