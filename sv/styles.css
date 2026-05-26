@@ -82,7 +82,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .caption  { font-size: 0.7rem;  line-height: 1.6;  font-weight: 400; color: var(--sage); letter-spacing: 0.08em; }
 
 /* ── NAVIGATION ───────────────────────────────────────────────────────────── */
-.nav { position:sticky; top:0; z-index:100; background:rgba(10,26,13,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
+.nav { position:sticky; top:0; z-index:100; background:rgba(20,32,22,0.95); backdrop-filter:blur(16px); border-bottom:1px solid rgba(107,143,99,0.12); padding:1.1rem 3rem; display:flex; align-items:center; justify-content:space-between; }
 .nav-logo { text-decoration:none; display:flex; align-items:center; }
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
 .nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; font-weight:400; transition:color 0.3s; }
