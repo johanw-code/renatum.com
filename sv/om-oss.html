@@ -38,26 +38,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="styles.css">
 <link rel="canonical" href="https://renatum.com/sv/om-oss">
 <style>
-.om-hero { padding: 5rem 0 4.5rem; }
-.om-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:300; color:var(--forest); line-height:1.2; margin-bottom:1.8rem; max-width:580px; }
+/* ── Hero ─────────────────────────────────────────────────── */
+.om-hero { padding:5rem 0 5.5rem; }
+.om-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--forest); line-height:1.15; margin-bottom:2rem; max-width:580px; }
+.om-hero-lead { font-size:1rem; color:var(--text); font-weight:300; line-height:1.9; max-width:600px; margin-bottom:1rem; opacity:0.75; }
 .om-hero p { font-size:1rem; color:var(--muted); font-weight:300; line-height:1.85; max-width:600px; margin-bottom:1rem; }
 .om-hero p:last-child { margin-bottom:0; }
 
-.om-section { padding:4rem 0; border-top:1px solid rgba(74,103,65,0.12); }
-.om-label { font-size:0.58rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--sage); font-weight:500; display:block; margin-bottom:1.6rem; }
-.om-section h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,2.5vw,1.85rem); font-weight:300; color:var(--forest); line-height:1.25; margin-bottom:1.4rem; max-width:600px; }
+/* ── Sections ─────────────────────────────────────────────── */
+.om-section { padding:4.5rem 0; border-top:1px solid rgba(74,103,65,0.12); }
+.om-label { font-size:0.58rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--sage); font-weight:500; display:block; margin-bottom:1.8rem; }
+.om-section h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.35rem,2.5vw,1.9rem); font-weight:300; color:var(--forest); line-height:1.25; margin-bottom:1.4rem; max-width:600px; }
+.om-section-lead { font-size:1rem; color:var(--text); font-weight:300; line-height:1.85; max-width:620px; margin-bottom:1.1rem; opacity:0.72; }
 .om-section p { font-size:1rem; color:var(--muted); font-weight:300; line-height:1.85; max-width:620px; margin-bottom:1.1rem; }
 .om-section p:last-child { margin-bottom:0; }
-.om-ul { list-style:none; margin:1.2rem 0 1.3rem; max-width:580px; display:flex; flex-direction:column; gap:0.65rem; }
+
+/* ── 01 Problem: panel med bullets ───────────────────────── */
+.om-list-panel { background:var(--white); border:1px solid rgba(74,103,65,0.1); padding:1.6rem 2rem; margin:1.6rem 0; max-width:580px; }
+.om-ul { list-style:none; display:flex; flex-direction:column; gap:0.7rem; }
 .om-ul li { padding-left:1.4rem; position:relative; font-size:1rem; color:var(--muted); font-weight:300; line-height:1.7; }
-.om-ul li::before { content:'—'; position:absolute; left:0; color:rgba(107,143,99,0.55); }
+.om-ul li::before { content:'—'; position:absolute; left:0; color:rgba(107,143,99,0.5); }
 
-.om-realism { border-top:1px solid rgba(74,103,65,0.12); border-bottom:1px solid rgba(74,103,65,0.12); padding:2rem 0; margin:1.6rem 0; max-width:620px; }
-.om-realism p { margin-bottom:0.9rem; }
-.om-realism p:last-child { margin-bottom:0; }
+/* ── 02 Process: rapport-stil radlista ───────────────────── */
+.om-steps { margin:1.6rem 0; max-width:580px; border-top:1px solid rgba(74,103,65,0.1); }
+.om-step { padding:1rem 0; border-bottom:1px solid rgba(74,103,65,0.08); font-size:1rem; color:var(--muted); font-weight:300; line-height:1.7; }
 
-.om-cta { padding:4rem 0; border-top:1px solid rgba(74,103,65,0.12); }
-.om-cta p { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:300; color:var(--forest); line-height:1.75; max-width:520px; margin-bottom:2rem; }
+/* ── 03 Sverige: 2×2 faktaceller ─────────────────────────── */
+.om-facts { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(74,103,65,0.1); margin:1.8rem 0; max-width:580px; }
+.om-fact { background:var(--white); padding:1.5rem 1.6rem; }
+.om-fact-label { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--sage); font-weight:500; display:block; margin-bottom:0.55rem; }
+.om-fact p { font-size:0.95rem; color:var(--muted); font-weight:300; line-height:1.65; margin:0; }
+@media(max-width:480px) { .om-facts { grid-template-columns:1fr; } }
+
+/* ── 04 Realism: vitt panel ───────────────────────────────── */
+.om-realism-panel { background:var(--white); border:1px solid rgba(74,103,65,0.13); padding:2.2rem 2.4rem; margin:1.8rem 0; max-width:620px; display:flex; flex-direction:column; gap:1rem; }
+.om-realism-panel p { font-size:1rem; color:var(--muted); font-weight:300; line-height:1.85; margin:0; }
+
+/* ── CTA ──────────────────────────────────────────────────── */
+.om-cta { padding:4.5rem 0; border-top:1px solid rgba(74,103,65,0.12); }
+.om-cta p { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; color:var(--forest); line-height:1.75; max-width:520px; margin-bottom:2rem; }
 </style>
 </head>
 <body>
@@ -71,35 +90,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="om-hero">
     <h1>Klimatmarknaden behöver bli mer konkret.</h1>
-    <p>Renatum finns för att göra klimataffärer med skogsmark spårbara och begripliga — för markägaren som vill ta betalt för skogens klimatvärde, och för köparen som behöver kunna visa vad som faktiskt finansieras.</p>
+    <p class="om-hero-lead">Renatum finns för att göra klimataffärer med skogsmark spårbara och begripliga — för markägaren som vill ta betalt för skogens klimatvärde, och för köparen som behöver kunna visa vad som faktiskt finansieras.</p>
     <p>Vi arbetar i Sverige. Inte för att det är det enklaste alternativet, utan för att det är ett av få sammanhang där fastighetsdata, regelverk och markägarstruktur tillsammans möjliggör en nivå av spårbarhet som är svår att uppnå på bredare marknader.</p>
   </div>
 
   <div class="om-section">
     <span class="om-label">01 — Problemet</span>
     <h2>Svårt att veta vad som faktiskt finansieras</h2>
-    <p>Den frivilliga koldioxidmarknaden har vuxit snabbt. Det är i grunden positivt — det finns ett verkligt behov av att finansiera klimatinsatser utanför kvotmarknaderna.</p>
+    <p class="om-section-lead">Den frivilliga koldioxidmarknaden har vuxit snabbt. Det är i grunden positivt — det finns ett verkligt behov av att finansiera klimatinsatser utanför kvotmarknaderna.</p>
     <p>Men en stor del av projekten är svåra att följa upp. De är geografiskt avlägsna, operativt komplexa och dokumenterade på sätt som gör det svårt för en utomstående att bedöma vad som faktiskt har hänt på marken.</p>
-    <ul class="om-ul">
-      <li>Kopplingen mellan betalning och faktisk klimatnytta är ofta indirekt</li>
-      <li>Det är svårt att förstå vem som är ansvarig för genomförande och uppföljning</li>
-      <li>Kvaliteten varierar kraftigt och är svår att bedöma utan specialistkompetens</li>
-      <li>Risken för extern kritik ökar i takt med att granskning av klimatkompensation intensifieras</li>
-    </ul>
+    <div class="om-list-panel">
+      <ul class="om-ul">
+        <li>Kopplingen mellan betalning och faktisk klimatnytta är ofta indirekt</li>
+        <li>Det är svårt att förstå vem som är ansvarig för genomförande och uppföljning</li>
+        <li>Kvaliteten varierar kraftigt och är svår att bedöma utan specialistkompetens</li>
+        <li>Risken för extern kritik ökar i takt med att granskning av klimatkompensation intensifieras</li>
+      </ul>
+    </div>
     <p>Det är inte ett argument mot klimatkompensation. Det är en observation om hur marknaden fungerar i dag — och om vad som krävs för att en affär ska hålla vid extern granskning.</p>
   </div>
 
   <div class="om-section">
     <span class="om-label">02 — Hur vi arbetar</span>
     <h2>Analys, affärsunderlag och verifierbar koppling</h2>
-    <p>Renatum arbetar med fastigheter som finns i det svenska fastighetsregistret. Det innebär att den klimatnytta som dokumenteras kan kopplas till en konkret plats, en konkret ägare och ett konkret skogsbruksunderlag.</p>
+    <p class="om-section-lead">Renatum arbetar med fastigheter som finns i det svenska fastighetsregistret. Det innebär att den klimatnytta som dokumenteras kan kopplas till en konkret plats, en konkret ägare och ett konkret skogsbruksunderlag.</p>
     <p>För en markägare innebär processen:</p>
-    <ul class="om-ul">
-      <li>En analys av fastighetens CO₂-bindning och lämplighet för den frivilliga marknaden</li>
-      <li>Ett affärsunderlag som bedömer intäktspotential och relevant certifieringsväg</li>
-      <li>Stöd i certifieringsprocessen — Gold Standard eller Plan Vivo beroende på fastighetstyp</li>
-      <li>Koppling till köpare som söker verifierbara, svenska klimatkrediter</li>
-    </ul>
+    <div class="om-steps">
+      <div class="om-step">En analys av fastighetens CO₂-bindning och lämplighet för den frivilliga marknaden</div>
+      <div class="om-step">Ett affärsunderlag som bedömer intäktspotential och relevant certifieringsväg</div>
+      <div class="om-step">Stöd i certifieringsprocessen — Gold Standard eller Plan Vivo beroende på fastighetstyp</div>
+      <div class="om-step">Koppling till köpare som söker verifierbara, svenska klimatkrediter</div>
+    </div>
     <p>Det vi möjliggör är en process — inte ett utfall. Varje steg bygger på faktaunderlag och kan granskas av en tredje part.</p>
     <p>För ett företag som söker klimatinsatser innebär det tillgång till projekt med fastighetsbeteckning, markägare och certifieringsdokumentation — inte bara ett certifikat.</p>
   </div>
@@ -107,13 +128,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="om-section">
     <span class="om-label">03 — Varför Sverige</span>
     <h2>Hög spårbarhet och stabila förutsättningar</h2>
-    <p>Sverige är ett ovanligt sammanhang för klimataffärer med skogsmark, i positiv bemärkelse.</p>
-    <ul class="om-ul">
-      <li>Fastighetsbeteckning och markägardata är offentliga och verifierbara</li>
-      <li>Skogsstyrelsen och Lantmäteriet tillhandahåller data som stödjer oberoende bedömningar</li>
-      <li>Stabilt juridiskt ramverk för äganderätt och markanvändning</li>
-      <li>Köpare och säljare verkar inom samma rättsordning och kan mötas utan mellanhänder</li>
-    </ul>
+    <p class="om-section-lead">Sverige är ett ovanligt sammanhang för klimataffärer med skogsmark, i positiv bemärkelse.</p>
+    <div class="om-facts">
+      <div class="om-fact">
+        <span class="om-fact-label">Ägardata</span>
+        <p>Fastighetsbeteckning och markägardata är offentliga och verifierbara mot nationella register</p>
+      </div>
+      <div class="om-fact">
+        <span class="om-fact-label">Faktaunderlag</span>
+        <p>Skogsstyrelsen och Lantmäteriet tillhandahåller data som stödjer oberoende bedömningar</p>
+      </div>
+      <div class="om-fact">
+        <span class="om-fact-label">Rättsordning</span>
+        <p>Stabilt juridiskt ramverk för äganderätt och markanvändning med lång kontinuitet</p>
+      </div>
+      <div class="om-fact">
+        <span class="om-fact-label">Direktitet</span>
+        <p>Köpare och säljare verkar inom samma rättsordning och kan mötas utan mellanhänder</p>
+      </div>
+    </div>
     <p>Det gör det möjligt att bygga klimataffärer med en grad av transparens och genomlysbarhet som är ovanlig på den globala marknaden.</p>
   </div>
 
@@ -121,7 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="om-label">04 — En viktig distinktion</span>
     <h2>Inte alla fastigheter passar — och inte alla analyser leder till affär</h2>
     <p>Det är viktigt att vara tydlig med vad Renatum erbjuder och vad vi inte erbjuder.</p>
-    <div class="om-realism">
+    <div class="om-realism-panel">
       <p>Analysen är en bedömning av potential, inte en garanti om intäkt. Klimatmarknaden förändras — priser, standarder och efterfrågan varierar över tid och kan inte förutses med säkerhet.</p>
       <p>Certifieringsprocessen tar tid och kräver dokumentation som inte alltid finns på plats. En del fastigheter lämpar sig bättre för traditionellt skogsbruk eller andra användningsområden.</p>
       <p>Renatum säljer inte löften om framtida intäkter. Vi tillhandahåller underlag för att kunna fatta ett välgrundat beslut — och är tydliga med vad som är osäkert.</p>
