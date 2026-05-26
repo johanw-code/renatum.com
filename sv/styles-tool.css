@@ -49,7 +49,7 @@ body { background: var(--linen); }
 /* Results panels */
 .results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   background: transparent; margin: 2rem 0; }
-.res-cell { background: #243028; border:1px solid rgba(107,143,99,0.15); padding: 2rem 1.5rem; text-align: center; }
+.res-cell { background: var(--bark); border:1px solid rgba(107,143,99,0.15); padding: 2rem 1.5rem; text-align: center; }
 .res-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--sage); display: block; margin-bottom: 0.5rem; }
 .res-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
@@ -63,7 +63,7 @@ body { background: var(--linen); }
   border-top: 1px solid rgba(107,143,99,0.15); opacity: 0.85; }
 
 /* Comparison section */
-.comparison { background: #243028; border: 1px solid rgba(107,143,99,0.15);
+.comparison { background: var(--bark); border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin-top: 1px; }
 .comp-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--sage); display: block; margin-bottom: 1.5rem; font-weight: 500; }
@@ -75,7 +75,7 @@ body { background: var(--linen); }
 /* Stats row */
 .stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin: 2rem 0; }
-.stat { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
+.stat { background: var(--bark); border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
 .stat-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
   font-weight: 300; color: var(--white); display: block; line-height: 1; }
 .stat-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
@@ -85,7 +85,7 @@ body { background: var(--linen); }
 /* Metrics row */
 .metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px;
   background: rgba(107,143,99,0.1); margin: 2rem 0; }
-.metric, .met { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
+.metric, .met { background: var(--bark); border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; text-align: center; }
 .metric-n, .met-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
   font-weight: 300; color: var(--white); display: block; line-height: 1; }
 .metric-l, .met-l { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
@@ -96,10 +96,10 @@ body { background: var(--linen); }
 /* Inputs section (avkastning) */
 .inputs { display: grid; grid-template-columns: 1fr; gap: 1px;
   background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
-.inp-cell { background: #243028; border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; color: var(--frost); }
+.inp-cell { background: var(--bark); border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; color: var(--frost); }
 
 /* Chart */
-.chart-card { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
+.chart-card { background: var(--section-dark); border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin: 2rem 0; }
 .chart-title { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--sage); display: block; margin-bottom: 1rem; font-weight: 500; }
@@ -110,7 +110,7 @@ body { background: var(--linen); }
 .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
 /* Timeline */
-.timeline { background: #1a2e1e; border: 1px solid rgba(107,143,99,0.15);
+.timeline { background: var(--section-dark); border: 1px solid rgba(107,143,99,0.15);
   padding: 2rem; margin: 1px 0; color: var(--frost); }
 .tl-bar-wrap { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
 .tl-bar { display: flex; align-items: center; gap: 1rem; }
@@ -120,7 +120,7 @@ body { background: var(--linen); }
 /* Bonitet */
 .main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
 @media(max-width:700px) { .main { grid-template-columns: 1fr; } }
-.result-panel { background: #243028; padding: 2rem; display: flex;
+.result-panel { background: var(--bark); padding: 2rem; display: flex;
   flex-direction: column; justify-content: center; color: var(--frost); }
 .si-card { text-align: center; padding: 1.5rem 0; }
 .si-class { font-family: 'Cormorant Garamond', serif; font-size: 4rem;
@@ -301,7 +301,7 @@ body { background: var(--linen); }
 .btn-save, .btn-reset, .btn-export { font-family: 'DM Sans', sans-serif;
   font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
   padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 400; border: none; transition: all 0.2s; }
-.btn-save { background: #5a9e2f; color: #fff; }
+.btn-save { background: var(--leaf); color: var(--white); }
 .btn-save:hover { background: #3a6c1a; }
 .btn-reset { background: transparent; border: 1px solid rgba(107,143,99,0.3); color: var(--mist); }
 .btn-reset:hover { border-color: var(--sage); color: var(--frost); }
@@ -430,7 +430,7 @@ body { background: var(--linen); }
 .tool-lead-form { display: flex; gap: 0.5rem; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
 .tool-lead-form input[type=email] { flex: 1; min-width: 200px; padding: 0.85rem 1rem; border: 1px solid rgba(61,92,56,0.25); background: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: var(--text); outline: none; }
 .tool-lead-form input[type=email]:focus { border-color: var(--sage); }
-.tool-lead-form button { background: #5a9e2f; color: #fff; border: none; padding: 0.85rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-weight: 400; white-space: nowrap; transition: background 0.3s; }
+.tool-lead-form button { background: var(--leaf); color: var(--white); border: none; padding: 0.85rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; font-weight: 400; white-space: nowrap; transition: background 0.3s; }
 .tool-lead-form button:hover { background: #3a6c1a; }
 .tool-lead-trust { display: block; margin-top: 1rem; font-size: 0.72rem; color: var(--muted); font-weight: 300; }
 
