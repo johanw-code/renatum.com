@@ -473,6 +473,10 @@ body { background: var(--linen); }
 .cta-box input:focus, .contact-form input:focus { border-color: var(--sage); }
 
 /* ── MOBILE REFINEMENTS ──────────────────────────────────────────────────── */
+@media(max-width:900px) {
+  /* prisvardhet: show score ring before criteria list so it's visible immediately */
+  .main-grid .result-panel { order: -1; }
+}
 @media(max-width:700px) {
   .tool-lead { padding: 2rem 1.5rem; }
   .tool-lead-form { max-width: 100%; }
