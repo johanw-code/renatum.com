@@ -16,7 +16,7 @@ body { background: var(--linen); }
 .card { background: var(--deep) !important; color: var(--frost); border-color: rgba(107,143,99,0.15); }
 
 /* 2-col grid for card pairs */
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
 @media(max-width:700px) { .grid { grid-template-columns: 1fr; } }
 
 /* Input labels */
@@ -94,7 +94,7 @@ body { background: var(--linen); }
 @media(max-width:700px) { .stats, .metrics { grid-template-columns: 1fr; } }
 
 /* Inputs section (avkastning) */
-.inputs { display: grid; grid-template-columns: 1fr; gap: 1px;
+.inputs { display: grid; grid-template-columns: 1fr; gap: 0.75rem;
   background: rgba(107,143,99,0.1); margin-bottom: 2rem; }
 .inp-cell { background: var(--bark); border:1px solid rgba(107,143,99,0.12); padding: 1.5rem; color: var(--frost); }
 
@@ -118,7 +118,7 @@ body { background: var(--linen); }
 .tl-bar-fill { height: 8px; background: var(--leaf); border-radius: 1px; transition: width 0.5s; }
 
 /* Bonitet */
-.main { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+.main { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
 @media(max-width:700px) { .main { grid-template-columns: 1fr; } }
 .result-panel { background: var(--bark); padding: 2rem; display: flex;
   flex-direction: column; justify-content: center; color: var(--frost); }
@@ -234,7 +234,7 @@ body { background: var(--linen); }
 .page-header h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300;
   font-size: clamp(2.2rem,4vw,3.2rem); color: var(--forest); margin-bottom: 0.5rem; }
 .page-header h1 em { font-style: italic; color: var(--moss); }
-.main-grid { display: grid; grid-template-columns: 1fr 360px; gap: 1px;
+.main-grid { display: grid; grid-template-columns: 1fr 360px; gap: 0.75rem;
   align-items: start; }
 @media(max-width:900px) { .main-grid { grid-template-columns: 1fr; } }
 
@@ -394,7 +394,7 @@ body { background: var(--linen); }
 .tl-val { font-size: 0.82rem; color: var(--frost); min-width: 70px; text-align: right; }
 
 /* Vardering — 2-col grid */
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem; }
 @media(max-width:700px) { .grid2 { grid-template-columns: 1fr; } }
 
 
@@ -483,7 +483,7 @@ body { background: var(--linen); }
   .tool-lead-form button { white-space: normal; }
   .phase-header { padding-top: 2rem; }
   .cta-box { padding: 2rem 1.5rem; }
-  .grid { gap: 0.75rem; }
-  .main { gap: 0.75rem; }
-  .grid2 { gap: 0.75rem; }
+  .grid { gap: 1rem; }
+  .main { gap: 1rem; }
+  .grid2 { gap: 1rem; }
 }
