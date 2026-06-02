@@ -67,9 +67,9 @@
 .aud-card-accent .aud-card-link { color:var(--leaf); }
 
 /* PLATFORM STEPS */
-.platform-steps { display:grid; grid-template-columns:1fr 1px 1fr 1px 1fr; background:rgba(74,103,65,0.06); border-top:1px solid rgba(74,103,65,0.1); }
+.platform-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; background:rgba(74,103,65,0.06); border-top:1px solid rgba(74,103,65,0.1); }
 .platform-step { padding:3rem 3rem 2.5rem; text-align:center; }
-.platform-step-divider { background:rgba(74,103,65,0.12); }
+.platform-step-divider { display:none; }
 .platform-step-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:var(--sage); line-height:1; margin-bottom:0.8rem; }
 .platform-step-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--forest); margin-bottom:0.5rem; }
 .platform-step-desc { font-size:1rem; line-height:1.75; color:var(--muted); font-weight:300; max-width:260px; margin:0 auto; }
