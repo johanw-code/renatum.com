@@ -483,4 +483,7 @@ body { background: var(--linen); }
   .tool-lead-form button { white-space: normal; }
   .phase-header { padding-top: 2rem; }
   .cta-box { padding: 2rem 1.5rem; }
+  .grid { gap: 0.75rem; }
+  .main { gap: 0.75rem; }
+  .grid2 { gap: 0.75rem; }
 }

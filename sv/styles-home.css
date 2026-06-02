@@ -36,7 +36,7 @@
 .how { padding:8rem 3rem; background:var(--section-dark); }
 .how-inner { max-width:1140px; margin:0 auto; }
 .how-header { text-align:center; margin-bottom:4rem; }
-.how-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(107,143,99,0.1); }
+.how-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0.75rem; background:rgba(107,143,99,0.1); }
 .how-step { background:var(--card-dark); padding:3rem 2.5rem; position:relative; }
 .how-step::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:transparent; transition:background 0.3s; }
 .how-step:hover::before { background:var(--sage); }
@@ -51,7 +51,7 @@
 .aud-cards-section { padding:8rem 3rem; background:var(--linen); }
 .aud-cards-inner { max-width:1140px; margin:0 auto; }
 .aud-cards-header { text-align:center; margin-bottom:4rem; }
-.aud-cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(74,103,65,0.12); margin-bottom:0; }
+.aud-cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; background:rgba(74,103,65,0.12); margin-bottom:0; }
 .aud-card { background:var(--white); padding:3rem 2.5rem 2.5rem; display:flex; flex-direction:column; text-decoration:none; color:inherit; border-top:2px solid transparent; transition:background 0.25s, border-color 0.25s; }
 .aud-card:hover { background:rgba(74,103,65,0.04); border-top-color:var(--sage); }
 .aud-card-accent { background:var(--forest); border-top-color:transparent; }
@@ -78,7 +78,7 @@
 .what-section { padding:8rem 3rem; background:var(--section-dark); }
 .what-inner { max-width:1140px; margin:0 auto; }
 .what-header { text-align:center; margin-bottom:3.5rem; }
-.what-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(107,143,99,0.1); }
+.what-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; background:rgba(107,143,99,0.1); }
 .what-card { background:var(--card-dark); padding:2.8rem 2.5rem; display:flex; flex-direction:column; border-top:2px solid transparent; transition:background 0.25s, border-color 0.25s; }
 .what-card:hover { background:rgba(118,179,59,0.08); border-top-color:var(--sage); }
 .what-card-icon { margin-bottom:1.5rem; }
@@ -135,7 +135,7 @@
 
 /* TOOLS */
 .tools-section { padding:8rem 3rem; background:var(--linen); }
-.tools-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(107,143,99,0.12); max-width:1140px; margin:3rem auto 0; }
+.tools-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; background:rgba(107,143,99,0.12); max-width:1140px; margin:3rem auto 0; }
 .tool-card { background:var(--deep); padding:2.5rem; text-decoration:none; display:block; border-top:2px solid transparent; transition:border-color 0.3s, background 0.3s; color:inherit; }
 .tool-card:hover { border-top-color:var(--leaf); background:rgba(74,103,65,0.1); }
 .tool-icon { width:40px; height:40px; background:rgba(107,143,99,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
@@ -199,6 +199,7 @@
   .hero-desc { margin-bottom:1.5rem; }
   .hero-actions { flex-wrap:wrap; gap:0.8rem; }
   .how-steps, .test-grid, .tools-grid { grid-template-columns:1fr; }
+  .how-steps, .aud-cards-grid, .what-cards, .tools-grid { gap:1rem; }
   .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }
   .about-img { min-height:300px; }
   .aud-cards-section { padding:3.5rem 1.5rem; }
