@@ -240,13 +240,17 @@ body { background: var(--linen); }
 
 /* Criteria list — dark deep background */
 .criteria-list { background: var(--deep); border: 1px solid rgba(107,143,99,0.15); }
-.property-name-bar { background: var(--ink); padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(107,143,99,0.12); }
+.property-name-bar { background: var(--white); padding: 1rem 1.5rem;
+  border: 1px solid rgba(74,103,65,0.15); margin-bottom: 0.75rem; }
+.property-name-bar label { font-size: 0.62rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--sage); font-weight: 500;
+  display: block; margin-bottom: 0.5rem; }
 .property-name-bar input { background: transparent; border: none;
-  border-bottom: 1px solid rgba(107,143,99,0.3);
-  color: var(--frost); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+  border-bottom: 1px solid rgba(61,92,56,0.2);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
   width: 100%; padding: 0.3rem 0; outline: none; }
-.property-name-bar input::placeholder { color: rgba(168,196,160,0.35); }
+.property-name-bar input::placeholder { color: var(--subtle); }
+.property-name-bar input:focus { border-bottom-color: var(--sage); outline: none; }
 
 .criterion { background: var(--deep); border-bottom: 1px solid rgba(107,143,99,0.1); }
 .criterion:last-child { border-bottom: none; }
