@@ -96,6 +96,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .comp-cols { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:1.5rem; }
 @media(max-width:700px) { .comp-cols { grid-template-columns:1fr; } }
 
+.foretag-solution { background:var(--forest); padding:3rem 3rem 3.5rem; margin-top:3.5rem; }
+@media(max-width:700px) {
+  .foretag-solution { padding:2rem 1.5rem 2.5rem; }
+  #timed-feedback { width:calc(100vw - 3rem); right:1.5rem; }
+}
+
 /* ── Feedback widgets ─────────────────────────────────────────────────────── */
 /* ── Timed-feedback (light card, bottom-right) ── */
 #timed-feedback {
@@ -285,7 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- SOLUTION -->
-  <div style="background:var(--forest);padding:3rem 3rem 3.5rem;margin-top:3.5rem;">
+  <div class="foretag-solution">
     <span style="font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);font-weight:500;display:block;margin-bottom:1.2rem;">Hur vi arbetar</span>
     <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--white);margin-bottom:2rem;line-height:1.2;">Så fungerar det</h2>
     <div style="display:flex;flex-direction:column;gap:0;">

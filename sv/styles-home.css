@@ -201,18 +201,21 @@
   .how-steps, .test-grid, .tools-grid { grid-template-columns:1fr; }
   .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }
   .about-img { min-height:300px; }
-  .aud-cards-section { padding:5rem 1.5rem; }
+  .aud-cards-section { padding:3.5rem 1.5rem; }
   .aud-cards-grid { grid-template-columns:1fr; }
   .platform-steps { grid-template-columns:1fr; }
   .platform-step-divider { display:none; }
   .platform-step { padding:2rem 1.5rem; }
-  .what-section, .why-section { padding:5rem 1.5rem; }
+  .what-section, .why-section { padding:3.5rem 1.5rem; }
   .what-cards { grid-template-columns:1fr; }
-  .why-points { grid-template-columns:1fr; gap:2.5rem; }
-  .proof-section { padding:5rem 1.5rem; }
-  .proof-case { grid-template-columns:1fr; gap:0.8rem; padding:2.5rem 0; }
+  .why-points { grid-template-columns:1fr; gap:1.8rem; }
+  .proof-section { padding:3.5rem 1.5rem; }
+  .proof-case { grid-template-columns:1fr; gap:0.8rem; padding:1.8rem 0; }
   .signal-bar { padding:1.2rem 1.5rem; }
-  .how, .co2-section, .tools-section, .testimonials, .contact { padding:5rem 1.5rem; }
+  .how, .co2-section, .tools-section, .testimonials, .contact { padding:3.5rem 1.5rem; }
+  .about-img { min-height:260px; }
+  .about-content { padding:2.5rem 1.5rem; }
   .band { padding:1.5rem; } .footer { padding:4rem 1.5rem 2rem; }
   .form-row { grid-template-columns:1fr; } .cookie-banner { padding:1rem 1.5rem; }
 }
+@media(max-width:500px) { .co2-stats { grid-template-columns:1fr; } }
