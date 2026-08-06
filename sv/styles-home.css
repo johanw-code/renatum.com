@@ -62,9 +62,10 @@
 .aud-card-accent .aud-card-title { color:var(--white); }
 .aud-card-desc { font-size:1rem; line-height:1.8; color:var(--muted); font-weight:300; flex:1; margin-bottom:2rem; }
 .aud-card-accent .aud-card-desc { color:rgba(255,255,255,0.58); }
-.aud-card-link { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--moss); font-weight:500; transition:letter-spacing 0.25s; }
+.aud-card-link { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--moss); font-weight:500; transition:letter-spacing 0.25s, color 0.25s; }
 .aud-card:hover .aud-card-link { letter-spacing:0.18em; }
-.aud-card-accent .aud-card-link { color:var(--leaf); }
+.aud-card-accent .aud-card-link { color:var(--mist); } /* was var(--leaf): 1.9:1 on the dark card, failed WCAG AA. var(--mist) gives 6.5:1. */
+.aud-card-accent:hover .aud-card-link { color:var(--frost); }
 
 /* PLATFORM STEPS */
 .platform-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem; background:rgba(74,103,65,0.06); margin-top:2.5rem; }
@@ -109,7 +110,7 @@
 
 /* SIGNAL BAR */
 .signal-bar { background:var(--ink); border-top:1px solid rgba(107,143,99,0.12); padding:1.6rem 3rem; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; }
-.signal-item { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(168,196,160,0.45); font-weight:400; padding:0.2rem 1.8rem; position:relative; white-space:nowrap; }
+.signal-item { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(168,196,160,0.7); font-weight:400; padding:0.2rem 1.8rem; position:relative; white-space:nowrap; } /* alpha raised from 0.45 (2.9:1) to 0.7 (5:1) to pass WCAG AA */
 .signal-item:not(:last-child)::after { content:''; position:absolute; right:0; top:50%; transform:translateY(-50%); width:1px; height:10px; background:rgba(107,143,99,0.2); }
 
 /* CO2 HIGHLIGHT */
@@ -142,8 +143,8 @@
 .tool-cat { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#8fbf80; font-weight:500; display:block; margin-bottom:0.5rem; }
 .tool-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:300; color:var(--white); margin-bottom:0.6rem; }
 .tool-desc { font-size:1rem; color:#cde0c5; line-height:1.7; font-weight:300; }
-.tool-cta { display:block; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; color:var(--leaf); font-weight:500; transition:color 0.2s; }
-.tool-card:hover .tool-cta { color:var(--leaf-lt); }
+.tool-cta { display:block; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; color:var(--mist); font-weight:500; transition:color 0.2s; } /* was var(--leaf): 2.4:1 on the card bg, failed WCAG AA. var(--mist) gives 7.9:1. */
+.tool-card:hover .tool-cta { color:var(--frost); }
 
 /* TESTIMONIALS */
 .testimonials { padding:8rem 3rem; background:var(--card-dark); }
@@ -176,6 +177,14 @@
 .form-input::placeholder, .form-textarea::placeholder { color:rgba(26,46,30,0.35); }
 .form-input:focus, .form-textarea:focus { border-color:var(--sage); }
 .form-textarea { height:120px; resize:none; }
+/* select uses .form-input too; appearance:none (set inline in the markup) strips the
+   native arrow with nothing to replace it, so add one back explicitly */
+select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%233d5c38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1rem center;
+  padding-right: 2.6rem;
+}
 
 
 

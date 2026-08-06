@@ -86,7 +86,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-he
 .nav-logo { text-decoration:none; display:flex; align-items:center; }
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
 .nav-links a { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--white); text-decoration:none; font-weight:400; transition:color 0.3s; }
-.nav-links a:hover { color:var(--leaf); }
+.nav-links a:hover { color:var(--mist); } /* was var(--leaf): 2.7:1 on the dark nav bg, failed WCAG AA. var(--mist) gives 8.9:1. */
 .nav-links a.nav-active { color:var(--white); border-bottom:1px solid var(--leaf); padding-bottom:2px; }
 .nav-dropdown { position:relative; }
 .nav-dropdown > a { cursor:pointer; user-select:none; }
