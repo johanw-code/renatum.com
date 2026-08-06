@@ -295,6 +295,12 @@ input[type=range]::-webkit-slider-thumb {
   .footer { padding: 4rem 1.5rem 2rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .cookie-banner { padding: 1rem 1.5rem; }
+
+  /* Standalone primary action buttons (e.g. vardering's "Beräkna uppskattning")
+     should read as deliberate, full-width taps on mobile — matching the other
+     tool pages' primary decision buttons (foretag, klimatkompensera), which
+     are already full-width there. */
+  .btn-full-mobile { display: block; width: 100%; text-align: center; }
 }
 
 

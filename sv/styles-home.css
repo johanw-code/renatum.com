@@ -195,9 +195,10 @@
   .nav-dropdown-menu a { padding:0.55rem 1rem; font-size:0.75rem; }
   .hero { min-height:calc(100svh - 60px); min-height:calc(100vh - 60px); align-items:flex-start; }
   .hero-inner { grid-template-columns:1fr; padding:2rem 1.5rem 3rem; align-items:flex-start; } .hero-right { display:none; }
-  .hero-title { font-size:2.6rem; }
+  .hero-title { font-size:2.6rem; line-height:1.08; }
   .hero-desc { margin-bottom:1.5rem; }
-  .hero-actions { flex-wrap:wrap; gap:0.8rem; }
+  .hero-actions { flex-direction:column; align-items:stretch; gap:0.8rem; }
+  .hero-actions .btn { text-align:center; }
   .how-steps, .test-grid, .tools-grid { grid-template-columns:1fr; }
   .how-steps, .aud-cards-grid, .what-cards, .tools-grid { gap:1rem; }
   .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }

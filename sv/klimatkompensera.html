@@ -39,11 +39,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="styles-tool.css">
 <style>
 #paymentBlock { margin-top: 2.5rem; }
+.lead-fallback { margin-top: 2rem; padding-top: 1.8rem; }
 @media(max-width:700px) {
   .process-blocks { grid-template-columns: 1fr; }
   .process-block-div { display: none; }
   .process-block { padding: 1.4rem 0; border-bottom: 1px solid rgba(74,103,65,0.1); }
   .process-block:last-child { border-bottom: none; }
+
+  /* The payment CTA is immediately followed by a second, separate lead-capture
+     ask ("Få mer information") — on mobile, where blocks read full-bleed and
+     close together, give the fallback more room to read as a distinct,
+     lower-priority option rather than a second pitch right on its heels. */
+  .lead-fallback { margin-top: 3rem; padding-top: 2.2rem; }
 }
 </style>
 </head>
@@ -154,7 +161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <!-- ── LEAD FALLBACK ── -->
-  <div style="margin-top:2rem;padding-top:1.8rem;border-top:1px solid rgba(61,92,56,0.1);">
+  <div class="lead-fallback" style="border-top:1px solid rgba(61,92,56,0.1);">
     <p style="font-size:0.8rem;color:var(--muted);font-weight:300;margin-bottom:0.8rem;">Vill du läsa mer om hur det fungerar?</p>
     <form class="tool-lead-form" style="flex-wrap:wrap;gap:0.5rem;" onsubmit="submitToolLead(event,this)">
       <input type="hidden" name="tool" value="klimatkompensera">

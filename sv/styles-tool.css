@@ -490,4 +490,15 @@ body { background: var(--linen); }
   .grid { gap: 1rem; }
   .main { gap: 1rem; }
   .grid2 { gap: 1rem; }
+
+  /* Prisvärdhet — criterion description carries more weight than equivalent
+     secondary text elsewhere on the site (1rem vs ~0.85-0.88rem); across 8
+     stacked criteria this reads heavier than intended on a narrow phone. */
+  .crit-desc { font-size: 0.88rem; }
+
+  /* Prisvärdhet — weight row (label + 3 buttons + description) is a single
+     flex line that can crowd or wrap awkwardly on narrow phones, repeated
+     across all 8 criteria. Let it wrap on its own terms instead. */
+  .weight-row { flex-wrap: wrap; row-gap: 0.5rem; }
+  .weight-desc { flex-basis: 100%; order: 3; }
 }
