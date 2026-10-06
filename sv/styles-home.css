@@ -6,6 +6,8 @@
 @supports (height:100svh) { .hero { height:calc(100svh - 65px); } }
 .hero-bg { position:absolute; inset:0; background-color:#0f1c11; animation:slowZoom 14s ease-out forwards; will-change:transform; }
 .hero-bg-img { position:absolute; inset:0; background-image:linear-gradient(to bottom right, rgba(15,28,17,0.70) 0%, rgba(15,28,17,0.25) 55%, rgba(15,28,17,0.45) 100%), url('skog.webp'); background-position:center; background-size:cover; background-repeat:no-repeat; filter:brightness(1.1) saturate(1.1); }
+/* Readability overlay: its own layer between photo and content, so the hero stays legible if skog.webp is ever swapped. Darkest behind the text column (left) and toward the bottom where the CTAs sit. */
+.hero-bg::after { content:''; position:absolute; inset:0; pointer-events:none; background:linear-gradient(to right, rgba(20,32,22,0.60) 0%, rgba(20,32,22,0.40) 50%, rgba(20,32,22,0.10) 100%), linear-gradient(to top, rgba(20,32,22,0.45) 0%, rgba(20,32,22,0) 45%); }
 @keyframes slowZoom { from{transform:scale(1.06)} to{transform:scale(1.0)} }
 .hero-inner { position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:0 3rem; width:100%; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:4rem; }
 .hero-eyebrow { font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:#8fbf80; font-weight:500; display:block; margin-bottom:1.5rem; opacity:0; animation:fadeUp 0.8s 0.3s forwards; }
@@ -14,6 +16,13 @@
 .hero-divider { width:40px; height:1px; background:var(--leaf); margin:1.8rem 0; opacity:0; animation:fadeUp 0.8s 0.7s forwards; }
 .hero-desc { font-size:1rem; line-height:1.8; font-weight:300; color:#ffffff; max-width:480px; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.8s 0.9s forwards; }
 .hero-actions { display:flex; gap:1.2rem; align-items:center; opacity:0; animation:fadeUp 0.8s 1.1s forwards; }
+/* Secondary hero CTA: solid fill instead of a transparent outline on the photo.
+   Contrast (WCAG 2.x): text --white on --forest 11.5:1 (hover on --moss 7.1:1).
+   Edge: 1px --mist border inside a 1px --ink ring -> border is 6.5:1 vs the fill and 8.9:1 vs the ring,
+   so the boundary holds >=3:1 regardless of the photo behind it (hover: --frost 5.7:1 vs --moss, 12.7:1 vs --ink). */
+.hero-actions .btn-outline { background:var(--forest); color:var(--white); border:1px solid var(--mist); box-shadow:0 0 0 1px var(--ink); }
+.hero-actions .btn-outline:hover { background:var(--moss); border-color:var(--frost); color:var(--white); }
+.hero-actions .btn-outline:focus-visible { outline:2px solid var(--frost); outline-offset:2px; box-shadow:0 0 0 1px var(--ink), 0 0 0 6px var(--ink); }
 .hero-right { display:flex; flex-direction:column; align-items:flex-end; justify-content:center; gap:1px; opacity:0; animation:fadeUp 0.8s 1s forwards; }
 .hero-stat { background:rgba(10,26,13,0.82); border:1px solid rgba(107,143,99,0.3); backdrop-filter:blur(12px); padding:1.5rem 2rem; text-align:right; width:100%; }
 .hero-stat-num { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:#ffffff; line-height:1; text-shadow:0 1px 4px rgba(0,0,0,0.3); }
@@ -208,6 +217,7 @@ select.form-input {
   .hero-desc { margin-bottom:1.5rem; }
   .hero-actions { flex-direction:column; align-items:stretch; gap:0.8rem; }
   .hero-actions .btn { text-align:center; }
+  .hero-bg::after { background:linear-gradient(to bottom, rgba(20,32,22,0.35) 0%, rgba(20,32,22,0.55) 45%, rgba(20,32,22,0.60) 75%, rgba(20,32,22,0.30) 100%); }
   .how-steps, .test-grid, .tools-grid { grid-template-columns:1fr; }
   .how-steps, .aud-cards-grid, .what-cards, .tools-grid { gap:1rem; }
   .about-section, .co2-inner, .contact-inner { grid-template-columns:1fr; }
